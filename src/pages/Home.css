@@ -1,0 +1,155 @@
+/* כרטיסי ניווט מהיר */
+.home-cards-section {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.home-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border);
+}
+.home-card {
+  padding: 2.5rem 2rem;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+  cursor: default;
+}
+.home-card:first-child { border-right: none; }
+.home-card:hover { background: var(--cream); }
+.home-card-icon { font-size: 2rem; display: flex; justify-content: center; margin-bottom: 0.75rem; color: var(--gold); }
+.home-card h3 {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.4rem;
+}
+.home-card p { font-size: 0.84rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.6; }
+
+/* כפתור "ראה הכל" */
+.home-see-all { text-align: center; margin-top: 2.5rem; }
+
+/* על המסעדה */
+.home-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.home-about-text {}
+.home-about-body {
+  font-size: 0.92rem;
+  color: var(--text2);
+  line-height: 1.95;
+  margin-bottom: 0.85rem;
+}
+.home-about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 1.5rem 0;
+}
+.home-about-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.87rem;
+  color: var(--text2);
+}
+.home-about-row svg { color: var(--gold); flex-shrink: 0; }
+.home-kosher-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: var(--gold);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.75rem;
+  letter-spacing: 0.08em;
+  background: rgba(184,154,94,0.08);
+  font-weight: 600;
+}
+
+/* תמונה */
+.home-about-img {
+  position: relative;
+  height: 420px;
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+}
+.home-about-img img { height: 100%; object-fit: cover; }
+
+.home-about-img .slideshow-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.home-about-img .slideshow-img.active { opacity: 1; }
+
+.home-about-img .slideshow-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+.home-about-img .slideshow-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s;
+}
+.home-about-img .slideshow-dot.active { background: var(--gold); }
+.home-about-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--gold);
+}
+.tl-corner { top: -2px; right: -2px; border-top: 2px solid; border-right: 2px solid; }
+.br-corner { bottom: -2px; left: -2px; border-bottom: 2px solid; border-left: 2px solid; }
+
+/* אירועים - כפתור outline בצבע בהיר */
+.home-events-btn {
+  color: rgba(248,244,236,0.8) !important;
+  border-color: rgba(184,154,94,0.35) !important;
+}
+.home-events-btn:hover {
+  color: var(--gold) !important;
+  border-color: var(--gold) !important;
+  background: rgba(184,154,94,0.1) !important;
+}
+
+/* CTA */
+.home-cta {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+.home-cta-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* ornament בהיר לרקע כהה */
+.ornament-light::before,
+.ornament-light::after {
+  background: rgba(184,154,94,0.25);
+}
+
+@media (max-width: 900px) {
+  .home-cards { grid-template-columns: 1fr; }
+  .home-card { border-right: none; border-bottom: 1px solid var(--border); }
+  .home-about { grid-template-columns: 1fr; gap: 2.5rem; }
+  .home-about-img { height: 280px; }
+}

@@ -1,0 +1,17 @@
+.page-title {
+  margin-bottom: 3rem;
+  text-align: center;
+  width: 100%;
+}
+.page-title .section-title { color: var(--gold); }
+.page-title .section-eyebrow,
+.page-title .section-subtitle {
+  text-align: center;
+  display: block;
+}
+.page-title .ornament {
+  justify-content: center;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}

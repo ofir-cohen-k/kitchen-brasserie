@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:kitchenm.co.il)",
+      "WebFetch(domain:wolt.com)",
+      "WebFetch(domain:www.fesliyanstudios.com)",
+      "WebFetch(domain:archive.org)"
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+.catering-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  border-radius: var(--radius);
+  transition: transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+.catering-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(184, 154, 94, 0.4);
+}
+
+.catering-card-img {
+  height: 195px;
+  overflow: hidden;
+  background: var(--cream2);
+}
+.catering-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.catering-card:hover .catering-card-img img { transform: scale(1.05); }
+
+.catering-card-body {
+  padding: 1.4rem 1.5rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.catering-card-name {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.4rem;
+}
+
+.catering-card-desc {
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.catering-guests {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.catering-guests svg { color: var(--gold); }
+
+.catering-includes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+  flex: 1;
+}
+.catering-includes-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text2);
+  line-height: 1.5;
+}
+.catering-includes-item svg { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+
+.catering-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(184, 154, 94, 0.12);
+  margin-top: auto;
+}
+
+.catering-from {
+  font-size: 0.72rem;
+  color: var(--muted);
+  display: block;
+}
+.catering-price {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+}

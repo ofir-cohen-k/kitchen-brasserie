@@ -1,0 +1,122 @@
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+.about-story-img {
+  position: relative;
+  height: 420px;
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+}
+.about-story-img img { height: 100%; object-fit: cover; }
+
+.slideshow-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.slideshow-img.active { opacity: 1; }
+
+.slideshow-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+.slideshow-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s;
+}
+.slideshow-dot.active { background: var(--gold); }
+.about-corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: var(--gold);
+}
+.about-corner.tl { top: -2px; right: -2px; border-top: 2px solid; border-right: 2px solid; }
+.about-corner.br { bottom: -2px; left: -2px; border-bottom: 2px solid; border-left: 2px solid; }
+
+.about-story-text .section-title {
+  margin-bottom: 1.5rem;
+}
+
+.about-body {
+  font-size: 0.92rem;
+  color: var(--text2);
+  line-height: 2;
+  margin-bottom: 1.5rem;
+}
+.about-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+.about-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.86rem;
+  color: var(--text2);
+}
+.about-row svg { color: var(--gold); }
+.about-row a { color: var(--text2); transition: color 0.2s; }
+.about-row a:hover { color: var(--gold); }
+
+/* ערכים */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.value-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-radius: var(--radius);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.value-icon { font-size: 2.5rem; display: flex; justify-content: center; margin-bottom: 1rem; color: var(--gold); }
+.value-title {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+.value-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.7; }
+
+/* כשרות */
+.about-kosher { max-width: 600px; margin: 0 auto; }
+.kosher-details { display: flex; flex-direction: column; gap: 0.75rem; }
+.kosher-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text2);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(184,154,94,0.1);
+}
+.kosher-item svg { color: var(--gold); flex-shrink: 0; }
+
+@media (max-width: 900px) {
+  .about-story { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-story-img { height: 280px; }
+}

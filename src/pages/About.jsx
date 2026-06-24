@@ -1,0 +1,156 @@
+// ========================================
+// דף אודות - About
+// ========================================
+
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { MapPin, Phone, Mail, Check, Leaf, ChefHat, ShieldCheck, Heart } from 'lucide-react';
+import PageTitle from '../components/PageTitle/PageTitle';
+import './About.css';
+
+const slideshowImages = [
+  'https://kitchenm.co.il/wp-content/uploads/2025/05/Ginsburg_KitchenGreg_15.5.24-112-scaled.jpg',
+  'https://kitchenm.co.il/wp-content/uploads/2025/05/MOYAL-04908-scaled.jpg',
+  'https://kitchenm.co.il/wp-content/uploads/2025/05/Ginsburg_KitchenGreg_15.5.24-69-scaled.jpg',
+  'https://kitchenm.co.il/wp-content/uploads/2025/05/MOYAL-05028-scaled.jpg',
+  'https://kitchenm.co.il/wp-content/uploads/2025/05/Ginsburg_KitchenGreg_15.5.24-146-scaled.jpg',
+];
+
+function About() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slideshowImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const values = [
+    { icon: <Leaf size={28} strokeWidth={1.5} />, title: 'חומרי גלם טריים', desc: 'כל יום מגיעים אלינו ירקות, דגים וגבינות טריים. אנחנו עובדים עם ספקים מקומיים שאנחנו סומכים עליהם ולא מתפשרים על האיכות.' },
+    { icon: <ChefHat size={28} strokeWidth={1.5} />, title: 'מכינים במקום', desc: 'הפסטות מתבשלות טריות, הדגים נצרבים במקום והבצק תופח אצלנו. אנחנו לא מחממים, אנחנו מכינים.' },
+    { icon: <ShieldCheck size={28} strokeWidth={1.5} />, title: 'כשר בד"ץ בית יוסף', desc: 'מסעדה חלבית ודגים בלבד, עובדים תחת השגחת בד"ץ בית יוסף עם בדיקות שוטפות ופיקוח מלא.' },
+    { icon: <Heart size={28} strokeWidth={1.5} />, title: 'שירות אישי', desc: 'אנחנו מכירים את האורחים שלנו, שמחים לראות פנים מוכרות ומקפידים שכל אחד יצא מרוצה.' },
+  ];
+
+  return (
+    <main style={{ paddingTop: '68px' }}>
+      <div className="section-dark" style={{ padding: '2.5rem 0 3rem' }}>
+        <div className="container">
+          <PageTitle
+            eyebrow="Kitchen Brasserie"
+            title="מי אנחנו"
+            subtitle="מסעדת קונספט חלבית ודגים כשרה בנס ציונה"
+          />
+        </div>
+      </div>
+
+      {/* הסיפור שלנו */}
+      <section className="section">
+        <div className="container">
+          <div className="about-story">
+            <div className="about-story-img">
+              {slideshowImages.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt="Kitchen Brasserie"
+                  className={`slideshow-img ${i === currentSlide ? 'active' : ''}`}
+                />
+              ))}
+              <div className="slideshow-dots">
+                {slideshowImages.map((_, i) => (
+                  <button
+                    key={i}
+                    className={`slideshow-dot ${i === currentSlide ? 'active' : ''}`}
+                    onClick={() => setCurrentSlide(i)}
+                  />
+                ))}
+              </div>
+              <div className="about-corner tl"></div>
+              <div className="about-corner br"></div>
+            </div>
+            <div className="about-story-text">
+              <span className="section-eyebrow">הסיפור שלנו</span>
+              <h2 className="section-title">מסעדת קונספט כשרה עם אופי ייחודי</h2>
+              <p className="about-body">
+                אנחנו מסעדת קונספט חלבית ודגים כשרה למהדרין, הממוקמת בקניון קניותר בנס ציונה. כבר כמה שנים שאנחנו יוצרים מקום נעים, איכותי ומזמין שמתאים לכל שעה ביום, מארוחת בוקר עם חברה ועד ארוחת צהריים עסקית או ערב משפחתי באווירה מיוחדת.
+              </p>
+              <p className="about-body">
+                התפריט שלנו עשיר ומגוון וכולל ארוחות בוקר מפנקות, פסטות, פיצות מהתנור, סלטים טריים, מנות דגים וקינוחים, תוך הקפדה על חומרי גלם איכותיים וטעמים מוקפדים. לצד חוויית המסעדה, אנחנו מציעים גם מגשי אירוח מעוצבים בהתאמה אישית, המתאימים לפגישות עסקיות, אירועים משפחתיים וחגיגות מכל הסוגים.
+              </p>
+              <p className="about-body">
+                בואו ליהנות מחוויה טעימה, נעימה ומדויקת. אצלנו כל ארוחה הופכת לרגע שכיף לחזור אליו.
+              </p>
+              <div className="about-contact-info">
+                <div className="about-row"><MapPin size={15} /><span>האירוסים 53, קניותר, נס ציונה</span></div>
+                <div className="about-row"><Phone size={15} /><a href="tel:0526248946">052-624-8946</a></div>
+                <div className="about-row"><Mail size={15} /><a href="mailto:Malketa24@gmail.com">Malketa24@gmail.com</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* הערכים שלנו */}
+      <section className="section-alt">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-eyebrow">הערכים שלנו</span>
+            <h2 className="section-title">למה לבחור בנו?</h2>
+            <div className="ornament"><span>✦</span></div>
+          </div>
+          <div className="values-grid">
+            {values.map((v, i) => (
+              <div key={i} className="value-card">
+                <span className="value-icon">{v.icon}</span>
+                <h3 className="value-title">{v.title}</h3>
+                <p className="value-desc">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* כשרות */}
+      <section className="section">
+        <div className="container about-kosher">
+          <div className="section-header">
+            <span className="section-eyebrow">כשרות</span>
+            <h2 className="section-title">כשר בד"ץ בית יוסף</h2>
+            <p className="section-subtitle">הכשרות שלנו היא לא רק תו — היא חלק מהזהות שלנו. אנחנו פועלים תחת השגחה מחמירה ורציפה, כדי שתוכלו לאכול בנינוחות ובביטחון מלא.</p>
+          </div>
+          <div className="kosher-details">
+            {[
+              'כשר בד"ץ בית יוסף — אחת מסמכויות הכשרות המחמירות בישראל',
+              'מסעדה חלבית ודגים בלבד — ללא בשר מכל סוג',
+              'בדיקות כשרות שוטפות ובלתי מוצהרות',
+              'כל המרכיבים והספקים מאושרים ומבוקרים',
+              'הכנת המזון תחת פיקוח מלא וצוות מוסמך',
+            ].map((item, i) => (
+              <div key={i} className="kosher-item">
+                <Check size={16} />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="section-dark" style={{ padding: '3rem 0' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <h2 className="section-title section-title-light">מוכנים לבוא לבקר?</h2>
+          <p className="section-subtitle" style={{ color: 'rgba(248,244,236,0.55)' }}>
+            שמרו שולחן, הביאו מישהו שאתם אוהבים — והשאר עלינו
+          </p>
+          <Link to="/reservation" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
+            הזמנת שולחן
+          </Link>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+export default About;

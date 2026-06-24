@@ -1,0 +1,79 @@
+.menu-hero { padding: 3rem 0 3.5rem; }
+
+/* שורת שליטה */
+.menu-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* טאבים */
+.menu-tabs {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.menu-tab {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+}
+.menu-tab:hover {
+  border-color: var(--gold);
+  color: var(--gold-dark);
+}
+.menu-tab-active {
+  background: var(--teal);
+  color: var(--cream) !important;
+  border-color: var(--teal) !important;
+  font-weight: 700;
+}
+
+/* חיפוש */
+.menu-search {
+  position: relative;
+  max-width: 320px;
+}
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 0.9rem;
+  transform: translateY(-50%);
+  color: var(--muted);
+  pointer-events: none;
+}
+.search-input {
+  width: 100%;
+  padding: 0.7rem 2.5rem 0.7rem 1rem;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+.search-input:focus {
+  border-color: var(--gold);
+  outline: none;
+}
+
+/* אין תוצאות */
+.menu-no-results {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}

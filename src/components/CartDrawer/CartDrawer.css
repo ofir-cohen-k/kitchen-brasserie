@@ -1,0 +1,197 @@
+/* רקע כהה מאחורי הסל */
+.cart-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 43, 46, 0.5);
+  z-index: 1100;
+  backdrop-filter: blur(2px);
+}
+
+/* הסל עצמו */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 380px;
+  max-width: 95vw;
+  background: var(--white);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 30px rgba(28, 43, 46, 0.15);
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.cart-drawer-open {
+  transform: translateX(0);
+}
+
+/* כותרת */
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--cream);
+}
+.cart-title {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.cart-count {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.cart-close {
+  background: none;
+  border: none;
+  color: var(--text2);
+  cursor: pointer;
+  padding: 0.3rem;
+  transition: color 0.2s;
+}
+.cart-close:hover { color: var(--dark); }
+
+/* סל ריק */
+.cart-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 2rem;
+  text-align: center;
+}
+.cart-empty-icon { color: var(--border); margin-bottom: 0.5rem; }
+.cart-empty-text { font-weight: 600; color: var(--dark); font-size: 1rem; }
+.cart-empty-sub { font-size: 0.85rem; color: var(--muted); }
+
+/* רשימת פריטים */
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0.75rem 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid rgba(184, 154, 94, 0.08);
+  transition: background 0.15s;
+}
+.cart-item:hover { background: var(--cream); }
+
+.cart-item-img {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.cart-item-info {
+  flex: 1;
+  min-width: 0;
+}
+.cart-item-name {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cart-item-price {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+/* שליטת כמות */
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.qty-btn {
+  background: var(--cream2);
+  border: 1px solid var(--border);
+  color: var(--dark);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.qty-btn:hover { background: var(--gold); color: white; border-color: var(--gold); }
+.qty-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-width: 18px;
+  text-align: center;
+}
+
+.cart-item-total {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  min-width: 40px;
+  text-align: left;
+}
+
+.cart-remove {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0.3rem;
+  transition: color 0.2s;
+  flex-shrink: 0;
+}
+.cart-remove:hover { color: #e74c3c; }
+
+/* Footer */
+.cart-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1.5px solid var(--border);
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.cart-total-price {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  color: var(--gold-dark);
+}
+.cart-clear {
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  color: var(--muted);
+  cursor: pointer;
+  text-align: center;
+  transition: color 0.2s;
+  text-decoration: underline;
+}
+.cart-clear:hover { color: #e74c3c; }

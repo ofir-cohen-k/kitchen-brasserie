@@ -1,0 +1,22 @@
+.success-box {
+  background: rgba(184, 154, 94, 0.08);
+  border: 1.5px solid rgba(184, 154, 94, 0.3);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  animation: fadeInUp 0.5s ease;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.success-icon { color: var(--gold); margin: 0 auto 1rem; }
+.success-title {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+.success-message { font-size: 0.9rem; color: var(--text2); margin-bottom: 0.3rem; }
+.success-extra { font-size: 0.82rem; color: var(--muted); font-weight: 600; }

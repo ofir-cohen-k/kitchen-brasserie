@@ -1,0 +1,105 @@
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2rem;
+  align-items: start;
+}
+.checkout-section-title {
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* אפשרויות משלוח */
+.delivery-options, .payment-options {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.delivery-option, .payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.delivery-option input, .payment-option input { display: none; }
+.delivery-option:hover, .payment-option:hover { border-color: var(--gold); }
+.delivery-option-active, .payment-option-active {
+  border-color: var(--gold) !important;
+  background: rgba(184,154,94,0.08);
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+.checkout-payment-note {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+}
+
+/* סיכום */
+.checkout-summary {
+  position: sticky;
+  top: 88px;
+}
+.summary-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text2);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(184,154,94,0.08);
+}
+.summary-name { flex: 1; padding-left: 0.5rem; }
+.summary-price { font-weight: 600; color: var(--dark); }
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  padding-top: 0.75rem;
+  border-top: 1.5px solid var(--border);
+}
+
+.checkout-empty {
+  text-align: center;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted);
+}
+
+.checkout-success-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .checkout-grid { grid-template-columns: 1fr; }
+  .checkout-summary { position: static; }
+}
