@@ -66,9 +66,9 @@ function Home() {
           </div>
           <div className="home-card">
             <span className="home-card-icon"><Truck size={28} strokeWidth={1.5} /></span>
-            <h3>משלוח דרך וולט</h3>
+            <h3>משלוח דרך Wolt</h3>
             <p>הזמינו מהתפריט שלנו עם משלוח עד הבית</p>
-            <a href="https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">להזמנה בוולט</a>
+            <a href="https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">להזמנה ב-Wolt</a>
           </div>
         </div>
       </section>
