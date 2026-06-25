@@ -33,7 +33,7 @@ function Footer() {
             <li><Link to="/reservation">הזמנת שולחן</Link></li>
             <li>
               <a href="https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona" target="_blank" rel="noopener noreferrer">
-                הזמנה דרך Wolt 🛵
+                הזמנה דרך Wolt
               </a>
             </li>
           </ul>
