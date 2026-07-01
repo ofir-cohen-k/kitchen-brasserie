@@ -20,12 +20,10 @@
   flex-direction: column;
   margin-bottom: 1rem;
 }
-.footer-logo-k {
-  font-family: Georgia, serif;
-  font-size: 1.5rem;
-  font-style: italic;
-  color: var(--cream);
-  font-weight: 700;
+.footer-logo-img {
+  height: 55px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 .footer-logo-b {
   font-size: 0.5rem;

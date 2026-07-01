@@ -12,8 +12,7 @@ function Footer() {
         {/* עמודה 1 - לוגו ותיאור */}
         <div className="footer-col">
           <div className="footer-logo">
-            <span className="footer-logo-k">kitchen</span>
-            <span className="footer-logo-b">Brasserie</span>
+            <img src="/logo.png" alt="Kitchen Brasserie" className="footer-logo-img" />
           </div>
           <p className="footer-desc">
             מסעדת קונספט חלבית ודגים כשרה למהדרין בנס ציונה. ארוחות בוקר מפנקות, תפריט עשיר ומגשי אירוח מרשימים.
