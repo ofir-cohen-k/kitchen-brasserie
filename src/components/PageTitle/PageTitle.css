@@ -3,7 +3,9 @@
   text-align: center;
   width: 100%;
 }
-.page-title .section-title { color: var(--gold); }
+.page-title .section-title { color: #ffffff; }
+.page-title .section-eyebrow { color: rgba(255,255,255,0.75) !important; }
+.page-title .section-subtitle { color: rgba(255,255,255,0.85) !important; }
 .page-title .section-eyebrow,
 .page-title .section-subtitle {
   text-align: center;

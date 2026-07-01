@@ -12,6 +12,10 @@ function AudioPlayer() {
     audioRef.current = new Audio(MUSIC_URL);
     audioRef.current.loop = true;
     audioRef.current.volume = 0.3;
+    audioRef.current.play().then(() => {
+      setIsPlaying(true);
+      setHasInteracted(true);
+    }).catch(() => {});
     return () => {
       audioRef.current.pause();
       audioRef.current = null;

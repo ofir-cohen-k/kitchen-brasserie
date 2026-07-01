@@ -6,7 +6,8 @@
       "WebFetch(domain:kitchenm.co.il)",
       "WebFetch(domain:wolt.com)",
       "WebFetch(domain:www.fesliyanstudios.com)",
-      "WebFetch(domain:archive.org)"
+      "WebFetch(domain:archive.org)",
+      "PowerShell(Rename-Item \"c:\\\\Users\\\\ofirk\\\\Downloads\\\\kitchen-brasserie\\\\public\\\\���� ����.png\" \"logo.png\")"
     ]
   }
 }

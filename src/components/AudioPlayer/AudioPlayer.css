@@ -6,7 +6,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(28, 43, 46, 0.85);
+  background: rgba(184, 154, 94, 0.9);
   border: 1.5px solid var(--gold);
   cursor: pointer;
   display: flex;
@@ -28,7 +28,7 @@
 .audio-icon {
   font-size: 0.9rem;
   line-height: 1;
-  filter: sepia(1) saturate(3) hue-rotate(5deg) brightness(1.1);
+  filter: brightness(0) invert(1);
 }
 
 .audio-pulse {

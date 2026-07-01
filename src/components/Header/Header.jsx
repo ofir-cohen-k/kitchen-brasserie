@@ -36,8 +36,7 @@ function Header() {
       <div className="header-inner container">
         {/* לוגו */}
         <Link to="/" className="logo" onClick={handleNavClick}>
-          <span className={`logo-kitchen ${isHome ? 'logo-kitchen-white' : ''}`}>kitchen</span>
-          <span className="logo-brasserie">Brasserie</span>
+          <img src="/logo.png" alt="Kitchen Brasserie" className={`logo-img ${isHome ? 'logo-img-light' : ''}`} />
         </Link>
 
         {/* תפריט ניווט - מחשב */}

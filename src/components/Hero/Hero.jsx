@@ -16,9 +16,8 @@ function Hero() {
         <span className="hero-eyebrow">כשר חלבי ודגים · נס ציונה</span>
 
         {/* כותרת ראשית */}
-        <h1 className="hero-title">kitchen</h1>
-        <div className="hero-divider">
-          <span>Brasserie</span>
+        <div className="hero-logo-wrap">
+          <img src="/logo.png" alt="Kitchen Brasserie" className="hero-logo-img" />
         </div>
 
         {/* תיאור קצר */}
