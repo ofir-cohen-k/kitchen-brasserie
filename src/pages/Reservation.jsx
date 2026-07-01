@@ -127,7 +127,24 @@ function Reservation() {
         </div>
       </div>
 
-      <section className="section">
+      <section className="section" style={{ paddingBottom: '0' }}>
+        <div className="container" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+          <a
+            href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+            style={{ fontSize: '1rem', padding: '0.9rem 2.5rem' }}
+          >
+            הזמנה מהירה דרך Tabit
+          </a>
+          <p style={{ marginTop: '1rem', color: 'var(--muted)', fontSize: '0.85rem' }}>
+            או מלאו את הטופס למטה
+          </p>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: '1rem' }}>
         <div className="container reservation-wrap">
           <form onSubmit={handleSubmit} noValidate className="form-box">
 
