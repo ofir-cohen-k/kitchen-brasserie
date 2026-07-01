@@ -20,10 +20,11 @@
   flex-direction: column;
   margin-bottom: 1rem;
 }
-.footer-logo-img {
-  height: 35px;
-  width: auto;
-  filter: brightness(0) invert(1);
+.footer-logo-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--cream);
 }
 .footer-logo-b {
   font-size: 0.5rem;
