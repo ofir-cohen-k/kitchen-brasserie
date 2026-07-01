@@ -90,14 +90,21 @@ function Contact() {
                 <div className="contact-info-icon"><Phone size={18} /></div>
                 <div>
                   <strong>טלפון</strong>
-                  <p><a href="https://wa.me/972526248946" target="_blank" rel="noopener noreferrer">052-624-8946</a></p>
+                  <p><a href="tel:0733277207">073-327-7207</a></p>
+                </div>
+              </div>
+              <div className="contact-info-item">
+                <div className="contact-info-icon"><Phone size={18} /></div>
+                <div>
+                  <strong>WhatsApp עסקי</strong>
+                  <p><a href="https://wa.me/972557218413" target="_blank" rel="noopener noreferrer">055-721-8413</a></p>
                 </div>
               </div>
               <div className="contact-info-item">
                 <div className="contact-info-icon"><Mail size={18} /></div>
                 <div>
                   <strong>אימייל</strong>
-                  <p><a href="mailto:Malketa24@gmail.com">Malketa24@gmail.com</a></p>
+                  <p><a href="mailto:Kitchbras@gmail.com">Kitchbras@gmail.com</a></p>
                 </div>
               </div>
               <div className="contact-info-item">

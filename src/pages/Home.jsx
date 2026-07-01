@@ -117,7 +117,7 @@ function Home() {
                 </div>
                 <div className="home-about-row">
                   <Phone size={15} />
-                  <span>052-624-8946</span>
+                  <span>073-327-7207</span>
                 </div>
                 <div className="home-about-row">
                   <Clock size={15} />

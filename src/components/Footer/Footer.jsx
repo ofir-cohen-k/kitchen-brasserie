@@ -48,11 +48,15 @@ function Footer() {
             </div>
             <div className="footer-contact-row">
               <Phone size={15} />
-              <a href="https://wa.me/972526248946" target="_blank" rel="noopener noreferrer">052-624-8946</a>
+              <a href="tel:0733277207">073-327-7207</a>
+            </div>
+            <div className="footer-contact-row">
+              <Phone size={15} />
+              <a href="https://wa.me/972557218413" target="_blank" rel="noopener noreferrer">WhatsApp עסקי: 055-721-8413</a>
             </div>
             <div className="footer-contact-row">
               <Mail size={15} />
-              <a href="mailto:Malketa24@gmail.com">Malketa24@gmail.com</a>
+              <a href="mailto:Kitchbras@gmail.com">Kitchbras@gmail.com</a>
             </div>
           </div>
         </div>

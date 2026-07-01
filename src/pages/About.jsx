@@ -84,8 +84,8 @@ function About() {
               </p>
               <div className="about-contact-info">
                 <div className="about-row"><MapPin size={15} /><span>האירוסים 53, קניותר, נס ציונה</span></div>
-                <div className="about-row"><Phone size={15} /><a href="tel:0526248946">052-624-8946</a></div>
-                <div className="about-row"><Mail size={15} /><a href="mailto:Malketa24@gmail.com">Malketa24@gmail.com</a></div>
+                <div className="about-row"><Phone size={15} /><a href="tel:0733277207">073-327-7207</a></div>
+                <div className="about-row"><Mail size={15} /><a href="mailto:Kitchbras@gmail.com">Kitchbras@gmail.com</a></div>
               </div>
             </div>
           </div>
