@@ -603,7 +603,7 @@ export const menuData = [
     description: "מים מינרלים.",
     price: 11,
     category: 'drinks',
-    image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=80&fit=crop',
+    image: 'https://images.unsplash.com/photo-1616118132534-381148898bb4?w=800&q=80&fit=crop',
     isRecommended: false,
     isAvailable: true,
   },
