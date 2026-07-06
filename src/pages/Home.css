@@ -1,3 +1,24 @@
+/* סרטון */
+.home-video-section {
+  background: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+.home-video-wrap {
+  max-width: 420px;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+}
+.home-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* כרטיסי ניווט מהיר */
 .home-cards-section {
   background: var(--white);
