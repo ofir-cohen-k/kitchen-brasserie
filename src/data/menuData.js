@@ -541,7 +541,7 @@ export const menuData = [
     description: "קרם גבינות, עוגיות והרבה קקאו.",
     price: 49,
     category: 'desserts',
-    image: d('טירמיסו'),
+    image: d('טירמיסו.jpg'),
     isRecommended: true,
     isAvailable: true,
   },
