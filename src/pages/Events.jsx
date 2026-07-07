@@ -1,5 +1,5 @@
-﻿// ========================================
-// ׳“׳£ ׳׳™׳¨׳•׳¢׳™׳ - Events
+// ========================================
+// דף אירועים - Events
 // ========================================
 
 import EventCard from '../components/EventCard/EventCard';
@@ -13,9 +13,9 @@ function Events() {
       <div className="section-dark" style={{ padding: '0.5rem 0 0.7rem' }}>
         <div className="container">
           <PageTitle
-            eyebrow="׳׳™׳¨׳•׳¢׳™׳"
-            title="׳׳™׳¨׳•׳¢׳™׳ ׳§׳¨׳•׳‘׳™׳"
-            subtitle="׳׳™׳¨׳•׳¢׳™׳ ׳׳™׳•׳—׳“׳™׳, ׳¢׳¨׳‘׳™ ׳©׳£, ׳׳•׳¡׳™׳§׳” ׳—׳™׳” ׳•׳¢׳•׳“"
+            eyebrow="אירועים"
+            title="אירועים קרובים"
+            subtitle="אירועים מיוחדים, ערבי שף, מוסיקה חיה ועוד"
           />
         </div>
       </div>
@@ -30,13 +30,13 @@ function Events() {
         </div>
       </section>
 
-      {/* ׳‘׳ ׳¨ CTA */}
+      {/* בנר CTA */}
       <section className="section-alt">
         <div className="container events-cta">
-          <h2 className="section-title">׳׳¢׳•׳ ׳™׳™׳ ׳™׳ ׳׳׳¨׳— ׳׳™׳¨׳•׳¢ ׳₪׳¨׳˜׳™?</h2>
-          <p className="section-subtitle">׳ ׳™׳×׳ ׳׳”׳–׳׳™׳ ׳׳× ׳”׳׳¡׳¢׳“׳” ׳׳׳™׳¨׳•׳¢׳™׳ ׳₪׳¨׳˜׳™׳™׳, ׳—׳’׳™׳’׳•׳× ׳׳©׳₪׳—׳×׳™׳•׳× ׳•׳׳™׳¨׳•׳¢׳™ ׳—׳‘׳¨׳”</p>
+          <h2 className="section-title">מעוניינים לארח אירוע פרטי?</h2>
+          <p className="section-subtitle">ניתן להזמין את המסעדה לאירועים פרטיים, חגיגות משפחתיות ואירועי חברה</p>
           <a href="tel:0733277207" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
-            ׳¦׳׳¦׳׳• ׳¢׳›׳©׳™׳•: 073-327-7207
+            צלצלו עכשיו: 073-327-7207
           </a>
         </div>
       </section>

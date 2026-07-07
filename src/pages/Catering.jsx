@@ -1,5 +1,5 @@
-﻿// ========================================
-// ׳“׳£ ׳׳’׳©׳™ ׳׳™׳¨׳•׳— - Catering
+// ========================================
+// דף מגשי אירוח - Catering
 // ========================================
 
 import { useState } from 'react';
@@ -30,11 +30,11 @@ function Catering() {
   });
   const [errors, setErrors] = useState({});
 
-  // ׳׳—׳™׳¦׳” ׳¢׳ "׳§׳‘׳ ׳₪׳¨׳˜׳™׳" ׳‘׳›׳¨׳˜׳™׳¡
+  // לחיצה על "קבל פרטים" בכרטיס
   function handleRequest(pkg) {
     setSelectedPackage(pkg);
     setForm((prev) => ({ ...prev, packageName: pkg.name }));
-    // ׳’׳׳™׳׳” ׳׳˜׳•׳₪׳¡
+    // גלילה לטופס
     setTimeout(() => {
       document.getElementById('catering-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 100);
@@ -48,13 +48,13 @@ function Catering() {
 
   function validate() {
     const newErrors = {};
-    if (!isNotEmpty(form.fullName)) newErrors.fullName = '׳ ׳ ׳׳”׳–׳™׳ ׳©׳ ׳׳׳';
-    if (!isValidPhone(form.phone)) newErrors.phone = '׳׳¡׳₪׳¨ ׳˜׳׳₪׳•׳ ׳׳ ׳×׳§׳™׳';
-    if (!isValidEmail(form.email)) newErrors.email = '׳›׳×׳•׳‘׳× ׳׳™׳׳™׳™׳ ׳׳ ׳×׳§׳™׳ ׳”';
-    if (!form.eventDate) newErrors.eventDate = '׳ ׳ ׳׳‘׳—׳•׳¨ ׳×׳׳¨׳™׳';
-    else if (!isFutureDate(form.eventDate)) newErrors.eventDate = '׳׳ ׳ ׳™׳×׳ ׳׳‘׳—׳•׳¨ ׳×׳׳¨׳™׳ ׳©׳¢׳‘׳¨';
-    if (!isNotEmpty(form.guests)) newErrors.guests = '׳ ׳ ׳׳”׳–׳™׳ ׳׳¡׳₪׳¨ ׳׳•׳¨׳—׳™׳';
-    if (!isNotEmpty(form.eventType)) newErrors.eventType = '׳ ׳ ׳׳‘׳—׳•׳¨ ׳¡׳•׳’ ׳׳™׳¨׳•׳¢';
+    if (!isNotEmpty(form.fullName)) newErrors.fullName = 'נא להזין שם מלא';
+    if (!isValidPhone(form.phone)) newErrors.phone = 'מספר טלפון לא תקין';
+    if (!isValidEmail(form.email)) newErrors.email = 'כתובת אימייל לא תקינה';
+    if (!form.eventDate) newErrors.eventDate = 'נא לבחור תאריך';
+    else if (!isFutureDate(form.eventDate)) newErrors.eventDate = 'לא ניתן לבחור תאריך שעבר';
+    if (!isNotEmpty(form.guests)) newErrors.guests = 'נא להזין מספר אורחים';
+    if (!isNotEmpty(form.eventType)) newErrors.eventType = 'נא לבחור סוג אירוע';
     return newErrors;
   }
 
@@ -71,7 +71,7 @@ function Catering() {
         id: `CAT-${Date.now().toString().slice(-6)}`,
         date: new Date().toISOString(),
         ...form,
-        status: '׳׳׳×׳™׳ ׳׳˜׳™׳₪׳•׳',
+        status: 'ממתין לטיפול',
       };
       setCateringRequests((prev) => [...prev, newRequest]);
       setIsSuccess(true);
@@ -84,14 +84,14 @@ function Catering() {
       <div className="section-dark" style={{ padding: '0.5rem 0 0.7rem' }}>
         <div className="container">
           <PageTitle
-            eyebrow="׳§׳™׳™׳˜׳¨׳™׳ ׳’"
-            title="׳׳’׳©׳™ ׳׳™׳¨׳•׳—"
-            subtitle="׳׳’׳©׳™׳ ׳׳¢׳•׳¦׳‘׳™׳ ׳•׳™׳•׳§׳¨׳×׳™׳™׳ ׳׳›׳ ׳¡׳•׳’ ׳׳™׳¨׳•׳¢"
+            eyebrow="קייטרינג"
+            title="מגשי אירוח"
+            subtitle="מגשים מעוצבים ויוקרתיים לכל סוג אירוע"
           />
         </div>
       </div>
 
-      {/* ׳—׳‘׳™׳׳•׳× */}
+      {/* חבילות */}
       <section className="section">
         <div className="container">
           <div className="cards-grid">
@@ -102,55 +102,55 @@ function Catering() {
         </div>
       </section>
 
-      {/* ׳˜׳•׳₪׳¡ ׳‘׳§׳©׳” */}
+      {/* טופס בקשה */}
       <section className="section-alt" id="catering-form">
         <div className="container catering-form-wrap">
           <div className="section-header">
-            <span className="section-eyebrow">׳¦׳•׳¨ ׳§׳©׳¨</span>
-            <h2 className="section-title">׳‘׳§׳©׳× ׳”׳¦׳¢׳× ׳׳—׳™׳¨</h2>
-            <p className="section-subtitle">׳׳׳׳• ׳׳× ׳”׳₪׳¨׳˜׳™׳ ׳•׳׳—׳“ ׳׳”׳¦׳•׳•׳× ׳©׳׳ ׳• ׳™׳—׳–׳•׳¨ ׳׳׳™׳</p>
-            <div className="ornament"><span>ג¦</span></div>
+            <span className="section-eyebrow">צור קשר</span>
+            <h2 className="section-title">בקשת הצעת מחיר</h2>
+            <p className="section-subtitle">מלאו את הפרטים ואחד מהצוות שלנו יחזור אליך</p>
+            <div className="ornament"><span>✦</span></div>
           </div>
 
           {isSuccess ? (
             <SuccessMessage
-              title="׳”׳‘׳§׳©׳” ׳ ׳©׳׳—׳”!"
-              message="׳×׳•׳“׳”! ׳׳ ׳—׳ ׳• ׳ ׳—׳–׳•׳¨ ׳׳׳™׳ ׳‘׳”׳§׳“׳ ׳¢׳ ׳”׳¦׳¢׳× ׳׳—׳™׳¨ ׳׳•׳×׳׳׳×."
+              title="הבקשה נשלחה!"
+              message="תודה! אנחנו נחזור אליך בהקדם עם הצעת מחיר מותאמת."
             />
           ) : (
             <form onSubmit={handleSubmit} noValidate className="form-box">
               {selectedPackage && (
                 <div className="catering-selected-pkg">
-                  <span>׳—׳‘׳™׳׳” ׳ ׳‘׳—׳¨׳×: </span>
+                  <span>חבילה נבחרת: </span>
                   <strong>{selectedPackage.name}</strong>
                 </div>
               )}
               <div className="form-grid">
-                <FormInput label="׳©׳ ׳׳׳" name="fullName" value={form.fullName} onChange={handleChange} error={errors.fullName} required />
-                <FormInput label="׳˜׳׳₪׳•׳" name="phone" type="tel" value={form.phone} onChange={handleChange} error={errors.phone} required />
-                <FormInput label="׳׳™׳׳™׳™׳" name="email" type="email" value={form.email} onChange={handleChange} error={errors.email} required />
-                <FormInput label="׳×׳׳¨׳™׳ ׳”׳׳™׳¨׳•׳¢" name="eventDate" type="date" value={form.eventDate} onChange={handleChange} error={errors.eventDate} required />
-                <FormInput label="׳׳¡׳₪׳¨ ׳׳•׳¨׳—׳™׳" name="guests" type="number" value={form.guests} onChange={handleChange} error={errors.guests} placeholder="׳›׳׳•׳× ׳׳©׳•׳¢׳¨׳×" required />
-                <FormInput label="׳¡׳•׳’ ׳”׳׳™׳¨׳•׳¢">
+                <FormInput label="שם מלא" name="fullName" value={form.fullName} onChange={handleChange} error={errors.fullName} required />
+                <FormInput label="טלפון" name="phone" type="tel" value={form.phone} onChange={handleChange} error={errors.phone} required />
+                <FormInput label="אימייל" name="email" type="email" value={form.email} onChange={handleChange} error={errors.email} required />
+                <FormInput label="תאריך האירוע" name="eventDate" type="date" value={form.eventDate} onChange={handleChange} error={errors.eventDate} required />
+                <FormInput label="מספר אורחים" name="guests" type="number" value={form.guests} onChange={handleChange} error={errors.guests} placeholder="כמות משוערת" required />
+                <FormInput label="סוג האירוע">
                   <select name="eventType" value={form.eventType} onChange={handleChange} className={`form-select ${errors.eventType ? 'error' : ''}`}>
-                    <option value="">׳‘׳—׳¨ ׳¡׳•׳’ ׳׳™׳¨׳•׳¢</option>
-                    <option value="wedding">׳—׳×׳•׳ ׳”</option>
-                    <option value="barmitzvah">׳‘׳¨/׳‘׳× ׳׳¦׳•׳•׳”</option>
-                    <option value="corporate">׳׳™׳¨׳•׳¢ ׳—׳‘׳¨׳”</option>
-                    <option value="birthday">׳™׳•׳ ׳”׳•׳׳“׳×</option>
-                    <option value="meeting">׳₪׳’׳™׳©׳” ׳¢׳¡׳§׳™׳×</option>
-                    <option value="other">׳׳—׳¨</option>
+                    <option value="">בחר סוג אירוע</option>
+                    <option value="wedding">חתונה</option>
+                    <option value="barmitzvah">בר/בת מצווה</option>
+                    <option value="corporate">אירוע חברה</option>
+                    <option value="birthday">יום הולדת</option>
+                    <option value="meeting">פגישה עסקית</option>
+                    <option value="other">אחר</option>
                   </select>
                   {errors.eventType && <span className="form-error">{errors.eventType}</span>}
                 </FormInput>
                 <div className="form-grid-full">
-                  <FormInput label="׳”׳¢׳¨׳•׳× ׳•׳‘׳§׳©׳•׳× ׳׳™׳•׳—׳“׳•׳×">
-                    <textarea name="notes" value={form.notes} onChange={handleChange} className="form-textarea" placeholder="׳¡׳₪׳¨׳™ ׳׳ ׳• ׳¢׳ ׳”׳׳™׳¨׳•׳¢ ׳©׳׳..." />
+                  <FormInput label="הערות ובקשות מיוחדות">
+                    <textarea name="notes" value={form.notes} onChange={handleChange} className="form-textarea" placeholder="ספרי לנו על האירוע שלך..." />
                   </FormInput>
                 </div>
               </div>
               <button type="submit" className="btn btn-primary" style={{ marginTop: '1rem' }} disabled={isLoading}>
-                {isLoading ? <span className="spinner"></span> : '׳©׳׳— ׳‘׳§׳©׳”'}
+                {isLoading ? <span className="spinner"></span> : 'שלח בקשה'}
               </button>
             </form>
           )}
