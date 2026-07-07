@@ -81,7 +81,7 @@ function Catering() {
 
   return (
     <main style={{ paddingTop: '68px' }}>
-      <div className="section-dark" style={{ padding: '2.5rem 0 3rem' }}>
+      <div className="section-dark" style={{ padding: '1.2rem 0 1.5rem' }}>
         <div className="container">
           <PageTitle
             eyebrow="קייטרינג"
