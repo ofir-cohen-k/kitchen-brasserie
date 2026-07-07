@@ -43,32 +43,20 @@
   border-left: 1.5px solid;
 }
 
-/* פריסה דו-עמודות */
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5rem;
-  padding: 68px 4rem 2rem;
-  width: 100%;
-  max-width: 1200px;
-}
-
-/* סרטון — צד שמאל */
+/* סרטון — צד שמאל (absolute) */
 .hero-video-side {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
 }
 .hero-video-phone {
-  width: 220px;
-  border-radius: 24px;
+  width: 200px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 12px 48px rgba(44, 26, 10, 0.22);
-  border: 3px solid rgba(184, 154, 94, 0.25);
+  box-shadow: 0 16px 48px rgba(44, 26, 10, 0.25);
+  border: 2px solid rgba(184, 154, 94, 0.3);
 }
 .hero-video {
   width: 100%;
@@ -76,13 +64,14 @@
   display: block;
 }
 
-/* תוכן */
+/* תוכן — מרכז */
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
   padding: 0 1.5rem;
-  max-width: 480px;
+  padding-top: 68px;
+  max-width: 700px;
 }
 
 .hero-eyebrow {
@@ -178,19 +167,11 @@
 }
 
 @media (max-width: 900px) {
-  .hero-inner {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 80px 1.5rem 2rem;
-  }
-  .hero-video-phone {
-    width: 160px;
-  }
+  .hero-video-side { display: none; }
 }
 
 @media (max-width: 600px) {
   .hero-frame { inset: 14px; }
   .hero-buttons { flex-direction: column; align-items: center; }
   .hero-buttons .btn { width: 200px; }
-  .hero-video-phone { width: 130px; }
 }
