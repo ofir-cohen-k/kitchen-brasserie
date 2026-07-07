@@ -1,5 +1,5 @@
-// ========================================
-// דף סיום הזמנה - Checkout
+﻿// ========================================
+// ׳“׳£ ׳¡׳™׳•׳ ׳”׳–׳׳ ׳” - Checkout
 // ========================================
 
 import { useState } from 'react';
@@ -16,10 +16,10 @@ function Checkout() {
   const { cartItems, totalPrice, clearCart } = useCart();
   const navigate = useNavigate();
 
-  // שמירת ההזמנות ב-LocalStorage
+  // ׳©׳׳™׳¨׳× ׳”׳”׳–׳׳ ׳•׳× ׳‘-LocalStorage
   const [orders, setOrders] = useLocalStorage('foodOrders', []);
 
-  // מצב הטופס
+  // ׳׳¦׳‘ ׳”׳˜׳•׳₪׳¡
   const [form, setForm] = useState({
     fullName: '',
     phone: '',
@@ -31,19 +31,19 @@ function Checkout() {
     paymentMethod: 'cash',
   });
 
-  const [errors, setErrors] = useState({});   // שגיאות טופס
+  const [errors, setErrors] = useState({});   // ׳©׳’׳™׳׳•׳× ׳˜׳•׳₪׳¡
   const [isLoading, setIsLoading] = useState(false);
-  const [orderNumber, setOrderNumber] = useState(null); // מספר הזמנה לאחר אישור
+  const [orderNumber, setOrderNumber] = useState(null); // ׳׳¡׳₪׳¨ ׳”׳–׳׳ ׳” ׳׳׳—׳¨ ׳׳™׳©׳•׳¨
 
-  // אם הסל ריק - הפניה לתפריט
+  // ׳׳ ׳”׳¡׳ ׳¨׳™׳§ - ׳”׳₪׳ ׳™׳” ׳׳×׳₪׳¨׳™׳˜
   if (cartItems.length === 0 && !orderNumber) {
     return (
       <main style={{ paddingTop: '68px' }}>
         <div className="section container">
           <div className="checkout-empty">
-            <p>הסל שלך ריק. לא ניתן לבצע הזמנה.</p>
+            <p>׳”׳¡׳ ׳©׳׳ ׳¨׳™׳§. ׳׳ ׳ ׳™׳×׳ ׳׳‘׳¦׳¢ ׳”׳–׳׳ ׳”.</p>
             <button className="btn btn-primary" onClick={() => navigate('/menu')}>
-              לתפריט
+              ׳׳×׳₪׳¨׳™׳˜
             </button>
           </div>
         </div>
@@ -51,32 +51,32 @@ function Checkout() {
     );
   }
 
-  // עדכון שדה בטופס
+  // ׳¢׳“׳›׳•׳ ׳©׳“׳” ׳‘׳˜׳•׳₪׳¡
   function handleChange(e) {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-    // מנקה שגיאה בשדה שהמשתמש עורך
+    // ׳׳ ׳§׳” ׳©׳’׳™׳׳” ׳‘׳©׳“׳” ׳©׳”׳׳©׳×׳׳© ׳¢׳•׳¨׳
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: '' }));
     }
   }
 
-  // בדיקת תקינות
+  // ׳‘׳“׳™׳§׳× ׳×׳§׳™׳ ׳•׳×
   function validate() {
     const newErrors = {};
-    if (!isNotEmpty(form.fullName)) newErrors.fullName = 'נא להזין שם מלא';
-    if (!isValidPhone(form.phone)) newErrors.phone = 'מספר טלפון לא תקין';
-    if (!isValidEmail(form.email)) newErrors.email = 'כתובת אימייל לא תקינה';
+    if (!isNotEmpty(form.fullName)) newErrors.fullName = '׳ ׳ ׳׳”׳–׳™׳ ׳©׳ ׳׳׳';
+    if (!isValidPhone(form.phone)) newErrors.phone = '׳׳¡׳₪׳¨ ׳˜׳׳₪׳•׳ ׳׳ ׳×׳§׳™׳';
+    if (!isValidEmail(form.email)) newErrors.email = '׳›׳×׳•׳‘׳× ׳׳™׳׳™׳™׳ ׳׳ ׳×׳§׳™׳ ׳”';
     if (form.deliveryType === 'delivery' && !isNotEmpty(form.address)) {
-      newErrors.address = 'נא להזין כתובת למשלוח';
+      newErrors.address = '׳ ׳ ׳׳”׳–׳™׳ ׳›׳×׳•׳‘׳× ׳׳׳©׳׳•׳—';
     }
     if (form.deliveryType === 'delivery' && !isNotEmpty(form.city)) {
-      newErrors.city = 'נא להזין עיר';
+      newErrors.city = '׳ ׳ ׳׳”׳–׳™׳ ׳¢׳™׳¨';
     }
     return newErrors;
   }
 
-  // שליחת הטופס
+  // ׳©׳׳™׳—׳× ׳”׳˜׳•׳₪׳¡
   function handleSubmit(e) {
     e.preventDefault();
     const validationErrors = validate();
@@ -87,20 +87,20 @@ function Checkout() {
 
     setIsLoading(true);
 
-    // יצירת מספר הזמנה אקראי
+    // ׳™׳¦׳™׳¨׳× ׳׳¡׳₪׳¨ ׳”׳–׳׳ ׳” ׳׳§׳¨׳׳™
     const newOrderNumber = `KB-${Date.now().toString().slice(-6)}`;
 
-    // יצירת אובייקט ההזמנה
+    // ׳™׳¦׳™׳¨׳× ׳׳•׳‘׳™׳™׳§׳˜ ׳”׳”׳–׳׳ ׳”
     const newOrder = {
       id: newOrderNumber,
       date: new Date().toISOString(),
       customer: form,
       items: cartItems,
       totalPrice,
-      status: 'ממתין לאישור',
+      status: '׳׳׳×׳™׳ ׳׳׳™׳©׳•׳¨',
     };
 
-    // שמירה ב-LocalStorage
+    // ׳©׳׳™׳¨׳” ׳‘-LocalStorage
     setTimeout(() => {
       setOrders((prev) => [...prev, newOrder]);
       clearCart();
@@ -109,23 +109,23 @@ function Checkout() {
     }, 1000);
   }
 
-  // הצגת הצלחה
+  // ׳”׳¦׳’׳× ׳”׳¦׳׳—׳”
   if (orderNumber) {
     return (
       <main style={{ paddingTop: '68px' }}>
         <section className="section">
           <div className="container checkout-success-wrap">
             <SuccessMessage
-              title="ההזמנה נשלחה בהצלחה! 🎉"
-              message="תודה על הזמנתך. אנחנו נחזור אליך בקרוב לאישור."
-              extra={`מספר הזמנה: ${orderNumber}`}
+              title="׳”׳”׳–׳׳ ׳” ׳ ׳©׳׳—׳” ׳‘׳”׳¦׳׳—׳”! נ‰"
+              message="׳×׳•׳“׳” ׳¢׳ ׳”׳–׳׳ ׳×׳. ׳׳ ׳—׳ ׳• ׳ ׳—׳–׳•׳¨ ׳׳׳™׳ ׳‘׳§׳¨׳•׳‘ ׳׳׳™׳©׳•׳¨."
+              extra={`׳׳¡׳₪׳¨ ׳”׳–׳׳ ׳”: ${orderNumber}`}
             />
             <button
               className="btn btn-primary"
               style={{ marginTop: '1.5rem' }}
               onClick={() => navigate('/menu')}
             >
-              חזרה לתפריט
+              ׳—׳–׳¨׳” ׳׳×׳₪׳¨׳™׳˜
             </button>
           </div>
         </section>
@@ -135,12 +135,12 @@ function Checkout() {
 
   return (
     <main style={{ paddingTop: '68px' }}>
-      <div className="section-dark" style={{ padding: '1.2rem 0 1.5rem' }}>
+      <div className="section-dark" style={{ padding: '0.5rem 0 0.7rem' }}>
         <div className="container">
           <PageTitle
-            eyebrow="סיום הזמנה"
-            title="פרטי ההזמנה"
-            subtitle="מלאו את הפרטים ואנחנו נדאג לכל השאר"
+            eyebrow="׳¡׳™׳•׳ ׳”׳–׳׳ ׳”"
+            title="׳₪׳¨׳˜׳™ ׳”׳”׳–׳׳ ׳”"
+            subtitle="׳׳׳׳• ׳׳× ׳”׳₪׳¨׳˜׳™׳ ׳•׳׳ ׳—׳ ׳• ׳ ׳“׳׳’ ׳׳›׳ ׳”׳©׳׳¨"
           />
         </div>
       </div>
@@ -149,23 +149,23 @@ function Checkout() {
         <div className="container">
           <div className="checkout-grid">
 
-            {/* טופס */}
+            {/* ׳˜׳•׳₪׳¡ */}
             <div className="checkout-form-col">
               <form onSubmit={handleSubmit} noValidate>
                 <div className="form-box">
-                  <h3 className="checkout-section-title">פרטים אישיים</h3>
+                  <h3 className="checkout-section-title">׳₪׳¨׳˜׳™׳ ׳׳™׳©׳™׳™׳</h3>
                   <div className="form-grid">
                     <FormInput
-                      label="שם מלא"
+                      label="׳©׳ ׳׳׳"
                       name="fullName"
                       value={form.fullName}
                       onChange={handleChange}
                       error={errors.fullName}
-                      placeholder="ישראל ישראלי"
+                      placeholder="׳™׳©׳¨׳׳ ׳™׳©׳¨׳׳׳™"
                       required
                     />
                     <FormInput
-                      label="טלפון"
+                      label="׳˜׳׳₪׳•׳"
                       name="phone"
                       type="tel"
                       value={form.phone}
@@ -176,7 +176,7 @@ function Checkout() {
                     />
                     <div className="form-grid-full">
                       <FormInput
-                        label="אימייל"
+                        label="׳׳™׳׳™׳™׳"
                         name="email"
                         type="email"
                         value={form.email}
@@ -190,7 +190,7 @@ function Checkout() {
                 </div>
 
                 <div className="form-box" style={{ marginTop: '1.5rem' }}>
-                  <h3 className="checkout-section-title">אופן קבלה</h3>
+                  <h3 className="checkout-section-title">׳׳•׳₪׳ ׳§׳‘׳׳”</h3>
                   <div className="delivery-options">
                     <label className={`delivery-option ${form.deliveryType === 'delivery' ? 'delivery-option-active' : ''}`}>
                       <input
@@ -200,7 +200,7 @@ function Checkout() {
                         checked={form.deliveryType === 'delivery'}
                         onChange={handleChange}
                       />
-                      🚗 משלוח לבית
+                      נ— ׳׳©׳׳•׳— ׳׳‘׳™׳×
                     </label>
                     <label className={`delivery-option ${form.deliveryType === 'pickup' ? 'delivery-option-active' : ''}`}>
                       <input
@@ -210,28 +210,28 @@ function Checkout() {
                         checked={form.deliveryType === 'pickup'}
                         onChange={handleChange}
                       />
-                      🏠 איסוף עצמי
+                      נ  ׳׳™׳¡׳•׳£ ׳¢׳¦׳׳™
                     </label>
                   </div>
 
                   {form.deliveryType === 'delivery' && (
                     <div className="form-grid" style={{ marginTop: '1rem' }}>
                       <FormInput
-                        label="כתובת"
+                        label="׳›׳×׳•׳‘׳×"
                         name="address"
                         value={form.address}
                         onChange={handleChange}
                         error={errors.address}
-                        placeholder="רחוב ומספר בית"
+                        placeholder="׳¨׳—׳•׳‘ ׳•׳׳¡׳₪׳¨ ׳‘׳™׳×"
                         required
                       />
                       <FormInput
-                        label="עיר"
+                        label="׳¢׳™׳¨"
                         name="city"
                         value={form.city}
                         onChange={handleChange}
                         error={errors.city}
-                        placeholder="שם העיר"
+                        placeholder="׳©׳ ׳”׳¢׳™׳¨"
                         required
                       />
                     </div>
@@ -239,12 +239,12 @@ function Checkout() {
                 </div>
 
                 <div className="form-box" style={{ marginTop: '1.5rem' }}>
-                  <h3 className="checkout-section-title">תשלום (הדגמה בלבד)</h3>
+                  <h3 className="checkout-section-title">׳×׳©׳׳•׳ (׳”׳“׳’׳׳” ׳‘׳׳‘׳“)</h3>
                   <div className="payment-options">
                     {[
-                      { value: 'cash', label: '💵 מזומן' },
-                      { value: 'credit', label: '💳 כרטיס אשראי' },
-                      { value: 'bit', label: '📱 ביט' },
+                      { value: 'cash', label: 'נ’µ ׳׳–׳•׳׳' },
+                      { value: 'credit', label: 'נ’³ ׳›׳¨׳˜׳™׳¡ ׳׳©׳¨׳׳™' },
+                      { value: 'bit', label: 'נ“± ׳‘׳™׳˜' },
                     ].map((opt) => (
                       <label
                         key={opt.value}
@@ -261,16 +261,16 @@ function Checkout() {
                       </label>
                     ))}
                   </div>
-                  <p className="checkout-payment-note">* זהו מנגנון הדגמה בלבד. לא מתבצע תשלום אמיתי.</p>
+                  <p className="checkout-payment-note">* ׳–׳”׳• ׳׳ ׳’׳ ׳•׳ ׳”׳“׳’׳׳” ׳‘׳׳‘׳“. ׳׳ ׳׳×׳‘׳¦׳¢ ׳×׳©׳׳•׳ ׳׳׳™׳×׳™.</p>
                 </div>
 
                 <div className="form-box" style={{ marginTop: '1.5rem' }}>
-                  <FormInput label="הערות להזמנה">
+                  <FormInput label="׳”׳¢׳¨׳•׳× ׳׳”׳–׳׳ ׳”">
                     <textarea
                       name="notes"
                       value={form.notes}
                       onChange={handleChange}
-                      placeholder="אלרגיות, בקשות מיוחדות..."
+                      placeholder="׳׳׳¨׳’׳™׳•׳×, ׳‘׳§׳©׳•׳× ׳׳™׳•׳—׳“׳•׳×..."
                       className="form-textarea"
                     />
                   </FormInput>
@@ -282,26 +282,26 @@ function Checkout() {
                   style={{ marginTop: '1.5rem', padding: '1rem' }}
                   disabled={isLoading}
                 >
-                  {isLoading ? <span className="spinner"></span> : 'אישור הזמנה'}
+                  {isLoading ? <span className="spinner"></span> : '׳׳™׳©׳•׳¨ ׳”׳–׳׳ ׳”'}
                 </button>
               </form>
             </div>
 
-            {/* סיכום הזמנה */}
+            {/* ׳¡׳™׳›׳•׳ ׳”׳–׳׳ ׳” */}
             <div className="checkout-summary-col">
               <div className="form-box checkout-summary">
-                <h3 className="checkout-section-title">סיכום הזמנה</h3>
+                <h3 className="checkout-section-title">׳¡׳™׳›׳•׳ ׳”׳–׳׳ ׳”</h3>
                 <ul className="summary-items">
                   {cartItems.map((item) => (
                     <li key={item.id} className="summary-item">
-                      <span className="summary-name">{item.name} × {item.quantity}</span>
-                      <span className="summary-price">₪{item.price * item.quantity}</span>
+                      <span className="summary-name">{item.name} ֳ— {item.quantity}</span>
+                      <span className="summary-price">ג‚×{item.price * item.quantity}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="summary-total">
-                  <span>סה"כ לתשלום</span>
-                  <span>₪{totalPrice}</span>
+                  <span>׳¡׳”"׳› ׳׳×׳©׳׳•׳</span>
+                  <span>ג‚×{totalPrice}</span>
                 </div>
               </div>
             </div>
