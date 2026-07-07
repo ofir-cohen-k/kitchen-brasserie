@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import CartDrawer from './components/CartDrawer/CartDrawer';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import AudioPlayer from './components/AudioPlayer/AudioPlayer';
+import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator';
 
 // כל הדפים
 import Home from './pages/Home';
@@ -30,6 +31,7 @@ import NotFound from './pages/NotFound';
 function MainLayout() {
   return (
     <>
+      <ScrollIndicator />
       <Header />
       <CartDrawer />
       <AudioPlayer />

@@ -214,10 +214,9 @@ input, select, textarea { font-family: var(--font-body); outline: none; directio
   box-shadow: var(--shadow);
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--cream); }
-::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; min-height: 80px; }
+/* Scrollbar - hidden, replaced by custom ScrollIndicator */
+::-webkit-scrollbar { width: 0; }
+* { scrollbar-width: none; }
 
 /* Spinner */
 .spinner {
