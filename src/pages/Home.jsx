@@ -161,7 +161,7 @@ function Home() {
             <span className="section-eyebrow" style={{ color: 'rgba(184,154,94,0.9)' }}>אירועים</span>
             <h2 className="section-title section-title-light">אירועים קרובים</h2>
             <p className="section-subtitle" style={{ color: 'rgba(248,244,236,0.55)' }}>
-              ארועים מיוחדים, ערבי שף, מוסיקה חיה ועוד
+              אירועים מיוחדים, ערבי שף, מוסיקה חיה ועוד
             </p>
             <div className="ornament ornament-light"><span>✦</span></div>
           </div>

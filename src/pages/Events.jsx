@@ -15,7 +15,7 @@ function Events() {
           <PageTitle
             eyebrow="אירועים"
             title="אירועים קרובים"
-            subtitle="ארועים מיוחדים, ערבי שף, מוסיקה חיה ועוד"
+            subtitle="אירועים מיוחדים, ערבי שף, מוסיקה חיה ועוד"
           />
         </div>
       </div>
