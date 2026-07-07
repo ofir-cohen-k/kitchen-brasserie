@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="5" fill="#1C2B2E"/>
-  <text x="16" y="24" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="22" font-weight="400" fill="#B89A5E">K</text>
+  <rect width="32" height="32" fill="#B89A5E"/>
+  <rect x="4" y="4" width="8" height="24" fill="#1C2B2E"/>
+  <polygon points="12,4 28,4 28,12 12,17" fill="#1C2B2E"/>
+  <polygon points="12,17 28,20 28,28 12,28" fill="#1C2B2E"/>
 </svg>
