@@ -62,7 +62,7 @@ function Home() {
             <span className="home-card-icon"><CalendarDays size={28} strokeWidth={1.5} /></span>
             <h3>הזמנת שולחן</h3>
             <p>האירוסים 53, קניותר, נס ציונה</p>
-            <Link to="/reservation" className="btn btn-outline btn-sm">להזמנה מהירה</Link>
+            <a href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">להזמנה מהירה</a>
           </div>
           <div className="home-card">
             <span className="home-card-icon"><Truck size={28} strokeWidth={1.5} /></span>
@@ -185,7 +185,7 @@ function Home() {
             <h2 className="section-title">מוכנים לארוחה מיוחדת?</h2>
             <p className="section-subtitle">הזמינו שולחן עכשיו ותהנו מחוויה קולינרית יוקרתית</p>
             <div className="home-cta-btns">
-              <Link to="/reservation" className="btn btn-primary">הזמנת שולחן</Link>
+              <a href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation" target="_blank" rel="noopener noreferrer" className="btn btn-primary">הזמנת שולחן</a>
               <Link to="/menu" className="btn btn-outline">לתפריט</Link>
             </div>
           </div>

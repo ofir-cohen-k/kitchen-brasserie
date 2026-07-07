@@ -59,9 +59,14 @@ function Header() {
           <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
             צור קשר
           </NavLink>
-          <NavLink to="/reservation" className="nav-link nav-cta">
+          <a
+            href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-link nav-cta"
+          >
             הזמנת שולחן
-          </NavLink>
+          </a>
         </nav>
 
         {/* אייקוני פעולה */}
@@ -99,9 +104,15 @@ function Header() {
           <NavLink to="/catering" className="nav-mobile-link" onClick={handleNavClick}>מגשי אירוח</NavLink>
           <NavLink to="/about" className="nav-mobile-link" onClick={handleNavClick}>אודות</NavLink>
           <NavLink to="/contact" className="nav-mobile-link" onClick={handleNavClick}>צור קשר</NavLink>
-          <NavLink to="/reservation" className="nav-mobile-link nav-mobile-cta" onClick={handleNavClick}>
+          <a
+            href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav-mobile-link nav-mobile-cta"
+            onClick={handleNavClick}
+          >
             הזמנת שולחן
-          </NavLink>
+          </a>
         </nav>
       )}
     </header>

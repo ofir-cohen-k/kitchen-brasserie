@@ -29,7 +29,7 @@ function Footer() {
             <li><Link to="/events">אירועים</Link></li>
             <li><Link to="/catering">מגשי אירוח</Link></li>
             <li><Link to="/about">אודות</Link></li>
-            <li><Link to="/reservation">הזמנת שולחן</Link></li>
+            <li><a href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation" target="_blank" rel="noopener noreferrer">הזמנת שולחן</a></li>
             <li>
               <a href="https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona" target="_blank" rel="noopener noreferrer">
                 הזמנה דרך Wolt
