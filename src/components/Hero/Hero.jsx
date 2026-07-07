@@ -5,39 +5,49 @@ import './Hero.css';
 function Hero() {
   return (
     <section className="hero" aria-label="כותרת ראשית">
-      {/* שכבת רקע כהה */}
       <div className="hero-overlay"></div>
-
-      {/* מסגרת קישוטית */}
       <div className="hero-frame"></div>
 
-      {/* תוכן */}
-      <div className="hero-content">
-        <span className="hero-eyebrow">כשר חלבי ודגים · נס ציונה</span>
-
-        {/* כותרת ראשית */}
-        <div className="hero-logo-wrap">
-          <img src="/logo.png" alt="Kitchen Brasserie" className="hero-logo-img" />
+      <div className="hero-inner">
+        {/* צד שמאל — סרטון */}
+        <div className="hero-video-side">
+          <div className="hero-video-phone">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="hero-video"
+            >
+              <source src="/מנות קיטשן/reel.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
 
-        {/* תיאור קצר */}
-        <p className="hero-subtitle">
-          מסעדת קונספט חלבית ודגים<br />
-          ארוחות בוקר · תפריט עשיר · מגשי אירוח
-        </p>
+        {/* צד ימין — תוכן */}
+        <div className="hero-content">
+          <span className="hero-eyebrow">כשר חלבי ודגים · נס ציונה</span>
 
-        {/* כפתורי פעולה */}
-        <div className="hero-buttons">
-          <Link to="/menu" className="btn btn-primary">
-            לתפריט המלא
-          </Link>
-          <Link to="/reservation" className="btn btn-outline hero-btn-outline">
-            הזמינו שולחן
-          </Link>
+          <div className="hero-logo-wrap">
+            <img src="/logo.png" alt="Kitchen Brasserie" className="hero-logo-img" />
+          </div>
+
+          <p className="hero-subtitle">
+            מסעדת קונספט חלבית ודגים<br />
+            ארוחות בוקר · תפריט עשיר · מגשי אירוח
+          </p>
+
+          <div className="hero-buttons">
+            <Link to="/menu" className="btn btn-primary">
+              לתפריט המלא
+            </Link>
+            <Link to="/reservation" className="btn btn-outline hero-btn-outline">
+              הזמינו שולחן
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/* חץ גלילה */}
       <div className="hero-scroll-indicator" aria-hidden="true">
         <div className="scroll-line"></div>
       </div>

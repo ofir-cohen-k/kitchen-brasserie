@@ -43,21 +43,6 @@ function Home() {
       {/* Hero - מקטע ראשי */}
       <Hero />
 
-      {/* ===== סרטון ===== */}
-      <section className="home-video-section">
-        <div className="home-video-wrap">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="home-video"
-          >
-            <source src="/מנות קיטשן/ריל 1.MOV" type="video/mp4" />
-          </video>
-        </div>
-      </section>
-
       {/* ===== כרטיסי ניווט מהיר ===== */}
       <section className="home-cards-section">
         <div className="home-cards container">
