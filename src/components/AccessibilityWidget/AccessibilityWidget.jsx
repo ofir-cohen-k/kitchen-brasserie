@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './AccessibilityWidget.css';
 
 const DEFAULTS = {
@@ -125,9 +126,9 @@ export default function AccessibilityWidget() {
 
           <button className="a11y-reset" onClick={reset}>איפוס הגדרות</button>
 
-          <a href="/accessibility" className="a11y-statement-link" onClick={() => setOpen(false)}>
+          <Link to="/accessibility" className="a11y-statement-link" onClick={() => setOpen(false)}>
             הצהרת נגישות
-          </a>
+          </Link>
         </div>
       )}
     </>
