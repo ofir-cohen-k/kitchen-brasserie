@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import './AudioPlayer.css';
 
-const MUSIC_URL = 'https://archive.org/download/paris-cafe-ambience-with-french-music-for-a-good-mood-for-relax-instrumental-jazz/Paris%20Cafe%20Ambience%20with%20French%20Music%20for%20a%20Good%20Mood%20%E2%98%95%EF%B8%8F%20%20For%20Relax%20%EF%BD%9C%20Instrumental%20Jazz.mp3';
+// "Bossa Antigua" by Kevin MacLeod — CC BY 3.0 — incompetech.com
+const MUSIC_URL = 'https://incompetech.com/music/royalty-free/mp3-royaltyfree/Bossa%20Antigua.mp3';
 
 function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
