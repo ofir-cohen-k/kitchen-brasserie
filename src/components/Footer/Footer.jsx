@@ -85,14 +85,9 @@ function Footer() {
       {/* שורת Copyright */}
       <div className="footer-bottom">
         <p>© 2025 Kitchen Brasserie. כל הזכויות שמורות.</p>
-        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <Link to="/accessibility" style={{ fontSize: '0.78rem', color: 'rgba(248,244,236,0.5)', textDecoration: 'underline' }}>
-            הצהרת נגישות
-          </Link>
-          <a href="https://incompetech.com" target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.72rem', color: 'rgba(248,244,236,0.35)', textDecoration: 'none' }}>
-            Music: Kevin MacLeod (CC BY 3.0)
-          </a>
-        </div>
+        <Link to="/accessibility" style={{ fontSize: '0.78rem', color: 'rgba(248,244,236,0.5)', textDecoration: 'underline' }}>
+          הצהרת נגישות
+        </Link>
       </div>
     </footer>
   );

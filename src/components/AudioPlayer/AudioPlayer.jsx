@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import './AudioPlayer.css';
 
-// "Crinoline Dreams" by Kevin MacLeod — CC BY 3.0 — incompetech.com
-const MUSIC_URL = 'https://incompetech.com/music/royalty-free/mp3-royaltyfree/Crinoline%20Dreams.mp3';
+// "One Night In France" by HoliznaCC0 — CC0 Public Domain — no rights reserved
+const MUSIC_URL = '/music.mp3';
 
 function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
