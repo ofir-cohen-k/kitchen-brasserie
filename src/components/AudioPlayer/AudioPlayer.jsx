@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import './AudioPlayer.css';
 
-// "Gymnopedie No 1" by Erik Satie, performed by Kevin MacLeod — CC BY 3.0 — incompetech.com
-const MUSIC_URL = 'https://incompetech.com/music/royalty-free/mp3-royaltyfree/Gymnopedie%20No%201.mp3';
+// "Crinoline Dreams" by Kevin MacLeod — CC BY 3.0 — incompetech.com
+const MUSIC_URL = 'https://incompetech.com/music/royalty-free/mp3-royaltyfree/Crinoline%20Dreams.mp3';
 
 function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
