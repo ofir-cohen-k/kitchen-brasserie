@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import './AudioPlayer.css';
 
-// "One Night In France" by HoliznaCC0 — CC0 Public Domain — no rights reserved
+// "Busted Guitar Jazz" by HoliznaCC0 — CC0 Public Domain — no rights reserved
 const MUSIC_URL = '/music.mp3';
 
 function AudioPlayer() {
