@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import './AudioPlayer.css';
 
-// "Busted Guitar Jazz" by HoliznaCC0 — CC0 Public Domain — no rights reserved
+// "French Accordion Vibe" by YuraSoop — Pixabay License — free for commercial use, no attribution required
 const MUSIC_URL = '/music.mp3';
 
 function AudioPlayer() {
