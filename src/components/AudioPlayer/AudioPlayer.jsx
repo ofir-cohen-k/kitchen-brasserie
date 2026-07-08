@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import './AudioPlayer.css';
 
-// "Jazz Brunch" by Kevin MacLeod — CC BY 3.0 — incompetech.com
-const MUSIC_URL = 'https://incompetech.com/music/royalty-free/mp3-royaltyfree/Jazz%20Brunch.mp3';
+// "Gymnopedie No 1" by Erik Satie, performed by Kevin MacLeod — CC BY 3.0 — incompetech.com
+const MUSIC_URL = 'https://incompetech.com/music/royalty-free/mp3-royaltyfree/Gymnopedie%20No%201.mp3';
 
 function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
