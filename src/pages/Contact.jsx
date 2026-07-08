@@ -67,7 +67,7 @@ function Contact() {
           <PageTitle
             eyebrow="צור קשר"
             title="נשמח לשמוע ממך"
-            subtitle="מלאו את הפרטים ואנחנו נחזור אליך בהקדם"
+            subtitle="מלאו את הפרטים ואנחנו נחזור אליכם בהקדם"
           />
         </div>
       </div>
@@ -124,7 +124,7 @@ function Contact() {
             {isSuccess ? (
               <SuccessMessage
                 title="ההודעה נשלחה!"
-                message="תודה על פנייתך. אנחנו נחזור אליך בהקדם האפשרי."
+                message="תודה על פנייתך. אנחנו נחזור אליכם בהקדם האפשרי."
               />
             ) : (
               <form onSubmit={handleSubmit} noValidate className="form-box">
