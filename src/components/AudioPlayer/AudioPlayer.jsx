@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import './AudioPlayer.css';
 
-// "Bossa Antigua" by Kevin MacLeod — CC BY 3.0 — incompetech.com
-const MUSIC_URL = 'https://incompetech.com/music/royalty-free/mp3-royaltyfree/Bossa%20Antigua.mp3';
+// "Jazz Brunch" by Kevin MacLeod — CC BY 3.0 — incompetech.com
+const MUSIC_URL = 'https://incompetech.com/music/royalty-free/mp3-royaltyfree/Jazz%20Brunch.mp3';
 
 function AudioPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -12,7 +12,7 @@ function AudioPlayer() {
   useEffect(() => {
     audioRef.current = new Audio(MUSIC_URL);
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.3;
+    audioRef.current.volume = 0.5;
     audioRef.current.play().then(() => {
       setIsPlaying(true);
       setHasInteracted(true);
