@@ -2,7 +2,14 @@
 // App.jsx - ראוטינג ראשי של האפליקציה
 // ========================================
 
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 // קומפוננטות ראשיות (Header, Footer, CartDrawer)
 import Header from './components/Header/Header';
@@ -31,6 +38,7 @@ import NotFound from './pages/NotFound';
 function MainLayout() {
   return (
     <>
+      <ScrollToTop />
       <ScrollIndicator />
       <Header />
       <CartDrawer />
