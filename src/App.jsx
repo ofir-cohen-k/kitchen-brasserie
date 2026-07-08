@@ -18,6 +18,7 @@ import CartDrawer from './components/CartDrawer/CartDrawer';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import AudioPlayer from './components/AudioPlayer/AudioPlayer';
 import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator';
+import AccessibilityWidget from './components/AccessibilityWidget/AccessibilityWidget';
 
 // כל הדפים
 import Home from './pages/Home';
@@ -28,6 +29,7 @@ import Events from './pages/Events';
 import Catering from './pages/Catering';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import AccessibilityStatement from './pages/AccessibilityStatement';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import NotFound from './pages/NotFound';
@@ -40,6 +42,7 @@ function MainLayout() {
     <>
       <ScrollToTop />
       <ScrollIndicator />
+      <AccessibilityWidget />
       <Header />
       <CartDrawer />
       <AudioPlayer />
@@ -66,6 +69,7 @@ function App() {
         <Route path="/catering" element={<Catering />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/accessibility" element={<AccessibilityStatement />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 

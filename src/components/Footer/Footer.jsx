@@ -85,6 +85,9 @@ function Footer() {
       {/* שורת Copyright */}
       <div className="footer-bottom">
         <p>© 2025 Kitchen Brasserie. כל הזכויות שמורות.</p>
+        <Link to="/accessibility" style={{ fontSize: '0.78rem', color: 'rgba(248,244,236,0.5)', textDecoration: 'underline' }}>
+          הצהרת נגישות
+        </Link>
       </div>
     </footer>
   );
