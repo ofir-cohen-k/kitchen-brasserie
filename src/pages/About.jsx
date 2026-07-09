@@ -9,11 +9,11 @@ import PageTitle from '../components/PageTitle/PageTitle';
 import './About.css';
 
 const slideshowImages = [
-  'https://kitchenm.co.il/wp-content/uploads/2025/05/Ginsburg_KitchenGreg_15.5.24-112-scaled.jpg',
-  'https://kitchenm.co.il/wp-content/uploads/2025/05/MOYAL-04908-scaled.jpg',
-  'https://kitchenm.co.il/wp-content/uploads/2025/05/Ginsburg_KitchenGreg_15.5.24-69-scaled.jpg',
-  'https://kitchenm.co.il/wp-content/uploads/2025/05/MOYAL-05028-scaled.jpg',
-  'https://kitchenm.co.il/wp-content/uploads/2025/05/Ginsburg_KitchenGreg_15.5.24-146-scaled.jpg',
+  '/מנות קיטשן/ספגטי קרבונרה.jpg',
+  '/מנות קיטשן/שניצל דג וסמאש פוטטוס.jpg',
+  '/מנות קיטשן/בוראטה דה נאפולי.jpg',
+  '/מנות קיטשן/ארנציני.jpg',
+  '/מנות קיטשן/שווארמה דג.jpg',
 ];
 
 function About() {

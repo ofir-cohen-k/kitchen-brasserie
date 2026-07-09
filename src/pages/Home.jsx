@@ -14,11 +14,11 @@ import { eventsData } from '../data/eventsData';
 import './Home.css';
 
 const slideshowImages = [
-  'https://kitchenm.co.il/wp-content/uploads/2025/05/Ginsburg_KitchenGreg_15.5.24-112-scaled.jpg',
-  'https://kitchenm.co.il/wp-content/uploads/2025/05/MOYAL-04908-scaled.jpg',
-  'https://kitchenm.co.il/wp-content/uploads/2025/05/Ginsburg_KitchenGreg_15.5.24-69-scaled.jpg',
-  'https://kitchenm.co.il/wp-content/uploads/2025/05/MOYAL-05028-scaled.jpg',
-  'https://kitchenm.co.il/wp-content/uploads/2025/05/Ginsburg_KitchenGreg_15.5.24-146-scaled.jpg',
+  '/מנות קיטשן/בוקר זוגית.jpg',
+  '/מנות קיטשן/פילה סלמון.jpg',
+  '/מנות קיטשן/קרוק מאדם.jpg',
+  '/מנות קיטשן/פיצה פרסקה.jpg',
+  '/מנות קיטשן/ריזוטו פטריות וכמהין.jpg',
 ];
 
 function Home() {

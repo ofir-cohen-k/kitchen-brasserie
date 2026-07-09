@@ -26,7 +26,7 @@
 }
 .home-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--border);
 }
 .home-card {
@@ -168,9 +168,21 @@
   background: rgba(184,154,94,0.25);
 }
 
+@media (max-width: 1050px) {
+  .home-cards { grid-template-columns: repeat(2, 1fr); }
+  .home-card { border-bottom: 1px solid var(--border); }
+  .home-card:nth-child(odd) { border-right: none; }
+  .home-card:nth-child(even) { border-right: 1px solid var(--border); }
+  .home-card:nth-last-child(-n+2) { border-bottom: none; }
+}
+
 @media (max-width: 900px) {
-  .home-cards { grid-template-columns: 1fr; }
-  .home-card { border-right: none; border-bottom: 1px solid var(--border); }
   .home-about { grid-template-columns: 1fr; gap: 2.5rem; }
   .home-about-img { height: 280px; }
+}
+
+@media (max-width: 600px) {
+  .home-cards { grid-template-columns: 1fr; }
+  .home-card { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
+  .home-card:last-child { border-bottom: none !important; }
 }
