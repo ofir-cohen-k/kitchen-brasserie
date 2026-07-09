@@ -3,9 +3,8 @@
 // ========================================
 
 import { Link } from 'react-router-dom';
-import { Utensils, ShoppingBasket, CalendarDays, Truck } from 'lucide-react';
+import { Utensils, ShoppingBasket, CalendarDays, Truck, MapPin, Phone, Clock } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { MapPin, Phone, Clock, Star } from 'lucide-react';
 import Hero from '../components/Hero/Hero';
 import MenuCard from '../components/MenuCard/MenuCard';
 import EventCard from '../components/EventCard/EventCard';

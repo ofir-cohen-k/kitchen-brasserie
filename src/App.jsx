@@ -30,6 +30,7 @@ import Catering from './pages/Catering';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import AccessibilityStatement from './pages/AccessibilityStatement';
+import Privacy from './pages/Privacy';
 import AdminLogin from './pages/AdminLogin';
 import AdminDashboard from './pages/AdminDashboard';
 import NotFound from './pages/NotFound';
@@ -70,6 +71,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/accessibility" element={<AccessibilityStatement />} />
+        <Route path="/privacy" element={<Privacy />} />
         <Route path="*" element={<NotFound />} />
       </Route>
 
