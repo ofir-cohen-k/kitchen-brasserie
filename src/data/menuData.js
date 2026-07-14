@@ -606,7 +606,6 @@ export const menuData = [
     price: 11,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/מינראלים.jpg',
-    imageContain: true,
     isRecommended: false,
     isAvailable: true,
   },
