@@ -767,7 +767,7 @@ export const menuData = [
     description: "סודה מרעננת.",
     price: 12,
     category: 'drinks',
-    image: '/מנות קיטשן/משקאות/סודה.gif',
+    image: '/סודה מתוקן.png',
     imageContain: true,
     isRecommended: false,
     isAvailable: true,
