@@ -1,27 +1,41 @@
 // MenuCard - כרטיס מנה בתפריט
-import { ShoppingCart, Star } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ShoppingCart, Star, X } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import './MenuCard.css';
 
 function MenuCard({ dish }) {
   const { addToCart } = useCart();
+  const [lightbox, setLightbox] = useState(false);
+
+  useEffect(() => {
+    if (!lightbox) return;
+    function onKey(e) { if (e.key === 'Escape') setLightbox(false); }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [lightbox]);
 
   function handleAddToCart() {
     addToCart(dish);
   }
 
   return (
-    <article className="menu-card">
-      {/* תמונת המנה */}
-      <div className={`menu-card-img${dish.imageContain ? ' menu-card-img-contain' : ''}${dish.imageBgWhite ? ' menu-card-img-bg-white' : ''}${dish.imagePadSm ? ' menu-card-img-pad-sm' : ''}`}>
-        <img src={dish.image} alt={dish.name} loading="lazy" />
-        {/* תג "מומלץ" אם המנה מסומנת כמומלצת */}
-        {dish.isRecommended && (
-          <span className="menu-card-badge">
-            <Star size={10} fill="currentColor" /> מומלץ
-          </span>
-        )}
-      </div>
+    <>
+      <article className="menu-card">
+        {/* תמונת המנה */}
+        <div
+          className={`menu-card-img${dish.imageContain ? ' menu-card-img-contain' : ''}${dish.imageBgWhite ? ' menu-card-img-bg-white' : ''}${dish.imagePadSm ? ' menu-card-img-pad-sm' : ''}`}
+          onClick={() => setLightbox(true)}
+          style={{ cursor: 'zoom-in' }}
+        >
+          <img src={dish.image} alt={dish.name} loading="lazy" />
+          {/* תג "מומלץ" אם המנה מסומנת כמומלצת */}
+          {dish.isRecommended && (
+            <span className="menu-card-badge">
+              <Star size={10} fill="currentColor" /> מומלץ
+            </span>
+          )}
+        </div>
 
       {/* תוכן הכרטיס */}
       <div className="menu-card-body">
@@ -46,8 +60,25 @@ function MenuCard({ dish }) {
             הוסף לסל
           </button>
         </div>
-      </div>
-    </article>
+        </div>
+      </article>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div className="lightbox-overlay" onClick={() => setLightbox(false)}>
+          <button className="lightbox-close" onClick={() => setLightbox(false)} aria-label="סגור">
+            <X size={24} />
+          </button>
+          <img
+            src={dish.image}
+            alt={dish.name}
+            className="lightbox-img"
+            onClick={e => e.stopPropagation()}
+          />
+          <p className="lightbox-name">{dish.name}</p>
+        </div>
+      )}
+    </>
   );
 }
 
