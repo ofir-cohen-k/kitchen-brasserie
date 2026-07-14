@@ -62,7 +62,7 @@ function Contact() {
       general: 'כללי',
     };
 
-    await Promise.allSettled([
+    const [dbResult, ejsResult] = await Promise.allSettled([
       supabase.from('contact_messages').insert({
         name: form.fullName,
         phone: form.phone,
@@ -76,12 +76,15 @@ function Contact() {
           from_name: form.fullName,
           phone: form.phone,
           from_email: form.email,
+          to_email: 'Kitchbras@gmail.com',
           subject: subjectLabels[form.subject] || form.subject,
           message: form.message,
         },
         EJS_KEY
       ),
     ]);
+    if (dbResult.status === 'rejected') console.error('Supabase error:', dbResult.reason);
+    if (ejsResult.status === 'rejected') console.error('EmailJS error:', ejsResult.reason);
 
     setIsSuccess(true);
     setIsLoading(false);
