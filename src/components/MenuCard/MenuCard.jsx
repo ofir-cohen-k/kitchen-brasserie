@@ -13,7 +13,7 @@ function MenuCard({ dish }) {
   return (
     <article className="menu-card">
       {/* תמונת המנה */}
-      <div className={`menu-card-img${dish.imageContain ? ' menu-card-img-contain' : ''}`}>
+      <div className={`menu-card-img${dish.imageContain ? ' menu-card-img-contain' : ''}${dish.imageBgWhite ? ' menu-card-img-bg-white' : ''}`}>
         <img src={dish.image} alt={dish.name} loading="lazy" />
         {/* תג "מומלץ" אם המנה מסומנת כמומלצת */}
         {dish.isRecommended && (

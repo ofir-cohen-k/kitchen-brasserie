@@ -36,6 +36,9 @@
 .menu-card:hover .menu-card-img-contain img {
   transform: scale(1.03);
 }
+.menu-card-img-bg-white {
+  background: #fff;
+}
 
 /* תג מומלץ */
 .menu-card-badge {
