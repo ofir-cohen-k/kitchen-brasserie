@@ -29,6 +29,13 @@
 .menu-card:hover .menu-card-img img {
   transform: scale(1.06);
 }
+.menu-card-img-contain img {
+  object-fit: contain;
+  padding: 1.25rem;
+}
+.menu-card:hover .menu-card-img-contain img {
+  transform: scale(1.03);
+}
 
 /* תג מומלץ */
 .menu-card-badge {
