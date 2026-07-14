@@ -76,6 +76,7 @@ function MenuCard({ dish }) {
             onClick={e => e.stopPropagation()}
           />
           <p className="lightbox-name">{dish.name}</p>
+          {dish.description && <p className="lightbox-desc">{dish.description}</p>}
         </div>
       )}
     </>

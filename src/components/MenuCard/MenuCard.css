@@ -151,6 +151,13 @@
   font-weight: 600;
   letter-spacing: 0.05em;
 }
+.lightbox-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.88rem;
+  text-align: center;
+  max-width: 480px;
+  line-height: 1.6;
+}
 .lightbox-close {
   position: absolute;
   top: 1.2rem;
