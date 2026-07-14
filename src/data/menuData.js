@@ -769,6 +769,7 @@ export const menuData = [
     category: 'drinks',
     image: '/סודה מתוקן.png',
     imageContain: true,
+    imagePadSm: true,
     isRecommended: false,
     isAvailable: true,
   },

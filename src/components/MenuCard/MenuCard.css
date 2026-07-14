@@ -39,6 +39,9 @@
 .menu-card-img-bg-white {
   background: #fff;
 }
+.menu-card-img-pad-sm img {
+  padding: 0.3rem;
+}
 
 /* תג מומלץ */
 .menu-card-badge {
