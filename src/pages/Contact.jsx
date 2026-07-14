@@ -4,6 +4,7 @@
 
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 import FormInput from '../components/FormInput/FormInput';
 import SuccessMessage from '../components/SuccessMessage/SuccessMessage';
@@ -11,6 +12,10 @@ import PageTitle from '../components/PageTitle/PageTitle';
 import { isValidPhone, isValidEmail, isNotEmpty } from '../utils/validation';
 import { supabase } from '../lib/supabase';
 import './Contact.css';
+
+const EJS_SERVICE  = 'service_1n9hlje';
+const EJS_TEMPLATE = 'template_658cfl4';
+const EJS_KEY      = 'rIR0IVmK1T5H5kpne';
 
 function Contact() {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -49,13 +54,35 @@ function Contact() {
       return;
     }
     setIsLoading(true);
-    const { error } = await supabase.from('contact_messages').insert({
-      name: form.fullName,
-      phone: form.phone,
-      email: form.email,
-      message: `נושא: ${form.subject} | ${form.message}`,
-    });
-    if (error) console.error(error);
+
+    const subjectLabels = {
+      reservation: 'הזמנת שולחן',
+      catering: 'מגשי אירוח',
+      menu: 'שאלה על תפריט',
+      general: 'כללי',
+    };
+
+    await Promise.allSettled([
+      supabase.from('contact_messages').insert({
+        name: form.fullName,
+        phone: form.phone,
+        email: form.email,
+        message: `נושא: ${subjectLabels[form.subject] || form.subject} | ${form.message}`,
+      }),
+      emailjs.send(
+        EJS_SERVICE,
+        EJS_TEMPLATE,
+        {
+          from_name: form.fullName,
+          phone: form.phone,
+          from_email: form.email,
+          subject: subjectLabels[form.subject] || form.subject,
+          message: form.message,
+        },
+        EJS_KEY
+      ),
+    ]);
+
     setIsSuccess(true);
     setIsLoading(false);
   }
