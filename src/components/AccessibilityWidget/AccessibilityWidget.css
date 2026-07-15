@@ -2,8 +2,8 @@
 .a11y-trigger {
   position: fixed;
   z-index: 10000;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #1565C0;
   color: #fff;
@@ -18,7 +18,7 @@
 }
 .a11y-trigger:hover { box-shadow: 0 5px 18px rgba(0,0,0,0.3); }
 .a11y-trigger:active { cursor: grabbing !important; }
-.a11y-trigger svg { width: 22px; height: 22px; pointer-events: none; }
+.a11y-trigger svg { width: 19px; height: 19px; pointer-events: none; }
 
 /* פאנל */
 .a11y-panel {

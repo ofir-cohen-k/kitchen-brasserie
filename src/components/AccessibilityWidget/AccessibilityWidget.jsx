@@ -10,7 +10,7 @@ const DEFAULTS = {
   stopAnimations: false,
   readableFont: false,
 };
-const BTN = 40;
+const BTN = 36;
 
 function applySettings(settings) {
   const root = document.documentElement;
