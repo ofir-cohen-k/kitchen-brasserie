@@ -18,6 +18,16 @@ function Footer() {
             מסעדת קונספט חלבית ודגים כשרה למהדרין בנס ציונה. ארוחות בוקר מפנקות, תפריט עשיר ומגשי אירוח מרשימים.
           </p>
           <p className="footer-kosher">✦ כשר בד"ץ בית יוסף</p>
+          <div className="footer-social">
+            <a href="https://www.instagram.com/kitchbras" target="_blank" rel="noopener noreferrer" aria-label="אינסטגרם של Kitchen Brasserie" className="footer-social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4.5"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              </svg>
+              Instagram
+            </a>
+          </div>
         </div>
 
         {/* עמודה 2 - קישורים */}
