@@ -32,32 +32,40 @@ function EventCard({ event }) {
         <div className="event-card-meta">
           <span className="event-meta-item">
             <Calendar size={13} />
-            {formatDate(event.date)}
+            {event.date ? formatDate(event.date) : 'לפי תיאום'}
           </span>
-          <span className="event-meta-item">
-            <Clock size={13} />
-            {event.time}
-          </span>
+          {event.time && (
+            <span className="event-meta-item">
+              <Clock size={13} />
+              {event.time}
+            </span>
+          )}
           <span className="event-meta-item">
             <Users size={13} />
-            {event.availablePlaces} מקומות פנויים
+            {event.availablePlaces != null ? `${event.availablePlaces} מקומות פנויים` : 'לפי הזמנה'}
           </span>
         </div>
 
         {/* מחיר וכפתור */}
         <div className="event-card-footer">
           <span className="event-card-price">
-            {event.price === 0 ? 'כניסה חופשית' : `₪${event.price} לאדם`}
+            {event.price == null ? 'לפי הצעת מחיר' : event.price === 0 ? 'כניסה חופשית' : `₪${event.price} לאדם`}
           </span>
-          <a
-            href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary btn-sm"
-            aria-label={`הזמן מקום לאירוע ${event.title}`}
-          >
-            הזמן מקום
-          </a>
+          {event.bookingUrl ? (
+            <Link to={event.bookingUrl} className="btn btn-primary btn-sm">
+              צור קשר
+            </Link>
+          ) : (
+            <a
+              href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary btn-sm"
+              aria-label={`הזמן מקום לאירוע ${event.title}`}
+            >
+              הזמן מקום
+            </a>
+          )}
         </div>
       </div>
     </article>
