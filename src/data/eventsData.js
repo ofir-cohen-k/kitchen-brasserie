@@ -5,6 +5,18 @@
 export const eventsData = [
   {
     id: 1,
+    title: 'אירועים פרטיים',
+    date: null,
+    time: null,
+    description: 'קיטשן בראסרי מארחת אירועים פרטיים מכל הסוגים — בר/בת מצווה, מסיבת הפתעה, ברית/בת, ימי הולדת ועוד. אנחנו נדאג לכל הפרטים: תפריט מותאם אישית, עיצוב שולחנות, מגשי אירוח ואווירה מיוחדת שתישאר בזיכרון. צרו איתנו קשר ונבנה יחד את האירוע המושלם עבורכם.',
+    price: null,
+    image: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80&fit=crop',
+    availablePlaces: null,
+    category: 'אירוע פרטי',
+    bookingUrl: '/contact',
+  },
+  {
+    id: 2,
     title: 'ערב חמישי עם DJ',
     date: '2026-08-07',
     time: '20:00',
@@ -15,7 +27,7 @@ export const eventsData = [
     category: 'מוסיקה',
   },
   {
-    id: 2,
+    id: 3,
     title: 'ערב שף - מנות מיוחדות',
     date: '2026-08-14',
     time: '19:30',
@@ -26,7 +38,7 @@ export const eventsData = [
     category: 'ערב שף',
   },
   {
-    id: 3,
+    id: 4,
     title: 'פיצות ללא הגבלה',
     date: '2026-08-21',
     time: '19:00',
@@ -37,7 +49,7 @@ export const eventsData = [
     category: 'פיצות',
   },
   {
-    id: 4,
+    id: 5,
     title: 'בוקר טעימות - ארוחות בוקר',
     date: '2026-08-28',
     time: '09:00',
@@ -46,17 +58,5 @@ export const eventsData = [
     image: 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=800&q=80&fit=crop',
     availablePlaces: 30,
     category: 'בוקר',
-  },
-  {
-    id: 5,
-    title: 'אירועים פרטיים',
-    date: null,
-    time: null,
-    description: 'קיטשן ברסרי מארחת אירועים פרטיים מכל הסוגים — בר/בת מצווה, מסיבת הפתעה, ברית/בת, ימי הולדת ועוד. נתפור את החוויה לפי הצרכים שלכם.',
-    price: null,
-    image: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80&fit=crop',
-    availablePlaces: null,
-    category: 'אירוע פרטי',
-    bookingUrl: '/contact',
   },
 ];
