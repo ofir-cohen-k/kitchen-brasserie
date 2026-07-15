@@ -550,7 +550,7 @@ export const cateringData = [
       'גבינה אפויה קלאסית',
     ],
     startingPrice: 220,
-    image: '/מנות קיטשן/עוגת גבינה אפויה.jpg',
+    image: FB.cake,
     category: 'sweets',
   },
 ];
