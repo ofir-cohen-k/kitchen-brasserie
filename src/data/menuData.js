@@ -531,7 +531,7 @@ export const menuData = [
     description: "מוגש עם שוקולד לבן וקולי פירות יער.",
     price: 49,
     category: 'desserts',
-    image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80&fit=crop',
+    image: d('עוגת גבינה ניו יורק.jpeg'),
     isRecommended: true,
     isAvailable: true,
   },
