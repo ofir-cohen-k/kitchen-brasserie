@@ -283,7 +283,7 @@ export const cateringData = [
   },
   {
     id: 18,
-    name: 'מגש קיטשן תאילודי',
+    name: 'מגש קיטשן תאילנדי',
     description: 'סלמון מוקפץ ברוטב תאילנדי עם אורז',
     guests: 'מגש לשיתוף',
     includes: [
