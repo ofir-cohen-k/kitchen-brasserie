@@ -216,7 +216,7 @@ export const cateringData = [
       'בזיליקום טרי',
     ],
     startingPrice: 59,
-    image: FB.pizza,
+    image: '/מנות קיטשן/מרגריטה.jpg',
     category: 'pizza',
   },
   {
@@ -231,7 +231,7 @@ export const cateringData = [
       'גבינת מוצרלה',
     ],
     startingPrice: 59,
-    image: FB.pizza,
+    image: '/מנות קיטשן/פיצה פטריות.jpg',
     category: 'pizza',
   },
   {
@@ -246,7 +246,7 @@ export const cateringData = [
       'עלי רוקט',
     ],
     startingPrice: 65,
-    image: FB.pizza,
+    image: '/מנות קיטשן/ארבע גבינות.jpg',
     category: 'pizza',
   },
   {
@@ -261,7 +261,7 @@ export const cateringData = [
       'בוראטה טרייה ובלסמי מצומצם',
     ],
     startingPrice: 79,
-    image: FB.pizza,
+    image: '/מנות קיטשן/קרוסטה בוראטה.jpg',
     category: 'pizza',
   },
 
@@ -278,7 +278,7 @@ export const cateringData = [
       "צ'ילי לוהט",
     ],
     startingPrice: 269,
-    image: FB.fish,
+    image: '/מנות קיטשן/סיגר דג ים.jpg',
     category: 'fish',
   },
   {
@@ -293,7 +293,7 @@ export const cateringData = [
       'שום וגינגר, בוטנים ואורז',
     ],
     startingPrice: 289,
-    image: FB.fish,
+    image: '/מנות קיטשן/שיפוד סלמון טיקה קארי מלזי.jpg',
     category: 'fish',
   },
   {
@@ -308,7 +308,7 @@ export const cateringData = [
       "רוטב חלפיניו, ירקות טריים ופיתה גלילית",
     ],
     startingPrice: 269,
-    image: FB.fish,
+    image: '/מנות קיטשן/שווארמה דג.jpg',
     category: 'fish',
   },
   {
@@ -323,7 +323,7 @@ export const cateringData = [
       'סלט אישי בצד',
     ],
     startingPrice: 299,
-    image: FB.fish,
+    image: '/מנות קיטשן/שניצל דג וסמאש פוטטוס.jpg',
     category: 'fish',
   },
 
@@ -340,7 +340,7 @@ export const cateringData = [
       'ויניגרט הבית',
     ],
     startingPrice: 179,
-    image: FB.salad,
+    image: '/מנות קיטשן/גלילי.jpg',
     category: 'salads',
   },
   {
@@ -400,7 +400,7 @@ export const cateringData = [
       'פרמזן',
     ],
     startingPrice: 189,
-    image: FB.salad,
+    image: '/מנות קיטשן/קיסר.jpg',
     category: 'salads',
   },
   {
@@ -415,7 +415,7 @@ export const cateringData = [
       "צ'יפס בטטה, ויניגרט הבית",
     ],
     startingPrice: 199,
-    image: FB.salad,
+    image: '/מנות קיטשן/פטריות ובטטה.jpg',
     category: 'salads',
   },
   {
@@ -430,7 +430,7 @@ export const cateringData = [
       'זיתי קלמטה, חומץ יין אדום ושמן זית',
     ],
     startingPrice: 199,
-    image: FB.salad,
+    image: '/מנות קיטשן/גינה.jpg',
     category: 'salads',
   },
 
