@@ -2,21 +2,16 @@
 // קובץ נתונים - מגשי אירוח
 // ========================================
 
-const IMG = {
-  sandwiches: 'https://images.unsplash.com/photo-1755887775940-7a9c6ab3d655?w=800&q=80&fit=crop',
-  sourdough:  'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=800&q=80&fit=crop',
-  croissant:  'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80&fit=crop',
-  tortilla:   'https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=800&q=80&fit=crop',
-  hot:        'https://images.unsplash.com/photo-1640719028782-8230a1bde306?w=800&q=80&fit=crop',
-  shakshuka:  'https://images.unsplash.com/photo-1590412200988-a436970781fa?w=800&q=80&fit=crop',
-  pasta:      'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80&fit=crop',
-  pizza:      'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80&fit=crop',
-  fish:       'https://images.unsplash.com/photo-1781130211746-b78a2918d857?w=800&q=80&fit=crop',
-  salad:      'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&fit=crop',
-  veggies:    'https://images.unsplash.com/photo-1641919105784-f0838a756e58?w=800&q=80&fit=crop',
-  fruit:      'https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=800&q=80&fit=crop',
-  sweets:     'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80&fit=crop',
-  cake:       'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80&fit=crop',
+const BASE = '/מנות קיטשן/מגשי אירוח/צילומי מגשי אירוח [ השלמות חלק יש בגרג]/';
+const L = (name) => `${BASE}${name}`;
+
+// Unsplash fallback for items without a local photo
+const FB = {
+  pasta:  'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80&fit=crop',
+  pizza:  'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80&fit=crop',
+  fish:   'https://images.unsplash.com/photo-1781130211746-b78a2918d857?w=800&q=80&fit=crop',
+  salad:  'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&fit=crop',
+  cake:   'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80&fit=crop',
 };
 
 export const cateringData = [
@@ -34,7 +29,7 @@ export const cateringData = [
       'סלמון – שמנת בצל ירוק (תוספת ₪5)',
     ],
     startingPrice: 189,
-    image: IMG.sandwiches,
+    image: L('מגש כריכוני ביס .jpg'),
     category: 'sandwiches',
   },
   {
@@ -49,7 +44,7 @@ export const cateringData = [
       'סלמון – שמנת בצל ירוק (תוספת ₪5)',
     ],
     startingPrice: 189,
-    image: IMG.sourdough,
+    image: L('מגש כריכונים לחמי מחמצת.jpg'),
     category: 'sandwiches',
   },
   {
@@ -63,7 +58,7 @@ export const cateringData = [
       'סלמון – שמנת בצל ירוק מיקרו בזיליקום (תוספת ₪5)',
     ],
     startingPrice: 199,
-    image: IMG.croissant,
+    image: L('מגש מיני קוראסון.jpg'),
     category: 'sandwiches',
   },
   {
@@ -78,7 +73,7 @@ export const cateringData = [
       'סביח – חציל תפוח אדמה ביצה קשה פטרוזיליה וטחינה',
     ],
     startingPrice: 169,
-    image: IMG.tortilla,
+    image: L('מגש מיני טורטיות .jpg'),
     category: 'sandwiches',
   },
   {
@@ -93,7 +88,7 @@ export const cateringData = [
       'בצל ירוק',
     ],
     startingPrice: 209,
-    image: IMG.sandwiches,
+    image: L('מגש כריכוני ביס .jpg'),
     category: 'sandwiches',
   },
 
@@ -110,7 +105,7 @@ export const cateringData = [
       'אנטיפסטי – ירקות קלויים תימין ומלח אטלנטי',
     ],
     startingPrice: 159,
-    image: IMG.hot,
+    image: L('מגשי פוקאצ_ות.jpg'),
     category: 'hot',
   },
 
@@ -125,7 +120,7 @@ export const cateringData = [
       '8 ביצים בתוך הרוטב',
     ],
     startingPrice: 169,
-    image: IMG.shakshuka,
+    image: L('שקשוקה.jpg'),
     category: 'hot',
   },
   {
@@ -139,7 +134,7 @@ export const cateringData = [
       'חציל קלוי וחצי קלוי',
     ],
     startingPrice: 179,
-    image: IMG.shakshuka,
+    image: L('שקשוקה בלקנית.jpg'),
     category: 'hot',
   },
 
@@ -155,7 +150,7 @@ export const cateringData = [
       'רוטב רוזה ופרמזן',
     ],
     startingPrice: 269,
-    image: IMG.pasta,
+    image: FB.pasta,
     category: 'hot',
   },
 
@@ -172,7 +167,7 @@ export const cateringData = [
       'קרם פסטו',
     ],
     startingPrice: 199,
-    image: IMG.pasta,
+    image: L('פנה במגוון רטבים.jpg'),
     category: 'hot',
   },
 
@@ -188,7 +183,7 @@ export const cateringData = [
       'מוקרם בתנור אבן',
     ],
     startingPrice: 189,
-    image: IMG.hot,
+    image: L('תפוח אדמה מוקרם.jpg'),
     category: 'hot',
   },
 
@@ -205,7 +200,7 @@ export const cateringData = [
       'שום וגינגר, אורז לבן',
     ],
     startingPrice: 239,
-    image: IMG.hot,
+    image: L('מוקפץ קיטשן.jpg'),
     category: 'hot',
   },
 
@@ -221,7 +216,7 @@ export const cateringData = [
       'בזיליקום טרי',
     ],
     startingPrice: 59,
-    image: IMG.pizza,
+    image: FB.pizza,
     category: 'pizza',
   },
   {
@@ -236,7 +231,7 @@ export const cateringData = [
       'גבינת מוצרלה',
     ],
     startingPrice: 59,
-    image: IMG.pizza,
+    image: FB.pizza,
     category: 'pizza',
   },
   {
@@ -251,7 +246,7 @@ export const cateringData = [
       'עלי רוקט',
     ],
     startingPrice: 65,
-    image: IMG.pizza,
+    image: FB.pizza,
     category: 'pizza',
   },
   {
@@ -266,7 +261,7 @@ export const cateringData = [
       'בוראטה טרייה ובלסמי מצומצם',
     ],
     startingPrice: 79,
-    image: IMG.pizza,
+    image: FB.pizza,
     category: 'pizza',
   },
 
@@ -283,7 +278,7 @@ export const cateringData = [
       "צ'ילי לוהט",
     ],
     startingPrice: 269,
-    image: IMG.fish,
+    image: FB.fish,
     category: 'fish',
   },
   {
@@ -298,7 +293,7 @@ export const cateringData = [
       'שום וגינגר, בוטנים ואורז',
     ],
     startingPrice: 289,
-    image: IMG.fish,
+    image: FB.fish,
     category: 'fish',
   },
   {
@@ -313,7 +308,7 @@ export const cateringData = [
       "רוטב חלפיניו, ירקות טריים ופיתה גלילית",
     ],
     startingPrice: 269,
-    image: IMG.fish,
+    image: FB.fish,
     category: 'fish',
   },
   {
@@ -328,7 +323,7 @@ export const cateringData = [
       'סלט אישי בצד',
     ],
     startingPrice: 299,
-    image: IMG.fish,
+    image: FB.fish,
     category: 'fish',
   },
 
@@ -345,7 +340,7 @@ export const cateringData = [
       'ויניגרט הבית',
     ],
     startingPrice: 179,
-    image: IMG.salad,
+    image: FB.salad,
     category: 'salads',
   },
   {
@@ -360,7 +355,7 @@ export const cateringData = [
       'טחינה וסלסת פלפלים בצד',
     ],
     startingPrice: 159,
-    image: IMG.salad,
+    image: L('סלט ישראלי.jpg'),
     category: 'salads',
   },
   {
@@ -375,7 +370,7 @@ export const cateringData = [
       'מתובל בשמן זית לימון וסילאן',
     ],
     startingPrice: 199,
-    image: IMG.salad,
+    image: L('סלט בריאות קינואה ועדשים.jpg'),
     category: 'salads',
   },
   {
@@ -390,7 +385,7 @@ export const cateringData = [
       'עשבי תיבול ובלסמי מצומצם',
     ],
     startingPrice: 199,
-    image: IMG.salad,
+    image: L('סלט פנצנלה.jpg'),
     category: 'salads',
   },
   {
@@ -405,7 +400,7 @@ export const cateringData = [
       'פרמזן',
     ],
     startingPrice: 189,
-    image: IMG.salad,
+    image: FB.salad,
     category: 'salads',
   },
   {
@@ -420,7 +415,7 @@ export const cateringData = [
       "צ'יפס בטטה, ויניגרט הבית",
     ],
     startingPrice: 199,
-    image: IMG.salad,
+    image: FB.salad,
     category: 'salads',
   },
   {
@@ -435,7 +430,7 @@ export const cateringData = [
       'זיתי קלמטה, חומץ יין אדום ושמן זית',
     ],
     startingPrice: 199,
-    image: IMG.salad,
+    image: FB.salad,
     category: 'salads',
   },
 
@@ -449,7 +444,7 @@ export const cateringData = [
       'מבחר ירקות קלויים',
     ],
     startingPrice: 149,
-    image: IMG.veggies,
+    image: L('מגש אנטיפסטי.jpg'),
     category: 'produce',
   },
   {
@@ -462,7 +457,7 @@ export const cateringData = [
       'בליווי מטבלים',
     ],
     startingPrice: 129,
-    image: IMG.veggies,
+    image: L('מגש ירקות.jpg'),
     category: 'produce',
   },
   {
@@ -474,7 +469,7 @@ export const cateringData = [
       'מבחר פירות העונה משתנה',
     ],
     startingPrice: 189,
-    image: IMG.fruit,
+    image: L('מגש פירות.jpg'),
     category: 'produce',
   },
 
@@ -488,7 +483,7 @@ export const cateringData = [
       'מבחר מאפים מלוחים משתנה',
     ],
     startingPrice: 159,
-    image: IMG.sweets,
+    image: L('מגש מיני מאפים מלוחים.jpg'),
     category: 'sweets',
   },
   {
@@ -503,7 +498,7 @@ export const cateringData = [
       'מקרונים',
     ],
     startingPrice: 320,
-    image: IMG.sweets,
+    image: L('מגש מתוקים.jpg'),
     category: 'sweets',
   },
   {
@@ -515,7 +510,7 @@ export const cateringData = [
       'מבחר מאפים מתוקים משתנה',
     ],
     startingPrice: 240,
-    image: IMG.sweets,
+    image: L('מגש מיני מתוקים.jpg'),
     category: 'sweets',
   },
   {
@@ -529,7 +524,7 @@ export const cateringData = [
       'קרם וניל',
     ],
     startingPrice: 220,
-    image: IMG.cake,
+    image: L('עוגה בלגית.jpg'),
     category: 'sweets',
   },
   {
@@ -543,7 +538,7 @@ export const cateringData = [
       'קרם ריבת חלב',
     ],
     startingPrice: 220,
-    image: IMG.cake,
+    image: FB.cake,
     category: 'sweets',
   },
   {
@@ -555,7 +550,7 @@ export const cateringData = [
       'גבינה אפויה קלאסית',
     ],
     startingPrice: 220,
-    image: IMG.cake,
+    image: FB.cake,
     category: 'sweets',
   },
 ];
