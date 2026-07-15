@@ -57,7 +57,7 @@ function Privacy() {
           <ul style={{ paddingRight: '1.2rem', display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
             <li>דוא"ל: <a href="mailto:Kitchbras@gmail.com" style={{ color: 'var(--gold)' }}>Kitchbras@gmail.com</a></li>
             <li>טלפון: <a href="tel:0733277207" style={{ color: 'var(--gold)' }}>073-327-7207</a></li>
-            <li>כתובת: האירוסים 53, קניותר, נס ציונה</li>
+            <li>כתובת: <a href="https://waze.com/ul?q=האירוסים+53+נס+ציונה&navigate=yes" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold)' }}>האירוסים 53, קניותר, נס ציונה</a></li>
           </ul>
 
           <h2 style={{ margin: '1.2rem 0 0.4rem', fontSize: '0.95rem', fontWeight: 700 }}>תאריך עדכון</h2>

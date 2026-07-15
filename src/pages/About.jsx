@@ -85,7 +85,7 @@ function About() {
                 בואו ליהנות מחוויה טעימה, נעימה ומדויקת. אצלנו כל ארוחה הופכת לרגע שכיף לחזור אליו.
               </p>
               <div className="about-contact-info">
-                <div className="about-row"><MapPin size={15} /><span>האירוסים 53, קניותר, נס ציונה</span></div>
+                <div className="about-row"><MapPin size={15} /><a href="https://waze.com/ul?q=האירוסים+53+נס+ציונה&navigate=yes" target="_blank" rel="noopener noreferrer">האירוסים 53, קניותר, נס ציונה</a></div>
                 <div className="about-row"><Phone size={15} /><a href="tel:0733277207">073-327-7207</a></div>
                 <div className="about-row"><Mail size={15} /><a href="mailto:Kitchbras@gmail.com">Kitchbras@gmail.com</a></div>
               </div>

@@ -62,7 +62,7 @@ function Home() {
           <div className="home-card">
             <span className="home-card-icon"><CalendarDays size={28} strokeWidth={1.5} /></span>
             <h3>הזמנת שולחן</h3>
-            <p>האירוסים 53, קניותר, נס ציונה</p>
+            <p><a href="https://waze.com/ul?q=האירוסים+53+נס+ציונה&navigate=yes" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>האירוסים 53, קניותר, נס ציונה</a></p>
             <a href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">להזמנה מהירה</a>
           </div>
           <div className="home-card">
@@ -114,7 +114,7 @@ function Home() {
               <div className="home-about-details">
                 <div className="home-about-row">
                   <MapPin size={15} />
-                  <span>האירוסים 53, קניותר, נס ציונה</span>
+                  <a href="https://waze.com/ul?q=האירוסים+53+נס+ציונה&navigate=yes" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>האירוסים 53, קניותר, נס ציונה</a>
                 </div>
                 <div className="home-about-row">
                   <Phone size={15} />
