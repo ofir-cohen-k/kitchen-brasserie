@@ -99,9 +99,7 @@ function Catering() {
               <CateringCard key={pkg.id} package={pkg} onRequest={handleRequest} />
             ))}
           </div>
-          <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-muted, #999)', marginTop: '1.5rem' }}>
-            * התמונות להמחשה בלבד ואינן מייצגות בהכרח את המוצר הסופי
-          </p>
+
         </div>
       </section>
 

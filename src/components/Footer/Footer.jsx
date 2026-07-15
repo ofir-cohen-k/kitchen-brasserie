@@ -91,6 +91,7 @@ function Footer() {
             <Link to="/accessibility">הצהרת נגישות</Link>
           </div>
         </div>
+        <p className="footer-disclaimer">* התמונות באתר להמחשה בלבד ואינן מייצגות בהכרח את המוצר הסופי</p>
       </div>
     </footer>
   );

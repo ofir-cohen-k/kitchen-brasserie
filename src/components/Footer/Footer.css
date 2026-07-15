@@ -161,6 +161,13 @@
 .footer-bottom-links a:hover {
   color: var(--gold);
 }
+.footer-disclaimer {
+  text-align: center;
+  font-size: 0.72rem;
+  color: rgba(248, 244, 236, 0.3);
+  padding: 0.4rem 1rem 0.6rem;
+  margin: 0;
+}
 
 @media (max-width: 900px) {
   .footer-inner {
