@@ -150,7 +150,7 @@ export const cateringData = [
       'רוטב רוזה ופרמזן',
     ],
     startingPrice: 269,
-    image: FB.pasta,
+    image: '/מנות קיטשן/מגש לזניה.jpg',
     category: 'hot',
   },
 
