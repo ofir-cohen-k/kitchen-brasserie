@@ -22,7 +22,7 @@ export const eventsData = [
     time: '20:00',
     description: 'בואו ליהנות מערב מוסיקה מיוחד עם DJ, מנות מיוחדות ואווירה ייחודית. הכניסה מוגבלת למקומות שמורים.',
     price: 0,
-    image: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80&fit=crop',
+    image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80&fit=crop',
     availablePlaces: 40,
     category: 'מוסיקה',
   },
