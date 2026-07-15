@@ -4,24 +4,24 @@
   bottom: 1.5rem;
   left: 1.5rem;
   z-index: 10000;
-  width: 36px;
-  height: 36px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: var(--teal);
+  background: #1565C0;
   color: #fff;
-  border: none;
+  border: 3px solid #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .a11y-trigger:hover {
   transform: scale(1.08);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 18px rgba(0,0,0,0.3);
 }
-.a11y-trigger svg { width: 18px; height: 18px; }
+.a11y-trigger svg { width: 28px; height: 28px; }
 
 /* פאנל */
 .a11y-panel {

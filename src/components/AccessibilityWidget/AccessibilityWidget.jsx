@@ -62,11 +62,9 @@ export default function AccessibilityWidget() {
         aria-label="פתח תפריט נגישות"
         title="נגישות"
       >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <circle cx="12" cy="4" r="1.5"/>
-          <path d="M9 9h6M12 9v5M9 20l3-6 3 6"/>
-          <path d="M7.5 14.5c-.8 1.2-1.5 2.8-1.5 4a2 2 0 0 0 4 0"/>
-          <path d="M16.5 14.5c.8 1.2 1.5 2.8 1.5 4a2 2 0 0 1-4 0"/>
+        <svg viewBox="0 0 100 100" fill="white" aria-hidden="true">
+          <circle cx="50" cy="16" r="11"/>
+          <path d="M50 30 C30 30 18 42 18 42 L30 44 L26 72 L38 72 L42 55 L58 55 L62 72 L74 72 L70 44 L82 42 C82 42 70 30 50 30Z"/>
         </svg>
       </button>
 
