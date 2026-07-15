@@ -101,7 +101,7 @@ export const menuData = [
     description: "פוקצ'ה חמה מהטאבון, אפויה בתנור לבנים עם שמן זית ועשבי תיבול, מוגשת לצד טחינה שחורה, סלסת עגבניות, בלסמי מצומצם ושמן זית.",
     price: 34,
     category: 'starters',
-    image: 'https://images.unsplash.com/photo-1585238342024-78d387f4a707?w=800&q=80&fit=crop',
+    image: d('פוקמינה.jpg'),
     isRecommended: true,
     isAvailable: true,
   },
