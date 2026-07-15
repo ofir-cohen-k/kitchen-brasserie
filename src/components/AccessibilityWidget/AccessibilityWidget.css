@@ -1,8 +1,6 @@
 /* כפתור פתיחה */
 .a11y-trigger {
   position: fixed;
-  bottom: 1.5rem;
-  left: 1.5rem;
   z-index: 10000;
   width: 52px;
   height: 52px;
@@ -10,24 +8,21 @@
   background: #1565C0;
   color: #fff;
   border: 3px solid #fff;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 3px 12px rgba(0,0,0,0.3);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: box-shadow 0.2s;
+  user-select: none;
+  touch-action: none;
 }
-.a11y-trigger:hover {
-  transform: scale(1.08);
-  box-shadow: 0 5px 18px rgba(0,0,0,0.3);
-}
-.a11y-trigger svg { width: 28px; height: 28px; }
+.a11y-trigger:hover { box-shadow: 0 5px 18px rgba(0,0,0,0.3); }
+.a11y-trigger:active { cursor: grabbing !important; }
+.a11y-trigger svg { width: 28px; height: 28px; pointer-events: none; }
 
 /* פאנל */
 .a11y-panel {
   position: fixed;
-  bottom: 8rem;
-  left: 1.5rem;
   z-index: 10001;
   width: 280px;
   background: #fff;
