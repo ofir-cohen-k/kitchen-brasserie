@@ -4,8 +4,6 @@
 
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-import emailjs from '@emailjs/browser';
-
 import FormInput from '../components/FormInput/FormInput';
 import SuccessMessage from '../components/SuccessMessage/SuccessMessage';
 import PageTitle from '../components/PageTitle/PageTitle';
@@ -13,9 +11,7 @@ import { isValidPhone, isValidEmail, isNotEmpty } from '../utils/validation';
 import { supabase } from '../lib/supabase';
 import './Contact.css';
 
-const EJS_SERVICE  = 'service_1n9hlje';
-const EJS_TEMPLATE = 'template_658cfl4';
-const EJS_KEY      = 'rIR0IVmK1T5H5kpne';
+const WF_KEY = 'c5909312-9ecf-44e6-99a8-74d15e66d0dc';
 
 function Contact() {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -69,19 +65,18 @@ function Contact() {
         email: form.email,
         message: `נושא: ${subjectLabels[form.subject] || form.subject} | ${form.message}`,
       }),
-      emailjs.send(
-        EJS_SERVICE,
-        EJS_TEMPLATE,
-        {
-          from_name: form.fullName,
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WF_KEY,
+          name: form.fullName,
+          email: form.email,
           phone: form.phone,
-          from_email: form.email,
-          to_email: 'Kitchbras@gmail.com',
-          subject: subjectLabels[form.subject] || form.subject,
+          subject: `[Kitchen Brasserie] ${subjectLabels[form.subject] || form.subject}`,
           message: form.message,
-        },
-        EJS_KEY
-      ),
+        }),
+      }).then(r => { if (!r.ok) throw new Error(`web3forms ${r.status}`); return r.json(); }),
     ]);
     if (dbResult.status === 'rejected') console.error('Supabase error:', dbResult.reason);
     if (ejsResult.status === 'rejected') console.error('EmailJS error:', ejsResult.reason);
