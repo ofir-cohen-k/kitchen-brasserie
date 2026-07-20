@@ -2,23 +2,49 @@
 // דף תפריט - Menu
 // ========================================
 
-import { useState } from 'react';
-import { Search } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+import { Search, X, ChevronRight, ChevronLeft } from 'lucide-react';
 import MenuCard from '../components/MenuCard/MenuCard';
 import PageTitle from '../components/PageTitle/PageTitle';
 import { menuData, categoryLabels } from '../data/menuData';
 import './Menu.css';
 
 function Menu() {
-  const [activeCategory, setActiveCategory] = useState('all');  // קטגוריה פעילה
-  const [searchText, setSearchText] = useState('');             // טקסט חיפוש
+  const [activeCategory, setActiveCategory] = useState('all');
+  const [searchText, setSearchText] = useState('');
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  // סינון לפי קטגוריה וחיפוש גם יחד
   const filteredDishes = menuData.filter((dish) => {
     const matchesCategory = activeCategory === 'all' || dish.category === activeCategory;
     const matchesSearch = dish.name.toLowerCase().includes(searchText.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const goNext = useCallback(() =>
+    setLightboxIndex(i => (i + 1) % filteredDishes.length),
+    [filteredDishes.length]
+  );
+  const goPrev = useCallback(() =>
+    setLightboxIndex(i => (i - 1 + filteredDishes.length) % filteredDishes.length),
+    [filteredDishes.length]
+  );
+
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e) => {
+      if (e.key === 'Escape')      setLightboxIndex(null);
+      if (e.key === 'ArrowLeft')   goNext();
+      if (e.key === 'ArrowRight')  goPrev();
+    };
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [lightboxIndex, goNext, goPrev]);
+
+  const activeDish = lightboxIndex !== null ? filteredDishes[lightboxIndex] : null;
 
   return (
     <main style={{ paddingTop: '68px' }}>
@@ -70,8 +96,8 @@ function Menu() {
           {/* גריד מנות */}
           {filteredDishes.length > 0 ? (
             <div className="cards-grid-4">
-              {filteredDishes.map((dish) => (
-                <MenuCard key={dish.id} dish={dish} />
+              {filteredDishes.map((dish, idx) => (
+                <MenuCard key={dish.id} dish={dish} onOpen={() => setLightboxIndex(idx)} />
               ))}
             </div>
           ) : (
@@ -88,6 +114,25 @@ function Menu() {
           )}
         </div>
       </section>
+      {activeDish && (
+        <div className="lightbox-overlay" onClick={() => setLightboxIndex(null)}>
+          <button className="lightbox-close" onClick={() => setLightboxIndex(null)} aria-label="סגור">
+            <X size={24} />
+          </button>
+          <button className="lightbox-nav lightbox-nav-right" onClick={e => { e.stopPropagation(); goPrev(); }} aria-label="הקודם">
+            <ChevronRight size={30} />
+          </button>
+          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+            <img src={activeDish.image} alt={activeDish.name} className="lightbox-img" />
+            <p className="lightbox-name">{activeDish.name}</p>
+            {activeDish.description && <p className="lightbox-desc">{activeDish.description}</p>}
+          </div>
+          <button className="lightbox-nav lightbox-nav-left" onClick={e => { e.stopPropagation(); goNext(); }} aria-label="הבא">
+            <ChevronLeft size={30} />
+          </button>
+          <span className="lightbox-counter">{lightboxIndex + 1} / {filteredDishes.length}</span>
+        </div>
+      )}
     </main>
   );
 }
