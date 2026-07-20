@@ -3,7 +3,7 @@
 // ========================================
 
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -11,7 +11,7 @@ function ScrollToTop() {
   return null;
 }
 
-// קומפוננטות ראשיות (Header, Footer, CartDrawer)
+// קומפוננטות ראשיות — נטענות תמיד
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import CartDrawer from './components/CartDrawer/CartDrawer';
@@ -20,20 +20,20 @@ import AudioPlayer from './components/AudioPlayer/AudioPlayer';
 import ScrollIndicator from './components/ScrollIndicator/ScrollIndicator';
 import AccessibilityWidget from './components/AccessibilityWidget/AccessibilityWidget';
 
-// כל הדפים
-import Home from './pages/Home';
-import Menu from './pages/Menu';
-import Checkout from './pages/Checkout';
-import Reservation from './pages/Reservation';
-import Events from './pages/Events';
-import Catering from './pages/Catering';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import AccessibilityStatement from './pages/AccessibilityStatement';
-import Privacy from './pages/Privacy';
-import AdminLogin from './pages/AdminLogin';
-import AdminDashboard from './pages/AdminDashboard';
-import NotFound from './pages/NotFound';
+// דפים — נטענים רק כשמגיעים אליהם (code splitting)
+const Home       = lazy(() => import('./pages/Home'));
+const Menu       = lazy(() => import('./pages/Menu'));
+const Checkout   = lazy(() => import('./pages/Checkout'));
+const Reservation= lazy(() => import('./pages/Reservation'));
+const Events     = lazy(() => import('./pages/Events'));
+const Catering   = lazy(() => import('./pages/Catering'));
+const About      = lazy(() => import('./pages/About'));
+const Contact    = lazy(() => import('./pages/Contact'));
+const AccessibilityStatement = lazy(() => import('./pages/AccessibilityStatement'));
+const Privacy    = lazy(() => import('./pages/Privacy'));
+const AdminLogin = lazy(() => import('./pages/AdminLogin'));
+const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
+const NotFound   = lazy(() => import('./pages/NotFound'));
 
 // ========================================
 // Layout ראשי - מכיל Header, Footer, CartDrawer
@@ -47,8 +47,9 @@ function MainLayout() {
       <Header />
       <CartDrawer />
       <AudioPlayer />
-      {/* Outlet מציג את הדף הנוכחי */}
-      <Outlet />
+      <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
+        <Outlet />
+      </Suspense>
       <Footer />
     </>
   );
@@ -76,12 +77,12 @@ function App() {
       </Route>
 
       {/* נתיבי אדמין - ללא Header ו-Footer */}
-      <Route path="/admin" element={<AdminLogin />} />
+      <Route path="/admin" element={<Suspense fallback={null}><AdminLogin /></Suspense>} />
       <Route
         path="/admin/dashboard"
         element={
           <ProtectedRoute>
-            <AdminDashboard />
+            <Suspense fallback={null}><AdminDashboard /></Suspense>
           </ProtectedRoute>
         }
       />
