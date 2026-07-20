@@ -5,20 +5,19 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #fff;
-  color: #1565C0;
-  border: 3px solid #1565C0;
+  background: #1C2B2E;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 14px rgba(0,0,0,0.22);
+  box-shadow: 0 3px 14px rgba(0,0,0,0.35);
   transition: box-shadow 0.2s, transform 0.2s;
   user-select: none;
   touch-action: none;
 }
-.a11y-trigger:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.28); transform: scale(1.07); }
+.a11y-trigger:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.4); transform: scale(1.07); }
 .a11y-trigger:active { cursor: grabbing !important; }
-.a11y-trigger svg { width: 26px; height: 26px; pointer-events: none; }
+.a11y-trigger svg { width: 30px; height: 30px; pointer-events: none; }
 
 /* פאנל */
 .a11y-panel {
