@@ -122,7 +122,7 @@ function Home() {
                 </div>
                 <div className="home-about-row">
                   <Clock size={15} />
-                  <span>ראשון–חמישי 09:00–21:30, שישי 09:00–15:00</span>
+                  <span>ראשון–חמישי 09:00–22:30, שישי 09:00–15:00</span>
                 </div>
               </div>
               <span className="home-kosher-badge">✦ כשר בד"ץ בית יוסף</span>

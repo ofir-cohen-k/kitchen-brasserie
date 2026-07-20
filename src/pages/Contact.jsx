@@ -141,7 +141,7 @@ function Contact() {
                 <div className="contact-info-icon"><Clock size={18} /></div>
                 <div>
                   <strong>שעות פעילות</strong>
-                  <p>ראשון–חמישי: 09:00–21:30</p>
+                  <p>ראשון–חמישי: 09:00–22:30</p>
                   <p>שישי: 09:00–15:00</p>
                   <p>שבת: סגור</p>
                 </div>

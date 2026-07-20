@@ -77,7 +77,7 @@ function Footer() {
           <div className="footer-hours">
             <div className="footer-hours-row">
               <span>ראשון – חמישי</span>
-              <span>09:00 – 21:30</span>
+              <span>09:00 – 22:30</span>
             </div>
             <div className="footer-hours-row">
               <span>שישי</span>
