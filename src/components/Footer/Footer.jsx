@@ -36,6 +36,7 @@ function Footer() {
           <ul className="footer-links">
             <li><Link to="/">בית</Link></li>
             <li><Link to="/menu">תפריט</Link></li>
+            <li><Link to="/private-events">אירועים</Link></li>
             <li><Link to="/events">קונספטים</Link></li>
             <li><Link to="/catering">מגשי אירוח</Link></li>
             <li><Link to="/about">אודות</Link></li>

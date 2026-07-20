@@ -26,6 +26,7 @@ const Menu       = lazy(() => import('./pages/Menu'));
 const Checkout   = lazy(() => import('./pages/Checkout'));
 const Reservation= lazy(() => import('./pages/Reservation'));
 const Events     = lazy(() => import('./pages/Events'));
+const PrivateEvents = lazy(() => import('./pages/PrivateEvents'));
 const Catering   = lazy(() => import('./pages/Catering'));
 const About      = lazy(() => import('./pages/About'));
 const Contact    = lazy(() => import('./pages/Contact'));
@@ -67,6 +68,7 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/reservation" element={<Reservation />} />
+        <Route path="/private-events" element={<PrivateEvents />} />
         <Route path="/events" element={<Events />} />
         <Route path="/catering" element={<Catering />} />
         <Route path="/about" element={<About />} />

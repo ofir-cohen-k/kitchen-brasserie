@@ -47,6 +47,9 @@ function Header() {
           <NavLink to="/menu" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
             תפריט
           </NavLink>
+          <NavLink to="/private-events" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+            אירועים
+          </NavLink>
           <NavLink to="/events" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
             קונספטים
           </NavLink>
@@ -115,6 +118,7 @@ function Header() {
         <nav className="nav-mobile" aria-label="תפריט ניווט מובייל">
           <NavLink to="/" className="nav-mobile-link" onClick={handleNavClick} end>בית</NavLink>
           <NavLink to="/menu" className="nav-mobile-link" onClick={handleNavClick}>תפריט</NavLink>
+          <NavLink to="/private-events" className="nav-mobile-link" onClick={handleNavClick}>אירועים</NavLink>
           <NavLink to="/events" className="nav-mobile-link" onClick={handleNavClick}>קונספטים</NavLink>
           <NavLink to="/catering" className="nav-mobile-link" onClick={handleNavClick}>מגשי אירוח</NavLink>
           <NavLink to="/about" className="nav-mobile-link" onClick={handleNavClick}>אודות</NavLink>

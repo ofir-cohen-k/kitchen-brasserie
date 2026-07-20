@@ -1,0 +1,93 @@
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.tier-card {
+  background: var(--cream);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 16px rgba(28, 43, 46, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.tier-header {
+  padding: 1.5rem 1.5rem 1rem;
+  border-top: 4px solid;
+  text-align: center;
+}
+
+.tier-badge {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 1rem;
+  border-radius: 2rem;
+}
+
+.tier-price {
+  margin-top: 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+.tier-body {
+  padding: 1rem 1.5rem;
+  flex: 1;
+}
+
+.tier-desc {
+  font-size: 0.88rem;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.tier-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tier-items li {
+  font-size: 0.88rem;
+  color: var(--text2);
+  padding-right: 1.1rem;
+  position: relative;
+}
+
+.tier-items li::before {
+  content: '✓';
+  position: absolute;
+  right: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.tier-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid rgba(28, 43, 46, 0.08);
+  text-align: center;
+}
+
+.private-events-cta {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .tiers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .tiers-grid { grid-template-columns: 1fr; }
+}
