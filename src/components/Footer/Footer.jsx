@@ -36,7 +36,7 @@ function Footer() {
           <ul className="footer-links">
             <li><Link to="/">בית</Link></li>
             <li><Link to="/menu">תפריט</Link></li>
-            <li><Link to="/events">אירועים</Link></li>
+            <li><Link to="/events">קונספטים</Link></li>
             <li><Link to="/catering">מגשי אירוח</Link></li>
             <li><Link to="/about">אודות</Link></li>
             <li><a href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation" target="_blank" rel="noopener noreferrer">הזמנת שולחן</a></li>
