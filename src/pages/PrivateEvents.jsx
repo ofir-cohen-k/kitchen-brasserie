@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
@@ -14,25 +14,38 @@ const tiers = [
   { id: 'brunch',   label: 'Brunch',   file: '/מנות קיטשן/אירועי בוקר.pdf' },
 ];
 
-const CARD_WIDTH = Math.min(typeof window !== 'undefined' ? Math.floor((window.innerWidth - 96) / 4) : 280, 320);
-const MODAL_WIDTH = Math.min(typeof window !== 'undefined' ? window.innerWidth - 48 : 700, 700);
+// Crop ratio: cut ~7% from each side to remove print crop marks
+const CROP = 0.07;
 
-function TierCard({ tier, onClick }) {
+function CroppedPage({ targetWidth, pageNumber, file, loading }) {
+  // Render wider so the crop doesn't shrink content
+  const renderWidth = Math.round(targetWidth / (1 - CROP * 2));
+  const cropPx = Math.round(renderWidth * CROP);
+  return (
+    <div style={{ width: targetWidth, overflow: 'hidden', flexShrink: 0 }}>
+      <div style={{ margin: `-${cropPx}px` }}>
+        <Document file={file} loading={loading || null} error={null}>
+          <Page
+            pageNumber={pageNumber}
+            width={renderWidth}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+          />
+        </Document>
+      </div>
+    </div>
+  );
+}
+
+function TierCard({ tier, cardWidth, onClick }) {
   return (
     <button className="tier-card-btn" onClick={onClick} aria-label={`פתח תפריט ${tier.label}`}>
-      <Document
+      <CroppedPage
+        targetWidth={cardWidth}
+        pageNumber={1}
         file={tier.file}
         loading={<div className="card-loading" />}
-        error={<div className="card-loading">⚠</div>}
-      >
-        <Page
-          pageNumber={1}
-          width={CARD_WIDTH}
-          renderTextLayer={false}
-          renderAnnotationLayer={false}
-          className="tier-card-page"
-        />
-      </Document>
+      />
       <div className="tier-card-overlay">
         <span className="tier-card-label">{tier.label}</span>
         <span className="tier-card-cta">לחץ לתפריט ←</span>
@@ -42,6 +55,8 @@ function TierCard({ tier, onClick }) {
 }
 
 function MenuModal({ tier, onClose }) {
+  const modalWidth = Math.min(window.innerWidth - 48, 700);
+
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     const onKey = (e) => e.key === 'Escape' && onClose();
@@ -56,17 +71,12 @@ function MenuModal({ tier, onClose }) {
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-box" onClick={e => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose} aria-label="סגור">✕</button>
-        <Document
+        <CroppedPage
+          targetWidth={modalWidth}
+          pageNumber={2}
           file={tier.file}
           loading={<div className="pdf-loading">טוען תפריט...</div>}
-        >
-          <Page
-            pageNumber={2}
-            width={MODAL_WIDTH}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-          />
-        </Document>
+        />
       </div>
     </div>
   );
@@ -74,6 +84,7 @@ function MenuModal({ tier, onClose }) {
 
 function PrivateEvents() {
   const [openTier, setOpenTier] = useState(null);
+  const cardWidth = Math.min(Math.floor((window.innerWidth - 96) / 4), 320);
 
   return (
     <main style={{ paddingTop: '68px' }}>
@@ -91,7 +102,7 @@ function PrivateEvents() {
         <div className="container">
           <div className="tiers-row">
             {tiers.map(t => (
-              <TierCard key={t.id} tier={t} onClick={() => setOpenTier(t)} />
+              <TierCard key={t.id} tier={t} cardWidth={cardWidth} onClick={() => setOpenTier(t)} />
             ))}
           </div>
         </div>
