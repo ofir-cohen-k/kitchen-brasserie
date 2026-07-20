@@ -20,7 +20,7 @@
   box-shadow: 0 0 0 6px rgba(21, 101, 192, 0.25), 0 0 20px rgba(21, 101, 192, 0.4);
 }
 .a11y-trigger:active { cursor: grabbing !important; }
-.a11y-trigger svg { width: 26px; height: 26px; pointer-events: none; }
+.a11y-trigger svg { width: 36px; height: 36px; pointer-events: none; }
 
 /* פאנל */
 .a11y-panel {
