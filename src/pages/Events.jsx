@@ -13,8 +13,8 @@ function Events() {
       <div className="section-dark" style={{ padding: '0.5rem 0 0.7rem' }}>
         <div className="container">
           <PageTitle
-            eyebrow="אירועים"
-            title="אירועים קרובים"
+            eyebrow="קונספטים"
+            title="קונספטים קרובים"
             subtitle="אירועים מיוחדים, ערבי שף, מוסיקה חיה ועוד"
           />
         </div>
