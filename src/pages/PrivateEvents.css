@@ -102,6 +102,18 @@
   margin: 0 auto;
 }
 
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #25D366 !important;
+  border-color: #25D366 !important;
+}
+.whatsapp-btn:hover {
+  background: #1ebe5d !important;
+  border-color: #1ebe5d !important;
+}
+
 @media (max-width: 900px) {
   .tiers-row { grid-template-columns: repeat(2, 1fr); }
 }
