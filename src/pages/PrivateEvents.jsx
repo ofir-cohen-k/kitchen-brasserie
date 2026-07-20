@@ -14,16 +14,21 @@ const tiers = [
   { id: 'brunch',   label: 'Brunch',   file: '/מנות קיטשן/אירועי בוקר.pdf' },
 ];
 
-// Crop ratio: cut ~7% from each side to remove print crop marks
+// Cut ~7% from each side to remove print crop marks
 const CROP = 0.07;
+// A4 aspect ratio (height/width) = 297/210
+const A4_RATIO = 297 / 210;
 
 function CroppedPage({ targetWidth, pageNumber, file, loading }) {
-  // Render wider so the crop doesn't shrink content
   const renderWidth = Math.round(targetWidth / (1 - CROP * 2));
   const cropPx = Math.round(renderWidth * CROP);
+  const targetHeight = Math.round(targetWidth * A4_RATIO);
+
   return (
-    <div style={{ width: targetWidth, overflow: 'hidden', flexShrink: 0 }}>
-      <div style={{ margin: `-${cropPx}px` }}>
+    // Outer: fixed size viewport, clips overflow
+    <div style={{ width: targetWidth, height: targetHeight, overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
+      {/* Inner: absolute so top/left are always physical (RTL-safe) */}
+      <div style={{ position: 'absolute', top: -cropPx, left: -cropPx, direction: 'ltr' }}>
         <Document file={file} loading={loading || null} error={null}>
           <Page
             pageNumber={pageNumber}
@@ -33,6 +38,7 @@ function CroppedPage({ targetWidth, pageNumber, file, loading }) {
           />
         </Document>
       </div>
+      {loading && <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{loading}</div>}
     </div>
   );
 }
