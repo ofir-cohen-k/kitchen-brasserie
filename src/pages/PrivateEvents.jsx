@@ -1,70 +1,18 @@
+import { useState } from 'react';
 import PageTitle from '../components/PageTitle/PageTitle';
 import './PrivateEvents.css';
 
 const tiers = [
-  {
-    id: 'silver',
-    name: 'Silver',
-    price: null,
-    description: '',
-    items: [],
-  },
-  {
-    id: 'gold',
-    name: 'Gold',
-    price: null,
-    description: '',
-    items: [],
-  },
-  {
-    id: 'platinum',
-    name: 'Platinum',
-    price: null,
-    description: '',
-    items: [],
-  },
-  {
-    id: 'brunch',
-    name: 'Brunch',
-    price: null,
-    description: '',
-    items: [],
-  },
+  { id: 'silver',   label: 'Silver',   file: '/מנות קיטשן/silver_1.pdf' },
+  { id: 'gold',     label: 'Gold',     file: '/מנות קיטשן/gold.pdf' },
+  { id: 'platinum', label: 'Platinum', file: '/מנות קיטשן/platinum_2.pdf' },
+  { id: 'brunch',   label: 'Brunch',   file: '/מנות קיטשן/אירועי בוקר.pdf' },
 ];
 
-const tierStyle = {
-  silver:   { accent: '#A8A9AD', label: 'Silver' },
-  gold:     { accent: '#B89A5E', label: 'Gold' },
-  platinum: { accent: '#6E7B8B', label: 'Platinum' },
-  brunch:   { accent: '#7C9B6E', label: 'Brunch' },
-};
-
-function TierCard({ tier }) {
-  const style = tierStyle[tier.id];
-  return (
-    <div className="tier-card">
-      <div className="tier-header" style={{ borderColor: style.accent }}>
-        <span className="tier-badge" style={{ background: style.accent }}>{style.label}</span>
-        {tier.price && <p className="tier-price">₪{tier.price} לאדם</p>}
-      </div>
-      <div className="tier-body">
-        {tier.description && <p className="tier-desc">{tier.description}</p>}
-        {tier.items.length > 0 && (
-          <ul className="tier-items">
-            {tier.items.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        )}
-      </div>
-      <div className="tier-footer">
-        <a href="/contact" className="btn btn-primary">לפרטים ותיאום</a>
-      </div>
-    </div>
-  );
-}
-
 function PrivateEvents() {
+  const [active, setActive] = useState('silver');
+  const current = tiers.find(t => t.id === active);
+
   return (
     <main style={{ paddingTop: '68px' }}>
       <div className="section-dark" style={{ padding: '0.5rem 0 0.7rem' }}>
@@ -72,18 +20,45 @@ function PrivateEvents() {
           <PageTitle
             eyebrow="אירועים"
             title="אירועים פרטיים"
-            subtitle="בר/בת מצווה, מסיבות, ימי הולדת, ארועי חברה ועוד — אנחנו נדאג לכל הפרטים"
+            subtitle="בר/בת מצווה, מסיבות, ימי הולדת, אירועי חברה ועוד — בחרו מסלול וגלו מה כלול"
           />
         </div>
       </div>
 
       <section className="section">
         <div className="container">
-          <div className="tiers-grid">
-            {tiers.map(tier => (
-              <TierCard key={tier.id} tier={tier} />
+
+          {/* לשוניות בחירת מסלול */}
+          <div className="tier-tabs">
+            {tiers.map(t => (
+              <button
+                key={t.id}
+                className={`tier-tab tier-tab--${t.id}${active === t.id ? ' tier-tab--active' : ''}`}
+                onClick={() => setActive(t.id)}
+              >
+                {t.label}
+              </button>
             ))}
           </div>
+
+          {/* מציג PDF */}
+          <div className="pdf-viewer-wrap">
+            <iframe
+              key={current.file}
+              src={current.file}
+              className="pdf-viewer"
+              title={`תפריט ${current.label}`}
+            />
+            <a
+              href={current.file}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pdf-open-link"
+            >
+              פתח בחלון חדש ↗
+            </a>
+          </div>
+
         </div>
       </section>
 

@@ -1,93 +1,68 @@
-.tiers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  align-items: start;
-}
-
-.tier-card {
-  background: var(--cream);
-  border-radius: var(--radius);
-  box-shadow: 0 2px 16px rgba(28, 43, 46, 0.08);
+/* לשוניות מסלולים */
+.tier-tabs {
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
 }
 
-.tier-header {
-  padding: 1.5rem 1.5rem 1rem;
-  border-top: 4px solid;
-  text-align: center;
-}
-
-.tier-badge {
-  display: inline-block;
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0.3rem 1rem;
+.tier-tab {
+  padding: 0.6rem 2rem;
   border-radius: 2rem;
-}
-
-.tier-price {
-  margin-top: 0.75rem;
-  font-size: 1.3rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: var(--teal);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  background: transparent;
 }
 
-.tier-body {
-  padding: 1rem 1.5rem;
-  flex: 1;
-}
+.tier-tab--silver   { border-color: #A8A9AD; color: #A8A9AD; }
+.tier-tab--gold     { border-color: #B89A5E; color: #B89A5E; }
+.tier-tab--platinum { border-color: #6E7B8B; color: #6E7B8B; }
+.tier-tab--brunch   { border-color: #7C9B6E; color: #7C9B6E; }
 
-.tier-desc {
-  font-size: 0.88rem;
-  color: var(--text2);
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
+.tier-tab--silver.tier-tab--active   { background: #A8A9AD; color: #fff; }
+.tier-tab--gold.tier-tab--active     { background: #B89A5E; color: #fff; }
+.tier-tab--platinum.tier-tab--active { background: #6E7B8B; color: #fff; }
+.tier-tab--brunch.tier-tab--active   { background: #7C9B6E; color: #fff; }
 
-.tier-items {
-  list-style: none;
+/* מציג PDF */
+.pdf-viewer-wrap {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.tier-items li {
-  font-size: 0.88rem;
-  color: var(--text2);
-  padding-right: 1.1rem;
-  position: relative;
+.pdf-viewer {
+  width: 100%;
+  max-width: 860px;
+  height: 80vh;
+  min-height: 500px;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 24px rgba(28, 43, 46, 0.12);
 }
 
-.tier-items li::before {
-  content: '✓';
-  position: absolute;
-  right: 0;
-  color: var(--gold);
-  font-weight: 700;
+.pdf-open-link {
+  font-size: 0.85rem;
+  color: var(--gold-dark);
+  text-decoration: underline;
+  transition: color 0.2s;
 }
+.pdf-open-link:hover { color: var(--gold); }
 
-.tier-footer {
-  padding: 1.25rem 1.5rem;
-  border-top: 1px solid rgba(28, 43, 46, 0.08);
-  text-align: center;
-}
-
+/* CTA */
 .private-events-cta {
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-  .tiers-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
 @media (max-width: 600px) {
-  .tiers-grid { grid-template-columns: 1fr; }
+  .pdf-viewer { height: 65vh; }
+  .tier-tab { padding: 0.5rem 1.2rem; font-size: 0.85rem; }
 }
