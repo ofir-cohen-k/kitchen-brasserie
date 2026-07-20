@@ -25,10 +25,14 @@ function CroppedPage({ targetWidth, pageNumber, file, loading }) {
   const targetHeight = Math.round(targetWidth * A4_RATIO);
 
   return (
-    // Outer: fixed size viewport, clips overflow
-    <div style={{ width: targetWidth, height: targetHeight, overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
-      {/* Inner: absolute so top/left are always physical (RTL-safe) */}
-      <div style={{ position: 'absolute', top: -cropPx, left: -cropPx, direction: 'ltr' }}>
+    // Outer: fixed viewport size, clips all overflow
+    <div style={{ width: targetWidth, height: targetHeight, overflow: 'hidden', flexShrink: 0 }}>
+      {/*
+        direction:ltr forces the Page canvas to start from the PHYSICAL left.
+        Negative marginTop/marginLeft then push the crop marks off-screen.
+        overflow:hidden on the parent clips the right/bottom crop marks.
+      */}
+      <div style={{ direction: 'ltr', marginTop: -cropPx, marginLeft: -cropPx }}>
         <Document file={file} loading={loading || null} error={null}>
           <Page
             pageNumber={pageNumber}
@@ -38,7 +42,6 @@ function CroppedPage({ targetWidth, pageNumber, file, loading }) {
           />
         </Document>
       </div>
-      {loading && <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{loading}</div>}
     </div>
   );
 }
