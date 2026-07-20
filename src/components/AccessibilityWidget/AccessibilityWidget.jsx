@@ -10,7 +10,7 @@ const DEFAULTS = {
   stopAnimations: false,
   readableFont: false,
 };
-const BTN = 36;
+const BTN = 48;
 
 function applySettings(settings) {
   const root = document.documentElement;
@@ -145,7 +145,7 @@ export default function AccessibilityWidget() {
         aria-label="פתח תפריט נגישות"
         title="גרור להזזה • לחץ לפתיחה"
       >
-        <svg viewBox="0 0 100 100" fill="white" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="#1565C0" aria-hidden="true">
           <circle cx="50" cy="16" r="11"/>
           <path d="M50 30 C30 30 18 42 18 42 L30 44 L26 72 L38 72 L42 55 L58 55 L62 72 L74 72 L70 44 L82 42 C82 42 70 30 50 30Z"/>
         </svg>

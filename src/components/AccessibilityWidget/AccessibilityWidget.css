@@ -2,23 +2,23 @@
 .a11y-trigger {
   position: fixed;
   z-index: 10000;
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: #1565C0;
-  color: #fff;
-  border: 3px solid #fff;
+  background: #fff;
+  color: #1565C0;
+  border: 3px solid #1565C0;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.3);
-  transition: box-shadow 0.2s;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.22);
+  transition: box-shadow 0.2s, transform 0.2s;
   user-select: none;
   touch-action: none;
 }
-.a11y-trigger:hover { box-shadow: 0 5px 18px rgba(0,0,0,0.3); }
+.a11y-trigger:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.28); transform: scale(1.07); }
 .a11y-trigger:active { cursor: grabbing !important; }
-.a11y-trigger svg { width: 19px; height: 19px; pointer-events: none; }
+.a11y-trigger svg { width: 26px; height: 26px; pointer-events: none; }
 
 /* פאנל */
 .a11y-panel {
