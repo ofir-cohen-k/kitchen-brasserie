@@ -22,9 +22,12 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
+    "canvas": "^3.2.3",
     "jimp": "^1.6.1",
+    "mupdf": "^1.28.0",
     "oxlint": "^1.69.0",
     "pdf-parse": "^2.4.5",
+    "puppeteer-core": "^25.3.0",
     "sharp": "^0.35.3",
     "vite": "^8.1.0"
   }

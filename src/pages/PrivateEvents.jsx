@@ -1,71 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/Page/AnnotationLayer.css';
-import 'react-pdf/dist/Page/TextLayer.css';
 import PageTitle from '../components/PageTitle/PageTitle';
 import './PrivateEvents.css';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
-
 const tiers = [
-  { id: 'silver',   label: 'Silver',   file: '/מנות קיטשן/silver_1.pdf' },
-  { id: 'gold',     label: 'Gold',     file: '/מנות קיטשן/gold.pdf' },
-  { id: 'platinum', label: 'Platinum', file: '/מנות קיטשן/platinum_2.pdf' },
-  { id: 'brunch',   label: 'Brunch',   file: '/מנות קיטשן/אירועי בוקר.pdf' },
+  { id: 'silver',   label: 'Silver',   cover: '/covers/cover-silver.jpg',   menu: '/covers/menu-silver.jpg'   },
+  { id: 'gold',     label: 'Gold',     cover: '/covers/cover-gold.jpg',     menu: '/covers/menu-gold.jpg'     },
+  { id: 'platinum', label: 'Platinum', cover: '/covers/cover-platinum.jpg', menu: '/covers/menu-platinum.jpg' },
+  { id: 'brunch',   label: 'Brunch',   cover: '/covers/cover-brunch.jpg',   menu: '/covers/menu-brunch.jpg'   },
 ];
 
-// Cut ~7% from each side to remove print crop marks
-const CROP = 0.07;
-// A4 aspect ratio (height/width) = 297/210
-const A4_RATIO = 297 / 210;
-
-function CroppedPage({ targetWidth, pageNumber, file, loading }) {
-  const renderWidth = Math.round(targetWidth / (1 - CROP * 2));
-  const cropPx = Math.round(renderWidth * CROP);
-  const targetHeight = Math.round(targetWidth * A4_RATIO);
-
-  return (
-    // Outer: fixed viewport size, clips all overflow
-    <div style={{ width: targetWidth, height: targetHeight, overflow: 'hidden', flexShrink: 0 }}>
-      {/*
-        direction:ltr forces the Page canvas to start from the PHYSICAL left.
-        Negative marginTop/marginLeft then push the crop marks off-screen.
-        overflow:hidden on the parent clips the right/bottom crop marks.
-      */}
-      <div style={{ direction: 'ltr', marginTop: -cropPx, marginLeft: -cropPx }}>
-        <Document file={file} loading={loading || null} error={null}>
-          <Page
-            pageNumber={pageNumber}
-            width={renderWidth}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-          />
-        </Document>
-      </div>
-    </div>
-  );
-}
-
-function TierCard({ tier, cardWidth, onClick }) {
-  return (
-    <button className="tier-card-btn" onClick={onClick} aria-label={`פתח תפריט ${tier.label}`}>
-      <CroppedPage
-        targetWidth={cardWidth}
-        pageNumber={1}
-        file={tier.file}
-        loading={<div className="card-loading" />}
-      />
-      <div className="tier-card-overlay">
-        <span className="tier-card-label">{tier.label}</span>
-        <span className="tier-card-cta">לחץ לתפריט ←</span>
-      </div>
-    </button>
-  );
-}
-
 function MenuModal({ tier, onClose }) {
-  const modalWidth = Math.min(window.innerWidth - 48, 700);
-
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     const onKey = (e) => e.key === 'Escape' && onClose();
@@ -80,12 +24,7 @@ function MenuModal({ tier, onClose }) {
     <div className="modal-backdrop" onClick={onClose}>
       <div className="modal-box" onClick={e => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose} aria-label="סגור">✕</button>
-        <CroppedPage
-          targetWidth={modalWidth}
-          pageNumber={2}
-          file={tier.file}
-          loading={<div className="pdf-loading">טוען תפריט...</div>}
-        />
+        <img src={tier.menu} alt={`תפריט ${tier.label}`} className="modal-img" />
       </div>
     </div>
   );
@@ -93,7 +32,6 @@ function MenuModal({ tier, onClose }) {
 
 function PrivateEvents() {
   const [openTier, setOpenTier] = useState(null);
-  const cardWidth = Math.min(Math.floor((window.innerWidth - 96) / 4), 320);
 
   return (
     <main style={{ paddingTop: '68px' }}>
@@ -111,7 +49,18 @@ function PrivateEvents() {
         <div className="container">
           <div className="tiers-row">
             {tiers.map(t => (
-              <TierCard key={t.id} tier={t} cardWidth={cardWidth} onClick={() => setOpenTier(t)} />
+              <button
+                key={t.id}
+                className="tier-card-btn"
+                onClick={() => setOpenTier(t)}
+                aria-label={`פתח תפריט ${t.label}`}
+              >
+                <img src={t.cover} alt={t.label} className="tier-card-img" />
+                <div className="tier-card-overlay">
+                  <span className="tier-card-label">{t.label}</span>
+                  <span className="tier-card-cta">לחץ לתפריט ←</span>
+                </div>
+              </button>
             ))}
           </div>
         </div>

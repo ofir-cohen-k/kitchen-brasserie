@@ -1,12 +1,9 @@
-/* שורת כרטיסים */
 .tiers-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
-  justify-items: center;
 }
 
-/* כרטיס */
 .tier-card-btn {
   position: relative;
   background: none;
@@ -24,13 +21,12 @@
   box-shadow: 0 10px 32px rgba(28, 43, 46, 0.2);
 }
 
-.tier-card-page canvas {
+.tier-card-img {
   display: block;
-  width: 100% !important;
-  height: auto !important;
+  width: 100%;
+  height: auto;
 }
 
-/* שכבת hover עם שם */
 .tier-card-overlay {
   position: absolute;
   inset: 0;
@@ -41,8 +37,6 @@
   align-items: center;
   padding: 1.25rem 1rem;
   gap: 0.3rem;
-  opacity: 1;
-  transition: opacity 0.2s;
 }
 .tier-card-label {
   color: #fff;
@@ -58,21 +52,11 @@
   letter-spacing: 0.05em;
 }
 
-.card-loading {
-  width: 100%;
-  aspect-ratio: 0.7;
-  background: #e8e3d8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-}
-
 /* Modal */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(10, 20, 20, 0.75);
+  background: rgba(10,20,20,0.8);
   z-index: 9000;
   display: flex;
   align-items: center;
@@ -80,7 +64,6 @@
   padding: 1.5rem;
   backdrop-filter: blur(4px);
 }
-
 .modal-box {
   position: relative;
   border-radius: var(--radius);
@@ -88,13 +71,11 @@
   max-height: 90vh;
   box-shadow: 0 16px 64px rgba(0,0,0,0.45);
 }
-
-.modal-box canvas {
+.modal-img {
   display: block;
-  max-width: 100%;
-  height: auto !important;
+  max-width: min(700px, calc(100vw - 3rem));
+  height: auto;
 }
-
 .modal-close {
   position: absolute;
   top: 0.75rem;
@@ -115,14 +96,6 @@
 }
 .modal-close:hover { background: rgba(0,0,0,0.8); }
 
-.pdf-loading {
-  padding: 3rem;
-  text-align: center;
-  color: #fff;
-  font-size: 1rem;
-}
-
-/* CTA */
 .private-events-cta {
   text-align: center;
   max-width: 600px;
