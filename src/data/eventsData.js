@@ -4,18 +4,6 @@
 
 export const eventsData = [
   {
-    id: 1,
-    title: 'אירועים פרטיים',
-    date: null,
-    time: null,
-    description: 'קיטשן בראסרי מארחת אירועים פרטיים מכל הסוגים — בר/בת מצווה, מסיבת הפתעה, ברית/בת, ימי הולדת ועוד. אנחנו נדאג לכל הפרטים: תפריט מותאם אישית, עיצוב שולחנות, מגשי אירוח ואווירה מיוחדת שתישאר בזיכרון. צרו איתנו קשר ונבנה יחד את האירוע המושלם עבורכם.',
-    price: null,
-    image: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80&fit=crop',
-    availablePlaces: null,
-    category: 'אירוע פרטי',
-    bookingUrl: '/contact',
-  },
-  {
     id: 2,
     title: 'ערב חמישי עם DJ',
     date: '2026-08-07',
