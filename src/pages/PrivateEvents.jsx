@@ -1,6 +1,11 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 import PageTitle from '../components/PageTitle/PageTitle';
 import './PrivateEvents.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const tiers = [
   { id: 'silver',   label: 'Silver',   file: '/מנות קיטשן/silver_1.pdf' },
@@ -8,6 +13,34 @@ const tiers = [
   { id: 'platinum', label: 'Platinum', file: '/מנות קיטשן/platinum_2.pdf' },
   { id: 'brunch',   label: 'Brunch',   file: '/מנות קיטשן/אירועי בוקר.pdf' },
 ];
+
+function PdfViewer({ file }) {
+  const [numPages, setNumPages] = useState(null);
+
+  const onLoadSuccess = useCallback(({ numPages }) => setNumPages(numPages), []);
+
+  return (
+    <div className="pdf-doc">
+      <Document
+        file={file}
+        onLoadSuccess={onLoadSuccess}
+        loading={<div className="pdf-loading">טוען תפריט...</div>}
+        error={<div className="pdf-loading">שגיאה בטעינת התפריט</div>}
+      >
+        {numPages && Array.from({ length: numPages }, (_, i) => (
+          <Page
+            key={i + 1}
+            pageNumber={i + 1}
+            className="pdf-page"
+            width={Math.min(window.innerWidth - 48, 860)}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+          />
+        ))}
+      </Document>
+    </div>
+  );
+}
 
 function PrivateEvents() {
   const [active, setActive] = useState('silver');
@@ -28,7 +61,6 @@ function PrivateEvents() {
       <section className="section">
         <div className="container">
 
-          {/* לשוניות בחירת מסלול */}
           <div className="tier-tabs">
             {tiers.map(t => (
               <button
@@ -41,22 +73,8 @@ function PrivateEvents() {
             ))}
           </div>
 
-          {/* מציג PDF */}
           <div className="pdf-viewer-wrap">
-            <iframe
-              key={current.file}
-              src={current.file}
-              className="pdf-viewer"
-              title={`תפריט ${current.label}`}
-            />
-            <a
-              href={current.file}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pdf-open-link"
-            >
-              פתח בחלון חדש ↗
-            </a>
+            <PdfViewer key={current.file} file={current.file} />
           </div>
 
         </div>

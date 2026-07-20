@@ -1,4 +1,4 @@
-/* לשוניות מסלולים */
+/* לשוניות */
 .tier-tabs {
   display: flex;
   gap: 0.75rem;
@@ -32,28 +32,30 @@
 /* מציג PDF */
 .pdf-viewer-wrap {
   display: flex;
+  justify-content: center;
+}
+
+.pdf-doc {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1.5rem;
+  width: 100%;
 }
 
-.pdf-viewer {
-  width: 100%;
-  max-width: 860px;
-  height: 80vh;
-  min-height: 500px;
-  border: none;
+.pdf-page canvas {
   border-radius: var(--radius);
   box-shadow: 0 4px 24px rgba(28, 43, 46, 0.12);
+  max-width: 100%;
+  height: auto !important;
 }
 
-.pdf-open-link {
-  font-size: 0.85rem;
-  color: var(--gold-dark);
-  text-decoration: underline;
-  transition: color 0.2s;
+.pdf-loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text2);
+  font-size: 1rem;
 }
-.pdf-open-link:hover { color: var(--gold); }
 
 /* CTA */
 .private-events-cta {
@@ -63,6 +65,5 @@
 }
 
 @media (max-width: 600px) {
-  .pdf-viewer { height: 65vh; }
   .tier-tab { padding: 0.5rem 1.2rem; font-size: 0.85rem; }
 }
