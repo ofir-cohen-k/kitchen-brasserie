@@ -192,9 +192,102 @@
   border-color: #1ebe5d !important;
 }
 
+/* ===== טופס ליד ===== */
+.event-form-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.event-form {
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 24px rgba(28,43,46,0.07);
+}
+
+.event-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem 1.5rem;
+}
+
+.event-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.event-form-full {
+  grid-column: 1 / -1;
+}
+
+.event-form-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--dark);
+  letter-spacing: 0.03em;
+}
+
+.event-form-field input,
+.event-form-field select,
+.event-form-field textarea {
+  padding: 0.6rem 0.85rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  color: var(--dark);
+  background: var(--cream);
+  transition: border-color 0.18s;
+  direction: rtl;
+}
+.event-form-field input:focus,
+.event-form-field select:focus,
+.event-form-field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.event-form-field textarea {
+  resize: vertical;
+}
+
+.event-form-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.event-form-success {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--white);
+  border: 1.5px solid rgba(184,154,94,0.3);
+  border-radius: var(--radius);
+}
+.event-form-success-icon {
+  display: block;
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.event-form-success p {
+  font-size: 1rem;
+  color: var(--dark);
+  font-weight: 500;
+}
+
 @media (max-width: 900px) {
   .tiers-row { grid-template-columns: repeat(2, 1fr); }
+  .event-form { padding: 1.5rem 1.25rem; }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+  .event-form-grid { grid-template-columns: 1fr; }
   .tiers-row { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .event-form-footer { flex-direction: column; align-items: stretch; text-align: center; }
 }
