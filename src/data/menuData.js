@@ -796,12 +796,12 @@ export const menuData = [
 
 export const categoryLabels = {
   all: 'הכל',
-  breakfast: 'בוקר ובראנץ׳',
   starters: 'בין לבין',
   salads: 'מהגינה',
   pasta: 'באווירה איטלקית',
   pizza: 'על האבן',
   fish: 'מנות לגדולים',
+  breakfast: 'בוקר ובראנץ׳',
   desserts: 'קינוחים',
   drinks: 'משקאות',
 };
