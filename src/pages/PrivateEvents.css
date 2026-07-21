@@ -173,10 +173,10 @@
 }
 .private-events-wa-title {
   font-family: var(--font-title);
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--dark);
-  line-height: 1.5;
+  white-space: nowrap;
   margin-bottom: 0;
 }
 
