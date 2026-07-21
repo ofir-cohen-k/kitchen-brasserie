@@ -59,8 +59,8 @@ function Menu() {
     const delta = e.changedTouches[0].clientX - touchStartX.current;
     touchStartX.current = null;
     if (Math.abs(delta) < 40) return;
-    if (delta < 0) goNext();
-    else goPrev();
+    if (delta < 0) goPrev();
+    else goNext();
   }
 
   const activeDish = lightboxIndex !== null ? filteredDishes[lightboxIndex] : null;
