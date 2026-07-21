@@ -47,6 +47,15 @@ function PrivateEvents() {
 
       <section className="section">
         <div className="container">
+          <div className="private-events-intro">
+            <h2 className="private-events-intro-title">האירוע שלכם מתחיל כאן</h2>
+            <p>קולינריה מוקפדת, אווירה אלגנטית ושירות מכל הלב.</p>
+            <p>
+              ב־Kitchen Brasserie תוכלו לחגוג אירועים משפחתיים ועסקיים באווירה ייחודית,
+              עם מגוון תפריטי אירוח עשירים ואפשרות לבניית תפריט בהתאמה אישית.
+            </p>
+            <p>בחרו את התפריט המתאים לכם והתחילו לתכנן את האירוע שלכם.</p>
+          </div>
           <div className="tiers-row">
             {tiers.map(t => (
               <button
