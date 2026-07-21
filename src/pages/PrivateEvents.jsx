@@ -77,6 +77,10 @@ function PrivateEvents() {
               </button>
             ))}
           </div>
+          <div className="private-events-below-tiers">
+            <p className="private-events-below-title">מעוניינים בתפריט בהתאמה אישית?</p>
+            <p className="private-events-below-body">נבנה עבורכם חוויה קולינרית המותאמת בדיוק לאופי האירוע, להעדפות ולתקציב שלכם.</p>
+          </div>
         </div>
       </section>
 

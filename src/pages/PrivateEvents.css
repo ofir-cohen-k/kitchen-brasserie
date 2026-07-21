@@ -47,6 +47,27 @@
   50%       { transform: translateY(7px); opacity: 1;   }
 }
 
+.private-events-below-tiers {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(184, 154, 94, 0.2);
+}
+.private-events-below-title {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.6rem;
+}
+.private-events-below-body {
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.85;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
 .tiers-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
