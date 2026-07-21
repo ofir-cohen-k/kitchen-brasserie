@@ -31,10 +31,7 @@ function Home() {
     }, 3000);
     return () => clearInterval(timer);
   }, []);
-  // מנות מומלצות - רק אלו עם isRecommended=true, עד 4
-  const recommendedDishes = menuData
-    .filter((dish) => dish.isRecommended)
-    .slice(0, 4);
+  const recommendedDishes = menuData.filter((dish) => dish.isFeatured);
 
   // שני אירועים ראשונים לדף הבית
   const featuredEvents = eventsData.slice(0, 2);

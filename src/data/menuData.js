@@ -20,6 +20,7 @@ export const menuData = [
     price: 167,
     category: 'breakfast',
     image: d('בוקר זוגית.jpg'),
+    isFeatured: true,
     isRecommended: true,
     isAvailable: true,
   },
@@ -40,7 +41,7 @@ export const menuData = [
     price: 69,
     category: 'breakfast',
     image: d('אצרולי.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -50,7 +51,7 @@ export const menuData = [
     price: 59,
     category: 'breakfast',
     image: d('קוראסון סלט ביצים.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -70,7 +71,7 @@ export const menuData = [
     price: 69,
     category: 'breakfast',
     image: d('שקשוקה מחבת חמה.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -90,7 +91,7 @@ export const menuData = [
     price: 64,
     category: 'breakfast',
     image: d('בריוש מקושקשת רכה.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
 
@@ -112,7 +113,7 @@ export const menuData = [
     price: 52,
     category: 'starters',
     image: d('ניוקי סלק.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -122,7 +123,7 @@ export const menuData = [
     price: 52,
     category: 'starters',
     image: d('ריזוטו פטריות וכמהין.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -132,7 +133,7 @@ export const menuData = [
     price: 57,
     category: 'starters',
     image: d('כרובית ארוסטיטו.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -152,7 +153,7 @@ export const menuData = [
     price: 47,
     category: 'starters',
     image: d('פולנטה פטריות.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -182,7 +183,7 @@ export const menuData = [
     price: 67,
     category: 'starters',
     image: d('סביצה דגים.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
 
@@ -204,7 +205,7 @@ export const menuData = [
     price: 65,
     category: 'salads',
     image: d('קיסר.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -224,7 +225,7 @@ export const menuData = [
     price: 67,
     category: 'salads',
     image: d('גינה.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -244,7 +245,7 @@ export const menuData = [
     price: 69,
     category: 'salads',
     image: d('פטריות ובטטה.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -264,7 +265,7 @@ export const menuData = [
     price: 69,
     category: 'salads',
     image: d('בריאות.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
 
@@ -286,7 +287,7 @@ export const menuData = [
     price: 69,
     category: 'pizza',
     image: d('ארבע גבינות.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -306,7 +307,7 @@ export const menuData = [
     price: 69,
     category: 'pizza',
     image: d('פיצה פטריות.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -316,6 +317,7 @@ export const menuData = [
     price: 76,
     category: 'pizza',
     image: d('קרוסטה בוראטה.jpg'),
+    isFeatured: true,
     isRecommended: true,
     isAvailable: true,
   },
@@ -326,7 +328,7 @@ export const menuData = [
     price: 67,
     category: 'pizza',
     image: d('פיצה ערמונים.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
 
@@ -348,7 +350,7 @@ export const menuData = [
     price: 74,
     category: 'pasta',
     image: d('ניוקי פטריות וערמונים.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -368,6 +370,7 @@ export const menuData = [
     price: 78,
     category: 'pasta',
     image: d('טורטליני גבינות.jpg'),
+    isFeatured: true,
     isRecommended: true,
     isAvailable: true,
   },
@@ -378,7 +381,7 @@ export const menuData = [
     price: 76,
     category: 'pasta',
     image: d('באציוליני גבינות.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -388,7 +391,7 @@ export const menuData = [
     price: 72,
     category: 'pasta',
     image: d('פפרדלה סיצליאנית.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -418,7 +421,7 @@ export const menuData = [
     price: 76,
     category: 'pasta',
     image: d('פלין עזים וסלק.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
 
@@ -450,7 +453,7 @@ export const menuData = [
     price: 89,
     category: 'fish',
     image: d('קיטשן תילאנדי.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -470,7 +473,7 @@ export const menuData = [
     price: 89,
     category: 'fish',
     image: d('דג סצואן.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -480,6 +483,7 @@ export const menuData = [
     price: 127,
     category: 'fish',
     image: d('פילה סלמון.jpg'),
+    isFeatured: true,
     isRecommended: true,
     isAvailable: true,
   },
@@ -522,7 +526,7 @@ export const menuData = [
     price: 47,
     category: 'desserts',
     image: d('מסקרפונה שערות קדאיף.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -552,7 +556,7 @@ export const menuData = [
     price: 49,
     category: 'desserts',
     image: d('קרפ בורלה.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -572,7 +576,7 @@ export const menuData = [
     price: 49,
     category: 'desserts',
     image: d('שיבולת פיסטוק שוקולד.jpg'),
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
 
@@ -585,7 +589,7 @@ export const menuData = [
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/שתייה קלה.gif',
     imageContain: true,
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -596,7 +600,7 @@ export const menuData = [
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/מאלטי-בירה-שחורה.png',
     imageContain: true,
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -607,7 +611,7 @@ export const menuData = [
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/מינראלים.png',
     imageContain: true,
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -617,7 +621,7 @@ export const menuData = [
     price: 18,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/טבעי - גזר תפוזים לימונדה.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -627,7 +631,7 @@ export const menuData = [
     price: 19,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/לימונענע גרוס.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -647,7 +651,7 @@ export const menuData = [
     price: 29,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/מילקשייק.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -657,7 +661,7 @@ export const menuData = [
     price: 21,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/קפה קפוא.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -677,7 +681,7 @@ export const menuData = [
     price: 19,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/קפה קר.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -687,7 +691,7 @@ export const menuData = [
     price: 15,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/קפוצ\'ינו.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -697,7 +701,7 @@ export const menuData = [
     price: 10,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/אספרסו.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -707,7 +711,7 @@ export const menuData = [
     price: 23,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/סיידר חם.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -717,7 +721,7 @@ export const menuData = [
     price: 17,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/שוקו פרלינים.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -727,7 +731,7 @@ export const menuData = [
     price: 15,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/אמריקנו.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -737,7 +741,7 @@ export const menuData = [
     price: 10,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/מקיאטו.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -747,7 +751,7 @@ export const menuData = [
     price: 11,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/קפה טורקי.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -757,7 +761,7 @@ export const menuData = [
     price: 14,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/תה עם תיון.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -769,7 +773,7 @@ export const menuData = [
     image: '/סודה מתוקן.png',
     imageContain: true,
     imagePadSm: true,
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -779,7 +783,7 @@ export const menuData = [
     price: 24,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/תפוח ירוק.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
   {
@@ -789,7 +793,7 @@ export const menuData = [
     price: 23,
     category: 'drinks',
     image: '/מנות קיטשן/משקאות/משקה בריאות.jpg',
-    isRecommended: false,
+    isRecommended: true,
     isAvailable: true,
   },
 ];
