@@ -2,7 +2,7 @@
 // דף תפריט - Menu
 // ========================================
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Search, X, ChevronRight, ChevronLeft } from 'lucide-react';
 import MenuCard from '../components/MenuCard/MenuCard';
 import PageTitle from '../components/PageTitle/PageTitle';
@@ -47,6 +47,21 @@ function Menu() {
       document.removeEventListener('keydown', onKey);
     };
   }, [lightboxIndex, goNext, goPrev]);
+
+  const touchStartX = useRef(null);
+
+  function handleTouchStart(e) {
+    touchStartX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e) {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    touchStartX.current = null;
+    if (Math.abs(delta) < 40) return;
+    if (delta < 0) goNext();
+    else goPrev();
+  }
 
   const activeDish = lightboxIndex !== null ? filteredDishes[lightboxIndex] : null;
 
@@ -119,7 +134,7 @@ function Menu() {
         </div>
       </section>
       {activeDish && (
-        <div className="lightbox-overlay" onClick={() => setLightboxIndex(null)}>
+        <div className="lightbox-overlay" onClick={() => setLightboxIndex(null)} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           <button className="lightbox-close" onClick={() => setLightboxIndex(null)} aria-label="סגור">
             <X size={24} />
           </button>
