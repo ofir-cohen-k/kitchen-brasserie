@@ -138,18 +138,20 @@ function Menu() {
           <button className="lightbox-close" onClick={() => setLightboxIndex(null)} aria-label="סגור">
             <X size={24} />
           </button>
-          <button className="lightbox-nav lightbox-nav-right" onClick={e => { e.stopPropagation(); goPrev(); }} aria-label="הקודם">
-            <ChevronRight size={30} />
-          </button>
           <div className="lightbox-content" onClick={e => e.stopPropagation()}>
             <img src={activeDish.image} alt={activeDish.name} className="lightbox-img" />
             <p className="lightbox-name">{activeDish.name}</p>
             {activeDish.description && <p className="lightbox-desc">{activeDish.description}</p>}
+            <div className="lightbox-nav-row">
+              <button className="lightbox-nav" onClick={goPrev} aria-label="הקודם">
+                <ChevronRight size={22} />
+              </button>
+              <span className="lightbox-counter">{lightboxIndex + 1} / {filteredDishes.length}</span>
+              <button className="lightbox-nav" onClick={goNext} aria-label="הבא">
+                <ChevronLeft size={22} />
+              </button>
+            </div>
           </div>
-          <button className="lightbox-nav lightbox-nav-left" onClick={e => { e.stopPropagation(); goNext(); }} aria-label="הבא">
-            <ChevronLeft size={30} />
-          </button>
-          <span className="lightbox-counter">{lightboxIndex + 1} / {filteredDishes.length}</span>
         </div>
       )}
     </main>
