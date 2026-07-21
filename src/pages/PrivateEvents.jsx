@@ -142,7 +142,7 @@ function PrivateEvents() {
       </section>
 
       {/* ===== טופס ליד ===== */}
-      <section className="section event-form-section">
+      <section className="section-alt event-form-section">
         <div className="container">
           <div className="event-form-header">
             <h2 className="section-title event-form-main-title">השאירו פרטים</h2>
