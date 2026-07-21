@@ -86,8 +86,7 @@ function PrivateEvents() {
 
       <section className="section-alt">
         <div className="container private-events-cta">
-          <h2 className="section-title">רוצים לשמוע עוד?</h2>
-          <p className="section-subtitle">צרו קשר ונבנה יחד את האירוע המושלם עבורכם</p>
+          <p className="private-events-wa-title">צרו קשר ונבנה יחד את האירוע המושלם עבורכם</p>
           <a
             href="https://api.whatsapp.com/send?phone=972557218413&text=היי,+אנחנו+מעוניינים+לקיים+אירוע+פרטי+בקיטשן,+נשמח+לקבל+פרטים."
             target="_blank"
