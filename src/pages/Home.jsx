@@ -3,7 +3,7 @@
 // ========================================
 
 import { Link } from 'react-router-dom';
-import { Utensils, ShoppingBasket, CalendarDays, Truck, MapPin, Phone, Clock } from 'lucide-react';
+import { Utensils, ShoppingBasket, CalendarDays, Truck, MapPin, Phone, Clock, Star, Sparkles } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Hero from '../components/Hero/Hero';
 import MenuCard from '../components/MenuCard/MenuCard';
@@ -48,10 +48,10 @@ function Home() {
       <section className="home-cards-section">
         <div className="home-cards container">
           <div className="home-card">
-            <span className="home-card-icon"><Utensils size={28} strokeWidth={1.5} /></span>
-            <h3>התפריט שלנו</h3>
-            <p>סלטים, פסטות, פיצות, עיקריות דגים ועוד</p>
-            <Link to="/menu" className="btn btn-outline btn-sm">לתפריט המלא</Link>
+            <span className="home-card-icon"><Star size={28} strokeWidth={1.5} /></span>
+            <h3>אירועים פרטיים</h3>
+            <p>בר/בת מצווה, ימי הולדת, אירועי חברה ועוד</p>
+            <Link to="/private-events" className="btn btn-outline btn-sm">לפרטים ותפריטים</Link>
           </div>
           <div className="home-card">
             <span className="home-card-icon"><ShoppingBasket size={28} strokeWidth={1.5} /></span>
@@ -60,10 +60,10 @@ function Home() {
             <Link to="/catering" className="btn btn-outline btn-sm">לכל המגשים</Link>
           </div>
           <div className="home-card">
-            <span className="home-card-icon"><CalendarDays size={28} strokeWidth={1.5} /></span>
-            <h3>הזמנת שולחן</h3>
-            <p><a href="https://waze.com/ul?q=האירוסים+53+נס+ציונה&navigate=yes" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>האירוסים 53, קניותר, נס ציונה</a></p>
-            <a href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">להזמנה מהירה</a>
+            <span className="home-card-icon"><Sparkles size={28} strokeWidth={1.5} /></span>
+            <h3>קונספטים</h3>
+            <p>ערבי שף, מוסיקה חיה, פיצה ועוד חוויות מיוחדות</p>
+            <Link to="/events" className="btn btn-outline btn-sm">לכל הקונספטים</Link>
           </div>
           <div className="home-card">
             <span className="home-card-icon"><Truck size={28} strokeWidth={1.5} /></span>
