@@ -103,7 +103,7 @@ function PrivateEvents() {
       </div>
 
       {/* ===== מבוא + כרטיסי תפריט ===== */}
-      <section className="section">
+      <section className="section" style={{ paddingBottom: '2.5rem' }}>
         <div className="container">
           <div className="private-events-intro">
             <span className="section-eyebrow">Kitchen Brasserie</span>
