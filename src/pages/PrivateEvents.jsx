@@ -142,11 +142,11 @@ function PrivateEvents() {
       </section>
 
       {/* ===== טופס ליד ===== */}
-      <section className="section-alt">
+      <section className="section event-form-section">
         <div className="container">
           <div className="event-form-header">
-            <span className="section-eyebrow">השאירו פרטים</span>
-            <h2 className="section-title">ונחזור אליכם תוך 24 שעות</h2>
+            <h2 className="section-title event-form-main-title">השאירו פרטים</h2>
+            <p className="event-form-sub-title">ונחזור אליכם בהקדם האפשרי</p>
             <div className="ornament"><span>✦</span></div>
           </div>
 
@@ -177,8 +177,8 @@ function PrivateEvents() {
                   <label>סוג האירוע</label>
                   <select name="eventType" value={form.eventType} onChange={handleChange}>
                     <option value="">בחרו סוג אירוע</option>
-                    <option>בר מצווה</option>
-                    <option>בת מצווה</option>
+                    <option>בר/בת מצווה</option>
+                    <option>ברית/בריתה</option>
                     <option>יום הולדת</option>
                     <option>אירוע חברה</option>
                     <option>מותאם אישית</option>

@@ -193,9 +193,22 @@
 }
 
 /* ===== טופס ליד ===== */
+.event-form-section {
+  padding-top: 1rem;
+}
+
 .event-form-header {
   text-align: center;
   margin-bottom: 2.5rem;
+}
+.event-form-main-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin-bottom: 0.4rem;
+}
+.event-form-sub-title {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
 }
 
 .event-form {
