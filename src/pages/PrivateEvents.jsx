@@ -56,9 +56,11 @@ function PrivateEvents() {
               ב־Kitchen Brasserie תוכלו לחגוג אירועים משפחתיים ועסקיים באווירה ייחודית,
               עם מגוון תפריטי אירוח עשירים ואפשרות לבניית תפריט בהתאמה אישית.
             </p>
-            <p className="private-events-body">בחרו את התפריט המתאים לכם והתחילו לתכנן את האירוע שלכם.</p>
+            <p className="private-events-cta-line">בחרו את התפריט המתאים לכם והתחילו לתכנן את האירוע שלכם.</p>
+            <div className="private-events-arrow">
+              <span>▼</span>
+            </div>
           </div>
-          <div className="ornament private-events-divider"><span>✦</span></div>
           <div className="tiers-row">
             {tiers.map(t => (
               <button
