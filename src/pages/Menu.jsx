@@ -14,11 +14,15 @@ function Menu() {
   const [searchText, setSearchText] = useState('');
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  const filteredDishes = menuData.filter((dish) => {
-    const matchesCategory = activeCategory === 'all' || dish.category === activeCategory;
-    const matchesSearch = dish.name.toLowerCase().includes(searchText.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const categoryOrder = Object.keys(categoryLabels);
+
+  const filteredDishes = menuData
+    .filter((dish) => {
+      const matchesCategory = activeCategory === 'all' || dish.category === activeCategory;
+      const matchesSearch = dish.name.toLowerCase().includes(searchText.toLowerCase());
+      return matchesCategory && matchesSearch;
+    })
+    .sort((a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category));
 
   const goNext = useCallback(() =>
     setLightboxIndex(i => (i + 1) % filteredDishes.length),
