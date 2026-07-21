@@ -145,6 +145,7 @@ function PrivateEvents() {
       <section className="section-alt event-form-section">
         <div className="container">
           <div className="event-form-header">
+            <div className="event-form-or"><span>או</span></div>
             <h2 className="section-title event-form-main-title">השאירו פרטים</h2>
             <p className="event-form-sub-title">ונחזור אליכם בהקדם האפשרי</p>
             <div className="ornament"><span>✦</span></div>
