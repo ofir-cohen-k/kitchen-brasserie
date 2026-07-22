@@ -95,7 +95,7 @@
   transition: color 0.2s;
   text-decoration: none;
 }
-.footer-links a:hover { color: var(--gold); }
+.footer-links a:hover { color: var(--cream); }
 
 /* פרטי קשר */
 .footer-contact {
@@ -115,7 +115,7 @@
   color: rgba(248, 244, 236, 0.65);
   transition: color 0.2s;
 }
-.footer-contact-row a:hover { color: var(--gold); }
+.footer-contact-row a:hover { color: var(--cream); }
 
 /* שעות פעילות */
 .footer-hours {
@@ -143,7 +143,7 @@
   text-decoration: none;
   transition: color 0.2s;
 }
-.footer-social-link:hover { color: var(--gold); }
+.footer-social-link:hover { color: var(--cream); }
 
 /* שורה תחתונה */
 .footer-bottom {
@@ -172,7 +172,7 @@
   transition: color 0.2s;
 }
 .footer-bottom-links a:hover {
-  color: var(--gold);
+  color: var(--cream);
 }
 .footer-disclaimer {
   text-align: center;
@@ -194,7 +194,7 @@
   font-family: inherit;
   text-align: right;
 }
-.footer-job-btn:hover { color: var(--gold); }
+.footer-job-btn:hover { color: var(--cream); }
 
 .footer-job-cta {
   margin-top: 0.25rem;
