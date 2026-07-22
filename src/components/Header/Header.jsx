@@ -98,8 +98,8 @@ function Header() {
             aria-label="הזמנה דרך Wolt"
             title="הזמנה דרך Wolt"
           >
-            <span className="wolt-icon-circle">
-              <img src="/wolt-logo.png" alt="Wolt" />
+            <span className="wolt-icon-pill">
+              <img src="/wolt-icon.png" alt="Wolt" />
             </span>
           </a>
 
