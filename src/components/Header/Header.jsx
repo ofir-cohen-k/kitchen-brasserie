@@ -5,7 +5,15 @@
 
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { ShoppingCart, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+
+const WOLT_URL = 'https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona';
+
+const WoltIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 56 56" fill="currentColor">
+    <path d="M28 0C12.536 0 0 12.536 0 28s12.536 28 28 28 28-12.536 28-28S43.464 0 28 0zm13.04 18.48-4.48 13.44-3.36-8.4-1.68 4.2-1.68-4.2-3.36 8.4-4.48-13.44H15.68l6.72 19.04 3.92-9.8 1.68 4.2 1.68-4.2 3.92 9.8 6.72-19.04H41.04z"/>
+  </svg>
+);
 import './Header.css';
 
 function Header() {
@@ -86,15 +94,17 @@ function Header() {
             </svg>
           </a>
 
-          {/* עגלה → מגשי אירוח */}
-          <Link
-            to="/catering"
-            className="cart-btn"
-            aria-label="מגשי אירוח"
-            title="מגשי אירוח"
+          {/* וולט */}
+          <a
+            href={WOLT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="wolt-btn"
+            aria-label="הזמנה דרך Wolt"
+            title="הזמנה דרך Wolt"
           >
-            <ShoppingCart size={20} />
-          </Link>
+            <WoltIcon />
+          </a>
 
           {/* כפתור תפריט המבורגר - רק במובייל */}
           <button

@@ -106,35 +106,15 @@
 }
 .instagram-btn:hover { color: var(--gold); }
 
-/* כפתור סל */
-.cart-btn {
-  position: relative;
-  background: none;
-  border: none;
+/* כפתור וולט */
+.wolt-btn {
   color: var(--dark);
-  cursor: pointer;
-  padding: 0.4rem;
   display: flex;
   align-items: center;
+  padding: 0.4rem;
   transition: color 0.2s;
 }
-.cart-btn:hover { color: var(--gold); }
-
-.cart-badge {
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background: var(--gold);
-  color: white;
-  font-size: 0.62rem;
-  font-weight: 700;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.wolt-btn:hover { color: var(--gold); }
 
 /* כפתור המבורגר */
 .hamburger-btn {
