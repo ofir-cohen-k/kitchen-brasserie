@@ -1,10 +1,66 @@
-// Footer - כותרת תחתונה
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
-
+import { MapPin, Phone, Mail, X } from 'lucide-react';
 import './Footer.css';
 
+const WF_KEY = 'c5909312-9ecf-44e6-99a8-74d15e66d0dc';
+
+const JOBS = ['מלצר/ית', 'טבח/ית', 'בריסטה', 'שוטף/ת כלים', 'אחמ"ש'];
+
+const EMPTY = { fullName: '', phone: '', email: '', notes: '' };
+
 function Footer() {
+  const [selectedJob, setSelectedJob] = useState(null);
+  const [form, setForm] = useState(EMPTY);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  function openModal(job) {
+    setSelectedJob(job);
+    setForm(EMPTY);
+    setSuccess(false);
+  }
+
+  function closeModal() {
+    setSelectedJob(null);
+    setSuccess(false);
+  }
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setForm(prev => ({ ...prev, [name]: value }));
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const r = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WF_KEY,
+          name: form.fullName,
+          email: form.email || 'לא צוין',
+          phone: form.phone,
+          subject: `[Kitchen Brasserie] מועמדות — ${selectedJob}`,
+          message: [
+            `תפקיד: ${selectedJob}`,
+            `שם: ${form.fullName}`,
+            `טלפון: ${form.phone}`,
+            `אימייל: ${form.email || 'לא צוין'}`,
+            form.notes ? `הערות: ${form.notes}` : '',
+          ].filter(Boolean).join('\n'),
+        }),
+      });
+      if (!r.ok) throw new Error();
+      setSuccess(true);
+    } catch {
+      alert('אירעה שגיאה, נסו שנית.');
+    }
+    setLoading(false);
+  }
+
   return (
     <footer className="footer">
       <div className="footer-inner container">
@@ -41,11 +97,7 @@ function Footer() {
             <li><Link to="/catering">מגשי אירוח</Link></li>
             <li><Link to="/about">אודות</Link></li>
             <li><a href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation" target="_blank" rel="noopener noreferrer">הזמנת שולחן</a></li>
-            <li>
-              <a href="https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona" target="_blank" rel="noopener noreferrer">
-                הזמנה דרך Wolt
-              </a>
-            </li>
+            <li><a href="https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona" target="_blank" rel="noopener noreferrer">הזמנה דרך Wolt</a></li>
           </ul>
         </div>
 
@@ -91,6 +143,20 @@ function Footer() {
           </div>
         </div>
 
+        {/* עמודה 5 - דרושים */}
+        <div className="footer-col">
+          <h4 className="footer-heading">דרושים</h4>
+          <ul className="footer-links">
+            {JOBS.map(job => (
+              <li key={job}>
+                <button className="footer-job-btn" onClick={() => openModal(job)}>
+                  {job}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
       </div>
 
       {/* שורת Copyright */}
@@ -104,6 +170,50 @@ function Footer() {
         </div>
         <p className="footer-disclaimer">* התמונות באתר להמחשה בלבד ואינן מייצגות בהכרח את המוצר הסופי</p>
       </div>
+
+      {/* מודאל מועמדות */}
+      {selectedJob && (
+        <div className="jobs-backdrop" onClick={closeModal}>
+          <div className="jobs-modal" onClick={e => e.stopPropagation()} dir="rtl">
+            <button className="jobs-modal-close" onClick={closeModal} aria-label="סגור"><X size={19} /></button>
+
+            {success ? (
+              <div className="jobs-success">
+                <span className="jobs-success-icon">✓</span>
+                <h3>הפרטים נשלחו!</h3>
+                <p>נחזור אליך בהקדם.</p>
+                <button className="btn btn-outline btn-sm" style={{ marginTop: '1.25rem' }} onClick={closeModal}>סגור</button>
+              </div>
+            ) : (
+              <>
+                <h3 className="jobs-modal-title">הגשת מועמדות</h3>
+                <p className="jobs-modal-sub">תפקיד: <strong>{selectedJob}</strong></p>
+                <form onSubmit={handleSubmit} noValidate className="jobs-form">
+                  <div className="jf-field">
+                    <label>שם מלא *</label>
+                    <input type="text" name="fullName" value={form.fullName} onChange={handleChange} required placeholder="ישראל ישראלי" />
+                  </div>
+                  <div className="jf-field">
+                    <label>טלפון *</label>
+                    <input type="tel" name="phone" value={form.phone} onChange={handleChange} required placeholder="050-000-0000" />
+                  </div>
+                  <div className="jf-field">
+                    <label>אימייל</label>
+                    <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="example@mail.com" />
+                  </div>
+                  <div className="jf-field">
+                    <label>משהו שכדאי שנדע</label>
+                    <textarea name="notes" value={form.notes} onChange={handleChange} rows={2} placeholder="ניסיון, זמינות..." />
+                  </div>
+                  <button type="submit" className="btn btn-primary jf-submit" disabled={loading}>
+                    {loading ? 'שולח...' : 'שלח מועמדות'}
+                  </button>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </footer>
   );
 }
