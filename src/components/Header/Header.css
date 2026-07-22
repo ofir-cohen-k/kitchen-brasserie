@@ -108,13 +108,34 @@
 
 /* כפתור וולט */
 .wolt-btn {
-  color: var(--dark);
   display: flex;
   align-items: center;
   padding: 0.4rem;
-  transition: color 0.2s;
+  transition: opacity 0.2s;
 }
-.wolt-btn:hover { color: var(--gold); }
+.wolt-btn:hover { opacity: 0.7; }
+
+.wolt-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.8px solid var(--dark);
+  padding: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+.wolt-btn:hover .wolt-icon-circle {
+  border-color: var(--gold);
+}
+.wolt-icon-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
 /* כפתור המבורגר */
 .hamburger-btn {

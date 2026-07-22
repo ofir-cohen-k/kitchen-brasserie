@@ -9,21 +9,6 @@ import { Menu, X } from 'lucide-react';
 
 const WOLT_URL = 'https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona';
 
-const WoltIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-    <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" strokeWidth="1.8" />
-    <text
-      x="16" y="21"
-      textAnchor="middle"
-      fill="currentColor"
-      fontSize="11.5"
-      fontFamily="Georgia, 'Times New Roman', serif"
-      fontStyle="italic"
-      fontWeight="bold"
-      letterSpacing="0.4"
-    >Wolt</text>
-  </svg>
-);
 import './Header.css';
 
 function Header() {
@@ -113,7 +98,9 @@ function Header() {
             aria-label="הזמנה דרך Wolt"
             title="הזמנה דרך Wolt"
           >
-            <WoltIcon />
+            <span className="wolt-icon-circle">
+              <img src="/מנות קיטשן/Wolt_logo_black.png" alt="Wolt" />
+            </span>
           </a>
 
           {/* כפתור תפריט המבורגר - רק במובייל */}
