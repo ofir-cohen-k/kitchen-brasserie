@@ -4,16 +4,13 @@
 // ========================================
 
 import { useState, useEffect } from 'react';
-import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ShoppingCart, Menu, X } from 'lucide-react';
-import { useCart } from '../../context/CartContext';
 import './Header.css';
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);  // האם גוללים למטה?
   const [isMenuOpen, setIsMenuOpen] = useState(false);  // האם תפריט המבורגר פתוח?
-  const { totalItems, setIsCartOpen } = useCart();
-  const navigate = useNavigate();
   const location = useLocation();
   const isHome = location.pathname === '/';
 
@@ -89,18 +86,15 @@ function Header() {
             </svg>
           </a>
 
-          {/* אייקון עגלת קניות */}
-          <button
+          {/* עגלה → מגשי אירוח */}
+          <Link
+            to="/catering"
             className="cart-btn"
-            onClick={() => setIsCartOpen(true)}
-            aria-label="פתח סל קניות"
+            aria-label="מגשי אירוח"
+            title="מגשי אירוח"
           >
             <ShoppingCart size={20} />
-            {/* מספר הפריטים בסל */}
-            {totalItems > 0 && (
-              <span className="cart-badge">{totalItems}</span>
-            )}
-          </button>
+          </Link>
 
           {/* כפתור תפריט המבורגר - רק במובייל */}
           <button

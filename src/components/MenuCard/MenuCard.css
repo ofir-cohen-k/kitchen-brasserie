@@ -15,7 +15,7 @@
 
 /* תמונה */
 .menu-card-img {
-  height: 175px;
+  height: 155px;
   overflow: hidden;
   position: relative;
   background: var(--cream2);
@@ -78,46 +78,39 @@
   margin-bottom: 0.3rem;
 }
 
+.menu-card-name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
 .menu-card-name {
   font-family: var(--font-title);
-  font-size: 1rem;
+  font-size: 0.97rem;
   font-weight: 700;
   color: var(--dark);
-  margin-bottom: 0.3rem;
   line-height: 1.3;
+}
+
+.menu-card-price {
+  font-family: var(--font-title);
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .menu-card-desc {
   font-size: 0.78rem;
   color: var(--muted);
   line-height: 1.65;
-  margin-bottom: 0.85rem;
-  /* חיתוך לשתי שורות */
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.menu-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(184, 154, 94, 0.12);
-  margin-top: auto;
-}
-
-.menu-card-price {
-  font-family: var(--font-title);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--gold-dark);
-}
-
-.menu-card-btn {
-  flex-shrink: 0;
 }
 
 /* Lightbox */
