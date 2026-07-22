@@ -196,6 +196,21 @@
 }
 .footer-job-btn:hover { color: var(--gold); }
 
+.footer-job-cta {
+  margin-top: 0.25rem;
+  padding: 0.5rem 1.1rem;
+  border: 1.5px solid rgba(184, 154, 94, 0.45);
+  border-radius: var(--radius);
+  color: var(--gold) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: border-color 0.2s, background 0.2s;
+}
+.footer-job-cta:hover {
+  border-color: var(--gold);
+  background: rgba(184, 154, 94, 0.1);
+}
+
 /* מודאל דרושים */
 .jobs-backdrop {
   position: fixed;
@@ -255,6 +270,7 @@
   font-weight: 600;
   color: var(--dark);
 }
+.jf-field select,
 .jf-field input,
 .jf-field textarea {
   padding: 0.55rem 0.8rem;
@@ -267,6 +283,7 @@
   direction: rtl;
   transition: border-color 0.18s;
 }
+.jf-field select:focus,
 .jf-field input:focus,
 .jf-field textarea:focus { outline: none; border-color: var(--gold); }
 .jf-field textarea { resize: vertical; }

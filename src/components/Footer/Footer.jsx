@@ -7,22 +7,22 @@ const WF_KEY = 'c5909312-9ecf-44e6-99a8-74d15e66d0dc';
 
 const JOBS = ['מלצר/ית', 'טבח/ית', 'בריסטה', 'שוטף/ת כלים', 'אחמ"ש'];
 
-const EMPTY = { fullName: '', phone: '', email: '', notes: '' };
+const EMPTY = { fullName: '', phone: '', email: '', role: '', notes: '' };
 
 function Footer() {
-  const [selectedJob, setSelectedJob] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
   const [form, setForm] = useState(EMPTY);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  function openModal(job) {
-    setSelectedJob(job);
+  function openModal() {
+    setModalOpen(true);
     setForm(EMPTY);
     setSuccess(false);
   }
 
   function closeModal() {
-    setSelectedJob(null);
+    setModalOpen(false);
     setSuccess(false);
   }
 
@@ -43,9 +43,9 @@ function Footer() {
           name: form.fullName,
           email: form.email || 'לא צוין',
           phone: form.phone,
-          subject: `[Kitchen Brasserie] מועמדות — ${selectedJob}`,
+          subject: `[Kitchen Brasserie] מועמדות — ${form.role}`,
           message: [
-            `תפקיד: ${selectedJob}`,
+            `תפקיד: ${form.role}`,
             `שם: ${form.fullName}`,
             `טלפון: ${form.phone}`,
             `אימייל: ${form.email || 'לא צוין'}`,
@@ -146,15 +146,10 @@ function Footer() {
         {/* עמודה 5 - דרושים */}
         <div className="footer-col">
           <h4 className="footer-heading">דרושים</h4>
-          <ul className="footer-links">
-            {JOBS.map(job => (
-              <li key={job}>
-                <button className="footer-job-btn" onClick={() => openModal(job)}>
-                  {job}
-                </button>
-              </li>
-            ))}
-          </ul>
+          <p className="footer-desc">מעוניינים להצטרף לצוות? נשמח לשמוע מכם.</p>
+          <button className="footer-job-btn footer-job-cta" onClick={openModal}>
+            הגש מועמדות
+          </button>
         </div>
 
       </div>
@@ -172,7 +167,7 @@ function Footer() {
       </div>
 
       {/* מודאל מועמדות */}
-      {selectedJob && (
+      {modalOpen && (
         <div className="jobs-backdrop" onClick={closeModal}>
           <div className="jobs-modal" onClick={e => e.stopPropagation()} dir="rtl">
             <button className="jobs-modal-close" onClick={closeModal} aria-label="סגור"><X size={19} /></button>
@@ -187,8 +182,15 @@ function Footer() {
             ) : (
               <>
                 <h3 className="jobs-modal-title">הגשת מועמדות</h3>
-                <p className="jobs-modal-sub">תפקיד: <strong>{selectedJob}</strong></p>
+                <p className="jobs-modal-sub">נשמח לשמוע מכם — נחזור בהקדם.</p>
                 <form onSubmit={handleSubmit} noValidate className="jobs-form">
+                  <div className="jf-field">
+                    <label>תפקיד מבוקש *</label>
+                    <select name="role" value={form.role} onChange={handleChange} required>
+                      <option value="">בחר/י תפקיד...</option>
+                      {JOBS.map(job => <option key={job} value={job}>{job}</option>)}
+                    </select>
+                  </div>
                   <div className="jf-field">
                     <label>שם מלא *</label>
                     <input type="text" name="fullName" value={form.fullName} onChange={handleChange} required placeholder="ישראל ישראלי" />
