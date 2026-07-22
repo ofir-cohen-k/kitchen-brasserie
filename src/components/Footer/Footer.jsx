@@ -146,10 +146,13 @@ function Footer() {
         {/* עמודה 5 - דרושים */}
         <div className="footer-col">
           <h4 className="footer-heading">דרושים</h4>
-          <p className="footer-desc">מעוניינים להצטרף לצוות? נשמח לשמוע מכם.</p>
-          <button className="footer-job-btn footer-job-cta" onClick={openModal}>
-            הגש מועמדות
-          </button>
+          <ul className="footer-links">
+            <li>
+              <button className="footer-job-btn" onClick={openModal}>
+                הגש מועמדות ←
+              </button>
+            </li>
+          </ul>
         </div>
 
       </div>
