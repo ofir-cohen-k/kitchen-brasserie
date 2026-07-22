@@ -161,7 +161,7 @@ function Catering() {
             <span className="cc-total-price">₪{cartTotal}</span>
           </div>
           <button className="btn btn-primary cc-send-btn" onClick={onSend}>
-            שלח בקשה
+            בקש הצעה
           </button>
           <p className="cc-note">* המחירים משוערים ועשויים להשתנות לאחר אישור</p>
         </>
