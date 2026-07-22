@@ -55,7 +55,18 @@ function Home() {
             <p>כריכונים, פוקאצ'ות, סלטים לכל אירוע</p>
             <Link to="/catering" className="btn btn-outline btn-sm">לכל המגשים</Link>
           </div>
-          {false && <div className="home-card"><h3>קונספטים</h3></div>}
+          <div className="home-card">
+            <span className="home-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4.5"/>
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <h3>עקבו אחרינו</h3>
+            <p>תמונות, סטוריז ועדכונים שוטפים מהמטבח שלנו</p>
+            <a href="https://www.instagram.com/kitchbras" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">@kitchbras</a>
+          </div>
           <div className="home-card">
             <span className="home-card-icon"><Truck size={28} strokeWidth={1.5} /></span>
             <h3>הזמנה דרך Wolt</h3>
