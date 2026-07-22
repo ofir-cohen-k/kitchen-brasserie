@@ -1,24 +1,486 @@
+/* ===== מבוא ===== */
 .catering-intro {
   max-width: 640px;
   margin: 0 auto;
   text-align: center;
 }
-.catering-intro-title {
-  margin-bottom: 0.75rem;
-}
+.catering-intro-title { margin-bottom: 0.75rem; }
 .catering-intro-body {
   font-size: 1rem;
   color: var(--text2);
   line-height: 1.85;
 }
 
-.catering-form-wrap { max-width: 760px; margin: 0 auto; }
-.catering-selected-pkg {
-  padding: 0.75rem 1rem;
-  background: rgba(184,154,94,0.1);
-  border: 1px solid rgba(184,154,94,0.25);
-  border-radius: var(--radius);
-  font-size: 0.88rem;
+/* ===== פריסה ===== */
+.catering-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.catering-products {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===== טאבים ===== */
+.catering-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.catering-tab {
+  padding: 0.4rem 0.95rem;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.81rem;
+  font-weight: 600;
   color: var(--text2);
-  margin-bottom: 1.2rem;
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.catering-tab:hover {
+  border-color: var(--gold);
+  color: var(--gold-dark);
+}
+.catering-tab-active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+/* ===== גריד מגשים ===== */
+.catering-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+
+/* ===== פאנל סל — דסקטופ ===== */
+.catering-cart-panel {
+  width: 290px;
+  flex-shrink: 0;
+}
+.catering-cart-sticky {
+  position: sticky;
+  top: 88px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  box-shadow: 0 4px 24px rgba(28,43,46,0.07);
+}
+
+/* ===== תוכן הסל (משותף לפאנל ומגירה) ===== */
+.cc-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark);
+  padding-bottom: 0.9rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.cc-badge {
+  margin-right: auto;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cc-empty {
+  text-align: center;
+  padding: 2.5rem 0;
+  color: var(--muted);
+}
+.cc-empty svg { margin-bottom: 0.6rem; opacity: 0.4; }
+.cc-empty p { font-size: 0.9rem; }
+.cc-empty-sub { font-size: 0.78rem; margin-top: 0.25rem; opacity: 0.7; }
+
+.cc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-height: 320px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding-left: 2px;
+}
+.cc-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.cc-item-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.cc-item-info {
+  flex: 1;
+  min-width: 0;
+}
+.cc-item-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cc-item-price {
+  font-size: 0.75rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-top: 0.1rem;
+}
+.cc-qty {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--cream2);
+  border-radius: 20px;
+  padding: 0.2rem 0.45rem;
+  flex-shrink: 0;
+}
+.cc-qty button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  padding: 0.1rem;
+  border-radius: 50%;
+  transition: background 0.15s;
+}
+.cc-qty button:hover { background: rgba(184,154,94,0.2); }
+.cc-qty span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  min-width: 1rem;
+  text-align: center;
+}
+.cc-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+.cc-remove:hover { color: #e53e3e; }
+
+.cc-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+.cc-total-price {
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+}
+.cc-send-btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+.cc-note {
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 0.6rem;
+  line-height: 1.4;
+}
+
+/* ===== כרטיסי מגש — שדרוגים לסל ===== */
+.catering-card { position: relative; }
+.catering-card-in-cart {
+  border-color: rgba(184, 154, 94, 0.55);
+  box-shadow: 0 0 0 3px rgba(184, 154, 94, 0.12);
+}
+.cc-card-badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  background: var(--gold);
+  color: #fff;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.catering-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--cream2);
+  border: 1.5px solid var(--gold);
+  border-radius: 20px;
+  padding: 0.25rem 0.6rem;
+}
+.catering-qty-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gold-dark);
+  display: flex;
+  align-items: center;
+  padding: 0.1rem;
+  transition: transform 0.1s;
+}
+.catering-qty-controls button:hover { transform: scale(1.2); }
+.catering-qty-controls span {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--dark);
+  min-width: 1.2rem;
+  text-align: center;
+}
+
+/* ===== FAB מובייל ===== */
+.catering-fab {
+  display: none;
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: var(--dark);
+  color: var(--gold);
+  border: none;
+  border-radius: 50px;
+  padding: 0.8rem 1.4rem;
+  gap: 0.65rem;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.catering-fab-total {
+  background: var(--gold);
+  color: var(--dark);
+  border-radius: 20px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.82rem;
+}
+
+/* ===== Backdrop משותף ===== */
+.catering-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,20,20,0.6);
+  z-index: 9000;
+  display: flex;
+  align-items: flex-end;
+}
+.catering-modal-backdrop {
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  z-index: 9500;
+}
+
+/* ===== מגירת מובייל ===== */
+.catering-drawer {
+  background: var(--white);
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 1.5rem;
+  max-height: 82vh;
+  overflow-y: auto;
+  width: 100%;
+}
+.catering-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.catering-drawer-header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+/* ===== מודאל טופס ===== */
+.catering-modal {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  width: 100%;
+  max-width: 520px;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+}
+.catering-modal-close {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 0.25rem;
+}
+.catering-modal-title {
+  font-family: var(--font-title);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.2rem;
+}
+.catering-modal-sub {
+  font-size: 0.86rem;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+.catering-modal-summary {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.catering-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  color: var(--text2);
+}
+.catering-summary-total {
+  border-top: 1px solid var(--border);
+  padding-top: 0.5rem;
+  margin-top: 0.15rem;
+  font-weight: 700;
+  color: var(--dark);
+  font-size: 0.92rem;
+}
+.catering-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 1rem;
+}
+.cm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+}
+.cm-full { grid-column: 1 / -1; }
+.cm-field label {
+  font-size: 0.77rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+.cm-field input,
+.cm-field textarea {
+  padding: 0.55rem 0.8rem;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  color: var(--dark);
+  background: var(--cream);
+  direction: rtl;
+  transition: border-color 0.18s;
+}
+.cm-field input:focus,
+.cm-field textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.cm-field textarea { resize: vertical; }
+.catering-modal-footer {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+.catering-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #25D366 !important;
+  border-color: #25D366 !important;
+}
+
+/* ===== הצלחה ===== */
+.catering-success {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.catering-success-icon {
+  display: block;
+  font-size: 2.8rem;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+.catering-success h3 {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+.catering-success p {
+  font-size: 0.92rem;
+  color: var(--text2);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+  .catering-layout { flex-direction: column; }
+  .catering-cart-panel { display: none; }
+  .catering-fab { display: flex; }
+}
+@media (max-width: 600px) {
+  .catering-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+  .catering-modal-grid { grid-template-columns: 1fr; }
+  .catering-modal { padding: 1.5rem 1.25rem; }
+  .catering-tabs { gap: 0.35rem; }
+  .catering-tab { font-size: 0.76rem; padding: 0.32rem 0.7rem; }
+}
+@media (max-width: 380px) {
+  .catering-grid { grid-template-columns: 1fr; }
 }
