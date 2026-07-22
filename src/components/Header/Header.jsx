@@ -8,6 +8,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const WOLT_URL = 'https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona';
+const WAZE_URL = 'https://waze.com/ul?q=האירוסים+53+נס+ציונה&navigate=yes';
 
 import './Header.css';
 
@@ -86,6 +87,23 @@ function Header() {
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
               <circle cx="12" cy="12" r="4.5"/>
               <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+
+          {/* וייז */}
+          <a
+            href={WAZE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="waze-btn"
+            aria-label="נווט אלינו בוויז"
+            title="נווט אלינו בוויז"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2C7.6 2 4 5.4 4 9.7c0 2.8 1.5 5.2 3.7 6.6L7 19l2.5-1.2c.8.2 1.6.4 2.5.4 4.4 0 8-3.4 8-7.5S16.4 2 12 2z"/>
+              <circle cx="9.5" cy="9.5" r="1" fill="currentColor" stroke="none"/>
+              <circle cx="14.5" cy="9.5" r="1" fill="currentColor" stroke="none"/>
+              <path d="M9.5 12.5c.7 1 4 1 4.5 0"/>
             </svg>
           </a>
 
