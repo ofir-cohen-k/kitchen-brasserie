@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { X, ShoppingCart, Plus, Minus } from 'lucide-react';
 import CateringCard from '../components/CateringCard/CateringCard';
 import PageTitle from '../components/PageTitle/PageTitle';
@@ -35,6 +35,21 @@ function Catering() {
   const [form, setForm] = useState(EMPTY_FORM);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+    const lock = () => {
+      const locked = window.innerWidth > 960;
+      document.documentElement.style.overflow = locked ? 'hidden' : '';
+      document.body.style.overflow = locked ? 'hidden' : '';
+    };
+    lock();
+    window.addEventListener('resize', lock);
+    return () => {
+      window.removeEventListener('resize', lock);
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   const filteredItems = useMemo(() =>
     activeCategory === 'all'
@@ -155,8 +170,10 @@ function Catering() {
   );
 
   return (
-    <main style={{ paddingTop: '68px' }}>
-      <div className="section-dark" style={{ padding: '0.5rem 0 0.7rem' }}>
+    <main className="catering-page">
+
+      {/* כותרת */}
+      <div className="section-dark catering-page-hero">
         <div className="container">
           <PageTitle
             eyebrow="קייטרינג"
@@ -166,61 +183,50 @@ function Catering() {
         </div>
       </div>
 
-      <section className="section" style={{ paddingBottom: '0' }}>
-        <div className="container">
-          <div className="catering-intro">
-            <h2 className="section-title catering-intro-title">מתכננים אירוע? אנחנו כאן לרשותכם.</h2>
-            <p className="catering-intro-body">בחרו ממגוון מגשי האירוח שלנו, ציינו את התאריך המבוקש, ואנחנו נחזור אליכם עם הצעה, זמינות ומענה לכל שאלה.</p>
+      {/* 3 עמודות */}
+      <div className="catering-cols">
+
+        {/* ימין — קטגוריות */}
+        <nav className="catering-cats-col" aria-label="קטגוריות">
+          <h3 className="catering-cats-title">התפריט שלנו</h3>
+          {Object.entries(categoryLabels).map(([key, label]) => (
+            <button
+              key={key}
+              className={`catering-cat-btn${activeCategory === key ? ' catering-cat-active' : ''}`}
+              onClick={() => setActiveCategory(key)}
+            >
+              {label}
+            </button>
+          ))}
+        </nav>
+
+        {/* אמצע — מגשים */}
+        <div className="catering-products-col">
+          <p className="catering-col-intro">מתכננים אירוע? בחרו מגשים, ציינו תאריך ואנחנו נחזור אליכם עם הצעת מחיר.</p>
+          <div className="catering-grid">
+            {filteredItems.map(item => (
+              <CateringCard
+                key={item.id}
+                package={item}
+                quantity={cart[item.id] || 0}
+                onAdd={() => updateCart(item.id, 1)}
+                onUpdate={delta => updateCart(item.id, delta)}
+              />
+            ))}
           </div>
         </div>
-      </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="catering-layout" dir="rtl">
-
-            {/* מגשים — ימין */}
-            <div className="catering-products">
-              <div className="catering-tabs" role="tablist">
-                {Object.entries(categoryLabels).map(([key, label]) => (
-                  <button
-                    key={key}
-                    role="tab"
-                    aria-selected={activeCategory === key}
-                    className={`catering-tab${activeCategory === key ? ' catering-tab-active' : ''}`}
-                    onClick={() => setActiveCategory(key)}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-              <div className="catering-grid">
-                {filteredItems.map(item => (
-                  <CateringCard
-                    key={item.id}
-                    package={item}
-                    quantity={cart[item.id] || 0}
-                    onAdd={() => updateCart(item.id, 1)}
-                    onUpdate={delta => updateCart(item.id, delta)}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* סל — שמאל */}
-            <aside className="catering-cart-panel">
-              <div className="catering-cart-sticky">
-                <div className="cc-header">
-                  <ShoppingCart size={17} />
-                  <span>הסל שלי</span>
-                  {cartCount > 0 && <span className="cc-badge">{cartCount}</span>}
-                </div>
-                <CartContent onSend={openModal} />
-              </div>
-            </aside>
+        {/* שמאל — סל */}
+        <aside className="catering-cart-col">
+          <div className="cc-header">
+            <ShoppingCart size={17} />
+            <span>הסל שלי</span>
+            {cartCount > 0 && <span className="cc-badge">{cartCount}</span>}
           </div>
-        </div>
-      </section>
+          <CartContent onSend={openModal} />
+        </aside>
+
+      </div>
 
       {/* כפתור מובייל */}
       {cartCount > 0 && (

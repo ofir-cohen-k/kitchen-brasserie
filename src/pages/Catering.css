@@ -1,80 +1,114 @@
-/* ===== מבוא ===== */
-.catering-intro {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
+/* ===== Desktop: 3-column fixed layout ===== */
+@media (min-width: 961px) {
+  .catering-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* כותרת קומפקטית */
+  .catering-page-hero.section-dark { padding: 1.75rem 0; }
+
+  /* 3 עמודות — ממלאות את שארית הגובה */
+  .catering-cols {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: row; /* RTL: ימין → שמאל: [קטגוריות] [מגשים] [סל] */
+    border-top: 1px solid var(--border);
+  }
+
+  /* ימין — קטגוריות */
+  .catering-cats-col {
+    width: 185px;
+    flex-shrink: 0;
+    overflow-y: auto;
+    padding: 1.25rem 1rem;
+    background: var(--white);
+    border-left: 1px solid var(--border);
+    direction: rtl;
+  }
+
+  /* אמצע — מגשים (גולל) */
+  .catering-products-col {
+    flex: 1;
+    min-width: 0;
+    overflow-y: auto;
+    padding: 1.25rem 1.5rem;
+    direction: rtl;
+  }
+
+  /* שמאל — סל */
+  .catering-cart-col {
+    width: 280px;
+    flex-shrink: 0;
+    overflow-y: auto;
+    padding: 1.25rem;
+    background: var(--white);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+  }
 }
-.catering-intro-title { margin-bottom: 0.75rem; }
-.catering-intro-body {
-  font-size: 1rem;
+
+/* ===== קטגוריות ===== */
+.catering-cats-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.catering-cat-btn {
+  display: block;
+  width: 100%;
+  text-align: right;
+  padding: 0.55rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
   color: var(--text2);
-  line-height: 1.85;
-}
-
-/* ===== פריסה ===== */
-.catering-layout {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-}
-
-.catering-products {
-  flex: 1;
-  min-width: 0;
-}
-
-/* ===== טאבים ===== */
-.catering-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-.catering-tab {
-  padding: 0.4rem 0.95rem;
-  border: 1.5px solid var(--border);
-  border-radius: 20px;
-  font-size: 0.81rem;
-  font-weight: 600;
-  color: var(--text2);
-  background: var(--white);
+  background: transparent;
   cursor: pointer;
   transition: all 0.18s;
-  white-space: nowrap;
+  margin-bottom: 0.2rem;
 }
-.catering-tab:hover {
-  border-color: var(--gold);
-  color: var(--gold-dark);
+.catering-cat-btn:hover {
+  background: var(--cream2);
+  color: var(--dark);
 }
-.catering-tab-active {
+.catering-cat-active {
   background: var(--gold);
-  border-color: var(--gold);
   color: #fff;
+  font-weight: 700;
+}
+
+/* ===== מבוא באמצע ===== */
+.catering-col-intro {
+  font-size: 0.85rem;
+  color: var(--text2);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--cream2);
+  border-radius: var(--radius);
+  border-right: 3px solid var(--gold);
 }
 
 /* ===== גריד מגשים ===== */
 .catering-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.25rem;
 }
 
-/* ===== פאנל סל — דסקטופ ===== */
-.catering-cart-panel {
-  width: 290px;
-  flex-shrink: 0;
-}
-.catering-cart-sticky {
-  position: sticky;
-  top: 88px;
-  background: var(--white);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.4rem;
-  box-shadow: 0 4px 24px rgba(28,43,46,0.07);
-}
-
-/* ===== תוכן הסל (משותף לפאנל ומגירה) ===== */
+/* ===== תוכן הסל ===== */
 .cc-header {
   display: flex;
   align-items: center;
@@ -115,8 +149,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  max-height: 320px;
-  overflow-y: auto;
   margin-bottom: 1rem;
   padding-left: 2px;
 }
@@ -132,10 +164,7 @@
   object-fit: cover;
   flex-shrink: 0;
 }
-.cc-item-info {
-  flex: 1;
-  min-width: 0;
-}
+.cc-item-info { flex: 1; min-width: 0; }
 .cc-item-name {
   font-size: 0.78rem;
   font-weight: 600;
@@ -207,10 +236,7 @@
   font-weight: 700;
   color: var(--gold-dark);
 }
-.cc-send-btn {
-  width: 100%;
-  margin-top: 1rem;
-}
+.cc-send-btn { width: 100%; margin-top: 1rem; }
 .cc-note {
   font-size: 0.7rem;
   color: var(--muted);
@@ -219,7 +245,7 @@
   line-height: 1.4;
 }
 
-/* ===== כרטיסי מגש — שדרוגים לסל ===== */
+/* ===== כרטיסי מגש ===== */
 .catering-card { position: relative; }
 .catering-card-in-cart {
   border-color: rgba(184, 154, 94, 0.55);
@@ -299,7 +325,7 @@
   font-size: 0.82rem;
 }
 
-/* ===== Backdrop משותף ===== */
+/* ===== Backdrop ===== */
 .catering-backdrop {
   position: fixed;
   inset: 0;
@@ -341,7 +367,7 @@
   color: var(--muted);
 }
 
-/* ===== מודאל טופס ===== */
+/* ===== מודאל ===== */
 .catering-modal {
   background: var(--white);
   border-radius: var(--radius);
@@ -402,17 +428,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 0.8rem 1rem;
 }
-.cm-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.32rem;
-}
+.cm-field { display: flex; flex-direction: column; gap: 0.32rem; }
 .cm-full { grid-column: 1 / -1; }
-.cm-field label {
-  font-size: 0.77rem;
-  font-weight: 600;
-  color: var(--dark);
-}
+.cm-field label { font-size: 0.77rem; font-weight: 600; color: var(--dark); }
 .cm-field input,
 .cm-field textarea {
   padding: 0.55rem 0.8rem;
@@ -426,10 +444,7 @@
   transition: border-color 0.18s;
 }
 .cm-field input:focus,
-.cm-field textarea:focus {
-  outline: none;
-  border-color: var(--gold);
-}
+.cm-field textarea:focus { outline: none; border-color: var(--gold); }
 .cm-field textarea { resize: vertical; }
 .catering-modal-footer {
   display: flex;
@@ -446,10 +461,7 @@
 }
 
 /* ===== הצלחה ===== */
-.catering-success {
-  text-align: center;
-  padding: 2rem 1rem;
-}
+.catering-success { text-align: center; padding: 2rem 1rem; }
 .catering-success-icon {
   display: block;
   font-size: 2.8rem;
@@ -463,23 +475,22 @@
   color: var(--dark);
   margin-bottom: 0.5rem;
 }
-.catering-success p {
-  font-size: 0.92rem;
-  color: var(--text2);
-}
+.catering-success p { font-size: 0.92rem; color: var(--text2); }
 
-/* ===== Responsive ===== */
+/* ===== Mobile ===== */
 @media (max-width: 960px) {
-  .catering-layout { flex-direction: column; }
-  .catering-cart-panel { display: none; }
+  .catering-cols { display: block; }
+  .catering-cats-col { display: none; }
+  .catering-cart-col { display: none; }
+  .catering-products-col { padding: 1rem; }
   .catering-fab { display: flex; }
+  .catering-col-intro { margin: 0 0 1rem; }
+  .catering-grid { padding-bottom: 5rem; }
 }
 @media (max-width: 600px) {
   .catering-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
   .catering-modal-grid { grid-template-columns: 1fr; }
   .catering-modal { padding: 1.5rem 1.25rem; }
-  .catering-tabs { gap: 0.35rem; }
-  .catering-tab { font-size: 0.76rem; padding: 0.32rem 0.7rem; }
 }
 @media (max-width: 380px) {
   .catering-grid { grid-template-columns: 1fr; }
