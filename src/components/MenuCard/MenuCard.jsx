@@ -3,7 +3,7 @@ import './MenuCard.css';
 
 function MenuCard({ dish, onOpen }) {
   return (
-    <article className="menu-card" onClick={onOpen} style={{ cursor: 'zoom-in' }}>
+    <article className="menu-card" onClick={onOpen || undefined} style={onOpen ? { cursor: 'zoom-in' } : undefined}>
       <div
         className={`menu-card-img${dish.imageContain ? ' menu-card-img-contain' : ''}${dish.imageBgWhite ? ' menu-card-img-bg-white' : ''}${dish.imagePadSm ? ' menu-card-img-pad-sm' : ''}`}
       >
