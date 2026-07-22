@@ -9,7 +9,6 @@ import { Menu, X } from 'lucide-react';
 
 const WOLT_URL = 'https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona';
 const WAZE_URL = 'https://waze.com/ul/hsv8txue5s';
-const WAZE_APP_URL = 'waze://ul/hsv8txue5s';
 
 import './Header.css';
 
@@ -93,12 +92,9 @@ function Header() {
 
           {/* וייז */}
           <a
-            href={WAZE_APP_URL}
-            onClick={e => {
-              e.preventDefault();
-              window.location.href = WAZE_APP_URL;
-              setTimeout(() => { window.open(WAZE_URL, '_blank'); }, 1500);
-            }}
+            href={WAZE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="waze-btn"
             aria-label="נווט אלינו בוויז"
             title="נווט אלינו בוויז"
