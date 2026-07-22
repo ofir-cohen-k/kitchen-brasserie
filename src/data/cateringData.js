@@ -6,11 +6,16 @@ const BASE = '/מנות קיטשן/מגשי אירוח/צילומי מגשי א�
 const L = (name) => `${BASE}${name}`;
 
 const FB = {
-  pasta:  'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80&fit=crop',
-  pizza:  'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80&fit=crop',
-  fish:   'https://images.unsplash.com/photo-1781130211746-b78a2918d857?w=800&q=80&fit=crop',
-  salad:  'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&fit=crop',
-  cake:   'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80&fit=crop',
+  pasta:    'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80&fit=crop',
+  pizza:    'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80&fit=crop',
+  fish:     'https://images.unsplash.com/photo-1781130211746-b78a2918d857?w=800&q=80&fit=crop',
+  salad:    'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&fit=crop',
+  cake:     'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80&fit=crop',
+  cheese:   'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=800&q=80&fit=crop',
+  dips:     'https://images.unsplash.com/photo-1577906096429-f73c2c312435?w=800&q=80&fit=crop',
+  dessertcups: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&q=80&fit=crop',
+  pastry:   'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&q=80&fit=crop',
+  coffee:   'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&fit=crop',
 };
 
 export const cateringData = [
@@ -99,7 +104,7 @@ export const cateringData = [
       'מטבעות עיזים',
     ],
     startingPrice: 240,
-    image: FB.salad,
+    image: FB.cheese,
     category: 'produce',
   },
   {
@@ -114,7 +119,7 @@ export const cateringData = [
       'סלט טונה וסלט ביצים',
     ],
     startingPrice: 250,
-    image: FB.salad,
+    image: FB.dips,
     category: 'produce',
   },
 
@@ -387,7 +392,7 @@ export const cateringData = [
       'מוס שוקולד דובאי',
     ],
     startingPrice: 180,
-    image: FB.cake,
+    image: FB.dessertcups,
     category: 'sweets',
   },
   {
@@ -424,7 +429,7 @@ export const cateringData = [
       'נאפה בטאבון',
     ],
     startingPrice: 180,
-    image: FB.cake,
+    image: FB.pastry,
     category: 'sweets',
   },
   {
@@ -455,7 +460,7 @@ export const cateringData = [
       'לבחירה: חלב סויה / שקדים / שיבולת שועל',
     ],
     startingPrice: 350,
-    image: FB.salad,
+    image: FB.coffee,
     category: 'drinks',
   },
 ];
