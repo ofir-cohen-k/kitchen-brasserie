@@ -3,13 +3,13 @@
 // ========================================
 
 import { Link } from 'react-router-dom';
-import { Utensils, ShoppingBasket, CalendarDays, Truck, MapPin, Phone, Clock, Star, Sparkles } from 'lucide-react';
+import { Utensils, ShoppingBasket, CalendarDays, Truck, MapPin, Phone, Clock, Star } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Hero from '../components/Hero/Hero';
 import MenuCard from '../components/MenuCard/MenuCard';
-import EventCard from '../components/EventCard/EventCard';
+// import EventCard from '../components/EventCard/EventCard'; // קונספטים מוסתר זמנית
 import { menuData } from '../data/menuData';
-import { eventsData } from '../data/eventsData';
+// import { eventsData } from '../data/eventsData'; // קונספטים מוסתר זמנית
 import './Home.css';
 
 const slideshowImages = [
@@ -33,8 +33,7 @@ function Home() {
   }, []);
   const recommendedDishes = menuData.filter((dish) => dish.isFeatured);
 
-  // שני אירועים ראשונים לדף הבית
-  const featuredEvents = eventsData.slice(0, 2);
+  // const featuredEvents = eventsData.slice(0, 2); // קונספטים מוסתר זמנית
 
   return (
     <main>
@@ -56,12 +55,7 @@ function Home() {
             <p>כריכונים, פוקאצ'ות, סלטים לכל אירוע</p>
             <Link to="/catering" className="btn btn-outline btn-sm">לכל המגשים</Link>
           </div>
-          <div className="home-card">
-            <span className="home-card-icon"><Sparkles size={28} strokeWidth={1.5} /></span>
-            <h3>קונספטים</h3>
-            <p>ערבי שף, מוסיקה חיה, פיצה ועוד חוויות מיוחדות</p>
-            <Link to="/events" className="btn btn-outline btn-sm">לכל הקונספטים</Link>
-          </div>
+          {false && <div className="home-card"><h3>קונספטים</h3></div>}
           <div className="home-card">
             <span className="home-card-icon"><Truck size={28} strokeWidth={1.5} /></span>
             <h3>הזמנה דרך Wolt</h3>
@@ -152,29 +146,7 @@ function Home() {
         </div>
       </section>
 
-      {/* ===== אירועים קרובים ===== */}
-      <section className="section-dark" id="events-preview">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-eyebrow" style={{ color: 'rgba(184,154,94,0.9)' }}>אירועים</span>
-            <h2 className="section-title section-title-light">אירועים קרובים</h2>
-            <p className="section-subtitle" style={{ color: 'rgba(248,244,236,0.55)' }}>
-              אירועים מיוחדים, ערבי שף, מוסיקה חיה ועוד
-            </p>
-            <div className="ornament ornament-light"><span>✦</span></div>
-          </div>
-          <div className="cards-grid">
-            {featuredEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
-          </div>
-          <div className="home-see-all">
-            <Link to="/events" className="btn btn-outline home-events-btn">
-              לכל האירועים
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* אירועים קרובים — מוסתר זמנית */}
 
       {/* ===== CTA - הזמנת שולחן ===== */}
       <section className="section home-cta-section">

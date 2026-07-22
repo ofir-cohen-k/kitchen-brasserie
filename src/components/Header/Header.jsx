@@ -51,9 +51,7 @@ function Header() {
           <NavLink to="/private-events" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
             אירועים
           </NavLink>
-          <NavLink to="/events" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            קונספטים
-          </NavLink>
+          {false && <NavLink to="/events" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>קונספטים</NavLink>}
           <NavLink to="/catering" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
             מגשי אירוח
           </NavLink>
@@ -93,7 +91,6 @@ function Header() {
           {/* וייז */}
           <a
             href={WAZE_URL}
-            onClick={e => { e.preventDefault(); window.location.href = WAZE_URL; }}
             className="waze-btn"
             aria-label="נווט אלינו בוויז"
             title="נווט אלינו בוויז"
@@ -134,7 +131,7 @@ function Header() {
           <NavLink to="/" className="nav-mobile-link" onClick={handleNavClick} end>בית</NavLink>
           <NavLink to="/menu" className="nav-mobile-link" onClick={handleNavClick}>תפריט</NavLink>
           <NavLink to="/private-events" className="nav-mobile-link" onClick={handleNavClick}>אירועים</NavLink>
-          <NavLink to="/events" className="nav-mobile-link" onClick={handleNavClick}>קונספטים</NavLink>
+          {false && <NavLink to="/events" className="nav-mobile-link" onClick={handleNavClick}>קונספטים</NavLink>}
           <NavLink to="/catering" className="nav-mobile-link" onClick={handleNavClick}>מגשי אירוח</NavLink>
           <NavLink to="/about" className="nav-mobile-link" onClick={handleNavClick}>אודות</NavLink>
           <NavLink to="/contact" className="nav-mobile-link" onClick={handleNavClick}>צור קשר</NavLink>
