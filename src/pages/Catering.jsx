@@ -91,6 +91,16 @@ function Catering() {
         </div>
       </div>
 
+      {/* מבוא */}
+      <section className="section" style={{ paddingBottom: '0' }}>
+        <div className="container">
+          <div className="catering-intro">
+            <h2 className="section-title catering-intro-title">מתכננים אירוע? אנחנו כאן לרשותכם.</h2>
+            <p className="catering-intro-body">בחרו ממגוון מגשי האירוח שלנו, ציינו את התאריך המבוקש, ואנחנו נחזור אליכם עם הצעה, זמינות ומענה לכל שאלה.</p>
+          </div>
+        </div>
+      </section>
+
       {/* חבילות */}
       <section className="section">
         <div className="container">

@@ -1,3 +1,17 @@
+.catering-intro {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.catering-intro-title {
+  margin-bottom: 0.75rem;
+}
+.catering-intro-body {
+  font-size: 1rem;
+  color: var(--text2);
+  line-height: 1.85;
+}
+
 .catering-form-wrap { max-width: 760px; margin: 0 auto; }
 .catering-selected-pkg {
   padding: 0.75rem 1rem;
