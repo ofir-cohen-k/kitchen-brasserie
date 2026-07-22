@@ -223,7 +223,9 @@ function Catering() {
             <span>הסל שלי</span>
             {cartCount > 0 && <span className="cc-badge">{cartCount}</span>}
           </div>
-          <CartContent onSend={openModal} />
+          <div className="cc-body">
+            <CartContent onSend={openModal} />
+          </div>
         </aside>
 
       </div>
