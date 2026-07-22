@@ -10,8 +10,18 @@ import { Menu, X } from 'lucide-react';
 const WOLT_URL = 'https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona';
 
 const WoltIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="3,5 7.5,19 12,10 16.5,19 21,5" />
+  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="16" fill="currentColor" />
+    <text
+      x="16" y="21"
+      textAnchor="middle"
+      fill="white"
+      fontSize="11.5"
+      fontFamily="Georgia, 'Times New Roman', serif"
+      fontStyle="italic"
+      fontWeight="bold"
+      letterSpacing="0.4"
+    >Wolt</text>
   </svg>
 );
 import './Header.css';
