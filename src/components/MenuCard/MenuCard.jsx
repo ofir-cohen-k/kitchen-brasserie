@@ -3,11 +3,9 @@ import './MenuCard.css';
 
 function MenuCard({ dish, onOpen }) {
   return (
-    <article className="menu-card">
+    <article className="menu-card" onClick={onOpen} style={{ cursor: 'zoom-in' }}>
       <div
         className={`menu-card-img${dish.imageContain ? ' menu-card-img-contain' : ''}${dish.imageBgWhite ? ' menu-card-img-bg-white' : ''}${dish.imagePadSm ? ' menu-card-img-pad-sm' : ''}`}
-        onClick={onOpen}
-        style={{ cursor: 'zoom-in' }}
       >
         <img src={dish.image} alt={dish.name} loading="lazy" />
         {dish.isRecommended && (
