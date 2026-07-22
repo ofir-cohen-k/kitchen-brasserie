@@ -178,7 +178,7 @@ function Catering() {
           <PageTitle
             eyebrow="קייטרינג"
             title="מגשי אירוח"
-            subtitle="מגשים מעוצבים ויוקרתיים לכל סוג אירוע"
+            subtitle="אירועים שנזכרים בהם מתחילים בשולחן שאנחנו מכינים"
           />
         </div>
       </div>
@@ -188,7 +188,7 @@ function Catering() {
 
         {/* ימין — קטגוריות */}
         <nav className="catering-cats-col" aria-label="קטגוריות">
-          <h3 className="catering-cats-title">התפריט שלנו</h3>
+          <h3 className="catering-cats-title">סוגי מגשים</h3>
           {Object.entries(categoryLabels).map(([key, label]) => (
             <button
               key={key}
@@ -202,7 +202,7 @@ function Catering() {
 
         {/* אמצע — מגשים */}
         <div className="catering-products-col">
-          <p className="catering-col-intro">מתכננים אירוע? בחרו מגשים, ציינו תאריך ואנחנו נחזור אליכם עם הצעת מחיר.</p>
+          <p className="catering-col-intro">בחרו את המגשים שאוהבים, ציינו תאריך — ונחזור אליכם עם הצעה מותאמת אישית.</p>
           <div className="catering-grid">
             {filteredItems.map(item => (
               <CateringCard
