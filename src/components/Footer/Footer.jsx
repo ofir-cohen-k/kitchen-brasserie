@@ -107,7 +107,7 @@ function Footer() {
           <div className="footer-contact">
             <div className="footer-contact-row">
               <MapPin size={15} />
-              <a href="https://waze.com/ul/hsv8txue5s?navigate=yes" target="_blank" rel="noopener noreferrer">האירוסים 53, קניותר, נס ציונה</a>
+              <a href="https://waze.com/ul/hsv8txue5s" target="_blank" rel="noopener noreferrer">האירוסים 53, קניותר, נס ציונה</a>
             </div>
             <div className="footer-contact-row">
               <Phone size={15} />
