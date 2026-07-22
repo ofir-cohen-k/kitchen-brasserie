@@ -151,6 +151,13 @@
   font-weight: 600;
   letter-spacing: 0.05em;
 }
+.lightbox-price {
+  color: var(--gold);
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: -0.4rem;
+}
 .lightbox-desc {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.88rem;

@@ -141,6 +141,7 @@ function Menu() {
           <div className="lightbox-content" onClick={e => e.stopPropagation()}>
             <img src={activeDish.image} alt={activeDish.name} className="lightbox-img" />
             <p className="lightbox-name">{activeDish.name}</p>
+            <p className="lightbox-price">₪{activeDish.price}</p>
             {activeDish.description && <p className="lightbox-desc">{activeDish.description}</p>}
             <div className="lightbox-nav-row">
               <button className="lightbox-nav" onClick={goPrev} aria-label="הקודם">
