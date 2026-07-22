@@ -8,7 +8,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const WOLT_URL = 'https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona';
-const WAZE_URL = 'https://waze.com/ul?q=האירוסים+53+נס+ציונה&navigate=yes';
+const WAZE_URL = 'https://waze.com/ul/hsv8txue5s';
 
 import './Header.css';
 
