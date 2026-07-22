@@ -36,7 +36,7 @@
   .catering-products-col {
     flex: 1;
     min-width: 0;
-    overflow-y: auto;
+    overflow-y: scroll;
     padding: 1.25rem 1.5rem;
     direction: rtl;
   }
@@ -62,6 +62,25 @@
     flex-direction: column;
     overflow: hidden;
   }
+}
+
+/* ===== Scrollbar עדין ===== */
+.catering-products-col::-webkit-scrollbar,
+.cc-list::-webkit-scrollbar {
+  width: 4px;
+}
+.catering-products-col::-webkit-scrollbar-track,
+.cc-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.catering-products-col::-webkit-scrollbar-thumb,
+.cc-list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+.catering-products-col::-webkit-scrollbar-thumb:hover,
+.cc-list::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
 }
 
 /* ===== קטגוריות ===== */
@@ -164,7 +183,7 @@
   padding-left: 2px;
   flex: 1;
   min-height: 0;
-  overflow-y: auto;
+  overflow-y: scroll;
   padding-bottom: 0.25rem;
 }
 .cc-item {
