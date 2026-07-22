@@ -2,6 +2,7 @@
 // דף הבית - Home
 // ========================================
 
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Utensils, ShoppingBasket, CalendarDays, Truck, MapPin, Phone, Clock, Star } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -37,6 +38,11 @@ function Home() {
 
   return (
     <main>
+      <Helmet>
+        <title>Kitchen Brasserie | מסעדה כשרה חלבית ודגים בנס ציונה</title>
+        <meta name="description" content="מסעדת קונספט חלבית ודגים כשרה למהדרין בנס ציונה. ארוחות בוקר מפנקות, פסטות, פיצות, דגים ומגשי אירוח. כשר בד״ץ בית יוסף — קניון קניותר." />
+        <link rel="canonical" href="https://kitchenbrasserie.com/" />
+      </Helmet>
       {/* Hero - מקטע ראשי */}
       <Hero />
 

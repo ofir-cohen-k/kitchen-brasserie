@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import PageTitle from '../components/PageTitle/PageTitle';
 import './PrivateEvents.css';
@@ -92,6 +93,11 @@ function PrivateEvents() {
 
   return (
     <main style={{ paddingTop: '68px' }}>
+      <Helmet>
+        <title>אירועים פרטיים | Kitchen Brasserie — בר מצווה, ימי הולדת ואירועי חברה</title>
+        <meta name="description" content="אירועים פרטיים ב-Kitchen Brasserie — בר/בת מצווה, ימי הולדת, אירועי חברה ועוד. חבילות Silver, Gold ו-Platinum. מסעדה כשרה בנס ציונה." />
+        <link rel="canonical" href="https://kitchenbrasserie.com/private-events" />
+      </Helmet>
       <div className="section-dark" style={{ padding: '0.5rem 0 0.7rem' }}>
         <div className="container">
           <PageTitle

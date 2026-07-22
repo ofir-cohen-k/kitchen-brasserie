@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useState, useMemo, useEffect } from 'react';
 import { X, ShoppingCart, Plus, Minus } from 'lucide-react';
 import CateringCard from '../components/CateringCard/CateringCard';
@@ -171,6 +172,11 @@ function Catering() {
 
   return (
     <main className="catering-page">
+      <Helmet>
+        <title>מגשי אירוח | Kitchen Brasserie — הזמנת מגשים לאירועים</title>
+        <meta name="description" content="מגשי אירוח מרשימים מ-Kitchen Brasserie — כריכונים, פוקאצ'ות, סלטים ועוד. מושלם לאירועים עסקיים ומשפחתיים. הזמינו ונחזור עם הצעת מחיר." />
+        <link rel="canonical" href="https://kitchenbrasserie.com/catering" />
+      </Helmet>
 
       {/* כותרת */}
       <div className="section-dark catering-page-hero">

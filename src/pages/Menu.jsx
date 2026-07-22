@@ -2,6 +2,7 @@
 // דף תפריט - Menu
 // ========================================
 
+import { Helmet } from 'react-helmet-async';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { Search, X, ChevronRight, ChevronLeft } from 'lucide-react';
 import MenuCard from '../components/MenuCard/MenuCard';
@@ -67,6 +68,11 @@ function Menu() {
 
   return (
     <main style={{ paddingTop: '68px' }}>
+      <Helmet>
+        <title>תפריט | Kitchen Brasserie — מסעדה כשרה בנס ציונה</title>
+        <meta name="description" content="תפריט מלא של Kitchen Brasserie — ארוחות בוקר, פסטות, פיצות, דגים, סלטים וקינוחים. מסעדה כשרה חלבית ודגים בנס ציונה, קניון קניותר." />
+        <link rel="canonical" href="https://kitchenbrasserie.com/menu" />
+      </Helmet>
       {/* רקע כהה עם כותרת */}
       <div className="menu-hero section-dark">
         <div className="container">

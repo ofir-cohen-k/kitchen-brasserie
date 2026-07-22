@@ -2,6 +2,7 @@
 // דף יצירת קשר - Contact
 // ========================================
 
+import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import FormInput from '../components/FormInput/FormInput';
@@ -87,6 +88,11 @@ function Contact() {
 
   return (
     <main style={{ paddingTop: '68px' }}>
+      <Helmet>
+        <title>צור קשר | Kitchen Brasserie — נס ציונה</title>
+        <meta name="description" content="צרו קשר עם Kitchen Brasserie — האירוסים 53, קניון קניותר, נס ציונה. טלפון: 073-327-7207. שעות פעילות: א׳-ה׳ 09:00-22:30, ו׳ 09:00-15:00." />
+        <link rel="canonical" href="https://kitchenbrasserie.com/contact" />
+      </Helmet>
       <div className="section-dark" style={{ padding: '0.5rem 0 0.7rem' }}>
         <div className="container">
           <PageTitle

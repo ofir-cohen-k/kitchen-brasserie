@@ -2,6 +2,7 @@
 // דף אודות - About
 // ========================================
 
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { MapPin, Phone, Mail, Check, Leaf, ChefHat, ShieldCheck, Heart } from 'lucide-react';
@@ -37,6 +38,11 @@ function About() {
 
   return (
     <main style={{ paddingTop: '68px' }}>
+      <Helmet>
+        <title>אודות | Kitchen Brasserie — הסיפור שלנו</title>
+        <meta name="description" content="הכירו את Kitchen Brasserie — מסעדת קונספט חלבית ודגים כשרה למהדרין בנס ציונה. הסיפור שלנו, הערכים שלנו והצוות שמאחורי המטבח." />
+        <link rel="canonical" href="https://kitchenbrasserie.com/about" />
+      </Helmet>
       <div className="section-dark" style={{ padding: '0.5rem 0 0.7rem' }}>
         <div className="container">
           <PageTitle
