@@ -429,7 +429,7 @@ export const cateringData = [
       'נאפה בטאבון',
     ],
     startingPrice: 180,
-    image: FB.pastry,
+    image: '/מנות קיטשן/רוגלך.jpg',
     category: 'sweets',
   },
   {
