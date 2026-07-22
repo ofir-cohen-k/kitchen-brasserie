@@ -93,8 +93,7 @@ function Header() {
           {/* וייז */}
           <a
             href={WAZE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={e => { e.preventDefault(); window.location.href = WAZE_URL; }}
             className="waze-btn"
             aria-label="נווט אלינו בוויז"
             title="נווט אלינו בוויז"
