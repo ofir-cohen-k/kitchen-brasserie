@@ -99,7 +99,7 @@ function Header() {
             title="הזמנה דרך Wolt"
           >
             <span className="wolt-icon-circle">
-              <img src="/מנות קיטשן/Wolt_logo_black.png" alt="Wolt" />
+              <img src="/wolt-logo.png" alt="Wolt" />
             </span>
           </a>
 
