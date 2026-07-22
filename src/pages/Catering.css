@@ -522,6 +522,7 @@
 /* ===== Mobile ===== */
 @media (max-width: 960px) {
   .catering-page { padding-top: 68px; }
+  .catering-page-hero.section-dark { padding: 1rem 0; }
   .catering-cols { display: block; }
   .catering-cats-col { display: none; }
   .catering-cart-col { display: none; }
