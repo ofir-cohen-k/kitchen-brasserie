@@ -178,35 +178,8 @@
   50% { opacity: 0.9; transform: scaleY(1.2); }
 }
 
-.hero-video-mobile { display: none; }
-
 @media (max-width: 900px) {
   .hero-video-side { display: none; }
-
-  .hero {
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 2.5rem;
-    min-height: 100svh;
-  }
-
-  .hero-content {
-    padding-bottom: 1.5rem;
-  }
-
-  .hero-video-mobile {
-    display: block;
-    position: relative;
-    z-index: 3;
-  }
-
-  .hero-video-mobile .hero-video-phone {
-    width: 200px;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 12px 40px rgba(44, 26, 10, 0.22);
-    border: 2px solid rgba(184, 154, 94, 0.35);
-  }
 }
 
 @media (max-width: 600px) {
