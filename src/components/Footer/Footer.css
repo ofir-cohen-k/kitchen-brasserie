@@ -324,4 +324,9 @@
   .footer-hours-row span:last-child {
     color: rgba(248, 244, 236, 0.45);
   }
+  /* icon moves to left so text is flush-right like headings and links */
+  .footer-contact-row {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 }
