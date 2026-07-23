@@ -178,33 +178,40 @@ function Home() {
       {/* אירועים קרובים — מוסתר זמנית */}
 
       {/* ===== עדויות לקוחות ===== */}
-      <section className="home-testimonials-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-eyebrow">הלקוחות שלנו מספרים</span>
-            <h2 className="section-title">מה אומרים עלינו</h2>
-            <div className="ornament"><span>✦</span></div>
-          </div>
-          <div className="testimonials-grid">
-            {[
-              { name: 'מיכל צ׳', text: 'שירות מעולה, אוכל אנין טעם — פשוט מעולה. תודה רבה!' },
-              { name: 'סיון פ׳', text: 'אנחנו אוכלים פה קבוע ואין פעם שלא יוצאים מרוצים. קבלת פנים מאירת עיניים, המקום מדהים וכל הצוות פשוט מדהים.' },
-              { name: 'Ezra Y.', text: 'ארוחת הבוקר הייתה מעולה — עשירה ומפנקת, שירות מצוין. אהבנו מאוד, בהחלט נחזור לפה.' },
-              { name: 'יצחק ב׳', text: 'אוכל טעים מאוד, מנות מכובדות ולא בקמצנות, שירות נעים ואדיב. נהנינו אני ואשתי מאוד.' },
-              { name: 'Sapir C.', text: 'מסעדה מדהימה! אהבנו ממש את האוכל ואת כל חוויית השירות. בטוחה שאחזור :)' },
-            ].map(({ name, text }, i) => (
-              <div key={i} className="testimonial-card">
-                <div className="testimonial-quote-mark">"</div>
-                <p className="testimonial-text">{text}</p>
-                <div className="testimonial-footer">
-                  <span className="testimonial-stars">★★★★★</span>
-                  <span className="testimonial-name">— {name}</span>
-                </div>
+      {(() => {
+        const reviews = [
+          { name: 'מיכל צ׳', text: 'שירות מעולה, אוכל אנין טעם — פשוט מעולה. תודה רבה!' },
+          { name: 'סיון פ׳', text: 'אנחנו אוכלים פה קבוע ואין פעם שלא יוצאים מרוצים. קבלת פנים מאירת עיניים, המקום מדהים וכל הצוות פשוט מדהים.' },
+          { name: 'Ezra Y.', text: 'ארוחת הבוקר הייתה מעולה — עשירה ומפנקת, שירות מצוין. אהבנו מאוד, בהחלט נחזור לפה.' },
+          { name: 'יצחק ב׳', text: 'אוכל טעים מאוד, מנות מכובדות ולא בקמצנות, שירות נעים ואדיב. נהנינו אני ואשתי מאוד.' },
+          { name: 'Sapir C.', text: 'מסעדה מדהימה! אהבנו ממש את האוכל ואת כל חוויית השירות. בטוחה שאחזור :)' },
+        ];
+        return (
+          <section className="home-testimonials-section">
+            <div className="container">
+              <div className="section-header">
+                <span className="section-eyebrow">הלקוחות שלנו מספרים</span>
+                <h2 className="section-title">מה אומרים עלינו</h2>
+                <div className="ornament"><span>✦</span></div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </div>
+            <div className="testimonials-marquee-wrap">
+              <div className="testimonials-marquee-track">
+                {[...reviews, ...reviews].map(({ name, text }, i) => (
+                  <div key={i} className="testimonial-card">
+                    <div className="testimonial-quote-mark">"</div>
+                    <p className="testimonial-text">{text}</p>
+                    <div className="testimonial-footer">
+                      <span className="testimonial-stars">★★★★★</span>
+                      <span className="testimonial-name">— {name}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ===== שאלות נפוצות ===== */}
       <section className="section home-faq-section" id="faq">

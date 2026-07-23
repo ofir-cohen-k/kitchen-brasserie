@@ -189,49 +189,62 @@
 
 /* ===== עדויות לקוחות ===== */
 .home-testimonials-section {
-  background: var(--dark);
-  padding: 4rem 0 4.5rem;
+  background: var(--white);
+  padding: 3.5rem 0 4rem;
+  overflow: hidden;
 }
 
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 0.5rem;
+/* fade edges */
+.testimonials-marquee-wrap {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(to left, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask: linear-gradient(to left, transparent 0%, black 12%, black 88%, transparent 100%);
+  margin-top: 1.5rem;
+}
+
+.testimonials-marquee-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+}
+.testimonials-marquee-track:hover { animation-play-state: paused; }
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .testimonial-card {
-  background: var(--white);
+  width: 320px;
+  flex-shrink: 0;
+  background: var(--cream);
+  border: 1px solid var(--border);
   border-radius: 2px;
-  padding: 2rem 1.75rem 1.6rem;
+  padding: 1.75rem 1.6rem 1.4rem;
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.testimonial-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+  cursor: default;
 }
 
 .testimonial-quote-mark {
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 1;
   color: var(--gold);
   font-family: Georgia, serif;
-  opacity: 0.35;
+  opacity: 0.3;
   position: absolute;
-  top: 0.75rem;
-  right: 1.5rem;
+  top: 0.6rem;
+  right: 1.25rem;
 }
 
 .testimonial-text {
-  font-size: 0.88rem;
+  font-size: 0.875rem;
   color: var(--text2);
   line-height: 1.85;
   flex: 1;
-  margin: 1.5rem 0 1.25rem;
+  margin: 1.25rem 0 1.1rem;
 }
 
 .testimonial-footer {
@@ -239,27 +252,20 @@
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid var(--border);
-  padding-top: 0.9rem;
+  padding-top: 0.8rem;
 }
 
 .testimonial-stars {
   color: var(--gold);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 3px;
 }
 
 .testimonial-name {
-  font-size: 0.78rem;
+  font-size: 0.77rem;
   font-weight: 700;
   color: var(--dark);
   letter-spacing: 0.04em;
-}
-
-@media (max-width: 900px) {
-  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 580px) {
-  .testimonials-grid { grid-template-columns: 1fr; }
 }
 
 /* ===== FAQ ===== */
