@@ -4,7 +4,7 @@
 
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Utensils, ShoppingBasket, CalendarDays, Truck, MapPin, Phone, Clock, Star } from 'lucide-react';
+import { ShoppingBasket, Truck, MapPin, Phone, Clock, Star, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import Hero from '../components/Hero/Hero';
 import MenuCard from '../components/MenuCard/MenuCard';
@@ -83,6 +83,41 @@ function TestimonialsMarquee() {
   );
 }
 
+function Lightbox({ dishes, index, onClose, onPrev, onNext }) {
+  const dish = dishes[index];
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    function handleKey(e) {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft') onNext();
+      if (e.key === 'ArrowRight') onPrev();
+    }
+    document.addEventListener('keydown', handleKey);
+    return () => {
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKey);
+    };
+  }, [index]);
+
+  return (
+    <div className="lightbox-overlay" onClick={onClose}>
+      <button className="lightbox-close" onClick={onClose} aria-label="סגור"><X size={18} /></button>
+      <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+        <img src={dish.image} alt={dish.name} className="lightbox-img" />
+        <div className="lightbox-name">{dish.name}</div>
+        <div className="lightbox-price">₪{dish.price}</div>
+        {dish.description && <p className="lightbox-desc">{dish.description}</p>}
+        <div className="lightbox-nav-row">
+          <button className="lightbox-nav" onClick={onPrev} aria-label="הקודם"><ChevronRight size={20} /></button>
+          <span className="lightbox-counter">{index + 1} / {dishes.length}</span>
+          <button className="lightbox-nav" onClick={onNext} aria-label="הבא"><ChevronLeft size={20} /></button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const slideshowImages = [
   { src: '/מנות קיטשן/בוראטה דה נאפולי.jpg',          alt: 'בוראטה דה נאפולי — Kitchen Brasserie נס ציונה' },
   { src: '/מנות קיטשן/שווארמה דג.jpg',                alt: 'שווארמה דג — מסעדה כשרה נס ציונה' },
@@ -95,6 +130,7 @@ const slideshowImages = [
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [lbIdx, setLbIdx] = useState(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -174,10 +210,19 @@ function Home() {
             <div className="ornament"><span>✦</span></div>
           </div>
           <div className="cards-grid-4">
-            {recommendedDishes.map((dish) => (
-              <MenuCard key={dish.id} dish={dish} />
+            {recommendedDishes.map((dish, i) => (
+              <MenuCard key={dish.id} dish={dish} onOpen={() => setLbIdx(i)} />
             ))}
           </div>
+          {lbIdx !== null && (
+            <Lightbox
+              dishes={recommendedDishes}
+              index={lbIdx}
+              onClose={() => setLbIdx(null)}
+              onPrev={() => setLbIdx((lbIdx - 1 + recommendedDishes.length) % recommendedDishes.length)}
+              onNext={() => setLbIdx((lbIdx + 1) % recommendedDishes.length)}
+            />
+          )}
           <div className="home-see-all">
             <Link to="/menu" className="btn btn-outline">
               לכל התפריט
