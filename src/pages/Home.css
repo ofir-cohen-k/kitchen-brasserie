@@ -202,21 +202,11 @@
   mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   margin-top: 1.5rem;
 }
-.testimonials-marquee-wrap:hover .testimonials-marquee-track {
-  animation-play-state: paused;
-}
 
 .testimonials-marquee-track {
   display: flex;
-  gap: 0;
   width: max-content;
-  direction: ltr;
-  animation: marqueeScroll 44s linear infinite;
-}
-
-@keyframes marqueeScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  will-change: transform;
 }
 
 .testimonial-card {

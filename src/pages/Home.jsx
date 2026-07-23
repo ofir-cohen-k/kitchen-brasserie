@@ -5,13 +5,79 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Utensils, ShoppingBasket, CalendarDays, Truck, MapPin, Phone, Clock, Star } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Hero from '../components/Hero/Hero';
 import MenuCard from '../components/MenuCard/MenuCard';
 // import EventCard from '../components/EventCard/EventCard'; // קונספטים מוסתר זמנית
 import { menuData } from '../data/menuData';
 // import { eventsData } from '../data/eventsData'; // קונספטים מוסתר זמנית
 import './Home.css';
+
+const REVIEWS = [
+  { name: 'מיכל צ׳', text: 'שירות מעולה, אוכל אנין טעם — פשוט מעולה. תודה רבה!' },
+  { name: 'סיון פ׳', text: 'אנחנו אוכלים פה קבוע ואין פעם שלא יוצאים מרוצים. קבלת פנים מאירת עיניים, המקום מדהים וכל הצוות פשוט מדהים.' },
+  { name: 'Ezra Y.', text: 'ארוחת הבוקר הייתה מעולה — עשירה ומפנקת, שירות מצוין. אהבנו מאוד, בהחלט נחזור לפה.' },
+  { name: 'יצחק ב׳', text: 'אוכל טעים מאוד, מנות מכובדות ולא בקמצנות, שירות נעים ואדיב. נהנינו אני ואשתי מאוד.' },
+  { name: 'Sapir C.', text: 'מסעדה מדהימה! אהבנו ממש את האוכל ואת כל חוויית השירות. בטוחה שאחזור :)' },
+  { name: 'Shoval T.', text: 'המקום האהוב עליי ועל בעלי — רמה גבוהה מאוד ושירות מושלם!!!' },
+  { name: 'מירב ג׳', text: 'הזמנו פסטות, דגים ופיצה — הכל היה מאוד טעים. האוכל הגיע מהר והמלצרים שירותיים. מומלץ בחום :)' },
+  { name: 'Shay M.', text: 'יצאנו לדייט בחמישי בערב — אווירה נעימה וקלילה, אוכל טעים במיוחד הסלטים והפסטות, שירות אדיב. לגמרי נחזור!' },
+  { name: 'גלית ג׳', text: 'חגגנו יום הולדת 40 עם 30 אנשים — תענוג אחד גדול מהרגע הראשון. אוכל מדהים, שירות מושלם, ועוד כשר למהדרין. ואנחנו נחזור... והרבה ❤️' },
+];
+
+function TestimonialsMarquee() {
+  const trackRef = useRef(null);
+  const posRef = useRef(0);
+  const rafRef = useRef(null);
+  const pausedRef = useRef(false);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const halfWidth = track.scrollWidth / 2;
+
+    function step() {
+      if (!pausedRef.current) {
+        posRef.current += 0.6;
+        if (posRef.current >= halfWidth) posRef.current -= halfWidth;
+        track.style.transform = `translateX(-${posRef.current}px)`;
+      }
+      rafRef.current = requestAnimationFrame(step);
+    }
+    rafRef.current = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, []);
+
+  return (
+    <section className="home-testimonials-section">
+      <div className="container">
+        <div className="section-header">
+          <span className="section-eyebrow">הלקוחות שלנו מספרים</span>
+          <h2 className="section-title">מה אומרים עלינו</h2>
+          <div className="ornament"><span>✦</span></div>
+        </div>
+      </div>
+      <div
+        className="testimonials-marquee-wrap"
+        onMouseEnter={() => { pausedRef.current = true; }}
+        onMouseLeave={() => { pausedRef.current = false; }}
+      >
+        <div className="testimonials-marquee-track" ref={trackRef}>
+          {[...REVIEWS, ...REVIEWS].map(({ name, text }, i) => (
+            <div key={i} className="testimonial-card">
+              <div className="testimonial-quote-mark">"</div>
+              <p className="testimonial-text">{text}</p>
+              <div className="testimonial-footer">
+                <span className="testimonial-stars">★★★★★</span>
+                <span className="testimonial-name">— {name}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 const slideshowImages = [
   { src: '/מנות קיטשן/בוראטה דה נאפולי.jpg',          alt: 'בוראטה דה נאפולי — Kitchen Brasserie נס ציונה' },
@@ -178,44 +244,7 @@ function Home() {
       {/* אירועים קרובים — מוסתר זמנית */}
 
       {/* ===== עדויות לקוחות ===== */}
-      {(() => {
-        const reviews = [
-          { name: 'מיכל צ׳', text: 'שירות מעולה, אוכל אנין טעם — פשוט מעולה. תודה רבה!' },
-          { name: 'סיון פ׳', text: 'אנחנו אוכלים פה קבוע ואין פעם שלא יוצאים מרוצים. קבלת פנים מאירת עיניים, המקום מדהים וכל הצוות פשוט מדהים.' },
-          { name: 'Ezra Y.', text: 'ארוחת הבוקר הייתה מעולה — עשירה ומפנקת, שירות מצוין. אהבנו מאוד, בהחלט נחזור לפה.' },
-          { name: 'יצחק ב׳', text: 'אוכל טעים מאוד, מנות מכובדות ולא בקמצנות, שירות נעים ואדיב. נהנינו אני ואשתי מאוד.' },
-          { name: 'Sapir C.', text: 'מסעדה מדהימה! אהבנו ממש את האוכל ואת כל חוויית השירות. בטוחה שאחזור :)' },
-          { name: 'Shoval T.', text: 'המקום האהוב עליי ועל בעלי — רמה גבוהה מאוד ושירות מושלם!!!' },
-          { name: 'מירב ג׳', text: 'הזמנו פסטות, דגים ופיצה — הכל היה מאוד טעים. האוכל הגיע מהר והמלצרים שירותיים. מומלץ בחום :)' },
-          { name: 'Shay M.', text: 'יצאנו לדייט בחמישי בערב — אווירה נעימה וקלילה, אוכל טעים במיוחד הסלטים והפסטות, שירות אדיב. לגמרי נחזור!' },
-          { name: 'גלית ג׳', text: 'חגגנו יום הולדת 40 עם 30 אנשים — תענוג אחד גדול מהרגע הראשון. אוכל מדהים, שירות מושלם, ועוד כשר למהדרין. ואנחנו נחזור... והרבה ❤️' },
-        ];
-        return (
-          <section className="home-testimonials-section">
-            <div className="container">
-              <div className="section-header">
-                <span className="section-eyebrow">הלקוחות שלנו מספרים</span>
-                <h2 className="section-title">מה אומרים עלינו</h2>
-                <div className="ornament"><span>✦</span></div>
-              </div>
-            </div>
-            <div className="testimonials-marquee-wrap">
-              <div className="testimonials-marquee-track">
-                {[...reviews, ...reviews].map(({ name, text }, i) => (
-                  <div key={i} className="testimonial-card">
-                    <div className="testimonial-quote-mark">"</div>
-                    <p className="testimonial-text">{text}</p>
-                    <div className="testimonial-footer">
-                      <span className="testimonial-stars">★★★★★</span>
-                      <span className="testimonial-name">— {name}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      })()}
+      <TestimonialsMarquee />
 
       {/* ===== שאלות נפוצות ===== */}
       <section className="section home-faq-section" id="faq">
