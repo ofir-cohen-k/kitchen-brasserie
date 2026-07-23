@@ -173,6 +173,8 @@ const slideshowImages = [
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [lbIdx, setLbIdx] = useState(null);
+  const slideTotal = slideshowImages.length;
+  const slideTouchX = useRef(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -307,7 +309,19 @@ function Home() {
                 <Link to="/about" className="btn btn-primary">קרא עוד עלינו</Link>
               </div>
             </div>
-            <div className="home-about-img reveal reveal-delay-2">
+            <div
+              className="home-about-img reveal reveal-delay-2"
+              onTouchStart={e => { slideTouchX.current = e.touches[0].clientX; }}
+              onTouchEnd={e => {
+                if (slideTouchX.current === null) return;
+                const diff = slideTouchX.current - e.changedTouches[0].clientX;
+                slideTouchX.current = null;
+                if (Math.abs(diff) < 40) return;
+                setCurrentSlide(prev => diff > 0
+                  ? (prev + 1) % slideTotal
+                  : (prev - 1 + slideTotal) % slideTotal);
+              }}
+            >
               {slideshowImages.map((img, i) => (
                 <img
                   key={i}
