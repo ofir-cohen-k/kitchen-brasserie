@@ -207,7 +207,7 @@ function Home() {
       <Hero />
 
       {/* ===== כרטיסי ניווט מהיר ===== */}
-      <section className="home-cards-section">
+      <section className="home-cards-section reveal">
         <div className="home-cards container">
           <div className="home-card">
             <span className="home-card-icon"><Star size={28} strokeWidth={1.5} /></span>
@@ -243,7 +243,7 @@ function Home() {
       </section>
 
       {/* ===== מנות מומלצות ===== */}
-      <section className="section" id="recommended">
+      <section className="section reveal" id="recommended">
         <div className="container">
           <div className="section-header">
             <span className="section-eyebrow">kitchen Brasserie</span>
@@ -274,7 +274,7 @@ function Home() {
       </section>
 
       {/* ===== על המסעדה ===== */}
-      <section className="section-alt" id="about-preview">
+      <section className="section-alt reveal" id="about-preview">
         <div className="container">
           <div className="home-about">
             <div className="home-about-text">
@@ -338,7 +338,7 @@ function Home() {
       <TestimonialsMarquee />
 
       {/* ===== שאלות נפוצות ===== */}
-      <section className="section home-faq-section" id="faq">
+      <section className="section home-faq-section reveal" id="faq">
         <div className="container">
           <div className="section-header">
             <span className="section-eyebrow">Kitchen Brasserie</span>
@@ -365,7 +365,7 @@ function Home() {
       </section>
 
       {/* ===== CTA - הזמנת שולחן ===== */}
-      <section className="section home-cta-section">
+      <section className="section home-cta-section reveal">
         <div className="container">
           <div className="home-cta">
             <h2 className="section-title">מוכנים לארוחה מיוחדת?</h2>
