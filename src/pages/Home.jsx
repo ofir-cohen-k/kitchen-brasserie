@@ -178,12 +178,12 @@ function Home() {
       {/* אירועים קרובים — מוסתר זמנית */}
 
       {/* ===== עדויות לקוחות ===== */}
-      <section className="section-dark home-testimonials-section">
+      <section className="home-testimonials-section">
         <div className="container">
           <div className="section-header">
-            <span className="section-eyebrow" style={{ color: 'rgba(184,154,94,0.7)' }}>הלקוחות שלנו מספרים</span>
-            <h2 className="section-title section-title-light">מה אומרים עלינו</h2>
-            <div className="ornament ornament-light"><span>✦</span></div>
+            <span className="section-eyebrow">הלקוחות שלנו מספרים</span>
+            <h2 className="section-title">מה אומרים עלינו</h2>
+            <div className="ornament"><span>✦</span></div>
           </div>
           <div className="testimonials-grid">
             {[
@@ -194,11 +194,11 @@ function Home() {
               { name: 'Sapir C.', text: 'מסעדה מדהימה! אהבנו ממש את האוכל ואת כל חוויית השירות. בטוחה שאחזור :)' },
             ].map(({ name, text }, i) => (
               <div key={i} className="testimonial-card">
-                <span className="testimonial-quote">"</span>
+                <div className="testimonial-quote-mark">"</div>
                 <p className="testimonial-text">{text}</p>
                 <div className="testimonial-footer">
                   <span className="testimonial-stars">★★★★★</span>
-                  <span className="testimonial-name">{name}</span>
+                  <span className="testimonial-name">— {name}</span>
                 </div>
               </div>
             ))}
