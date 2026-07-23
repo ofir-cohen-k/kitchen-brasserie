@@ -78,7 +78,7 @@ function TestimonialsMarquee() {
           if (!track) return;
           const halfWidth = track.scrollWidth / 2;
           const delta = e.touches[0].clientX - touchStartXRef.current;
-          let newPos = touchStartPosRef.current - delta;
+          let newPos = touchStartPosRef.current + delta;
           newPos = ((newPos % halfWidth) + halfWidth) % halfWidth;
           posRef.current = newPos;
           track.style.transform = `translateX(${newPos - halfWidth}px)`;
