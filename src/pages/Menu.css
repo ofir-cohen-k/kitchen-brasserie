@@ -66,6 +66,26 @@
   outline: none;
 }
 
+@media (max-width: 900px) {
+  .menu-tabs {
+    position: sticky;
+    top: 68px;
+    z-index: 100;
+    background: var(--cream);
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -1rem;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(44,26,10,0.06);
+  }
+  .menu-tabs::-webkit-scrollbar { display: none; }
+  .menu-tab { flex-shrink: 0; }
+  .menu-search { max-width: 100%; }
+}
+
 /* אין תוצאות */
 .menu-no-results {
   text-align: center;
