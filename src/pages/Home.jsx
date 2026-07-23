@@ -200,18 +200,20 @@ function Home() {
               </div>
             </div>
             <div className="testimonials-marquee-wrap">
-              <div className="testimonials-marquee-track">
-                {[...reviews, ...reviews].map(({ name, text }, i) => (
-                  <div key={i} className="testimonial-card">
-                    <div className="testimonial-quote-mark">"</div>
-                    <p className="testimonial-text">{text}</p>
-                    <div className="testimonial-footer">
-                      <span className="testimonial-stars">★★★★★</span>
-                      <span className="testimonial-name">— {name}</span>
+              {[0, 1].map(trackIdx => (
+                <div key={trackIdx} className="testimonials-marquee-track">
+                  {reviews.map(({ name, text }, i) => (
+                    <div key={i} className="testimonial-card">
+                      <div className="testimonial-quote-mark">"</div>
+                      <p className="testimonial-text">{text}</p>
+                      <div className="testimonial-footer">
+                        <span className="testimonial-stars">★★★★★</span>
+                        <span className="testimonial-name">— {name}</span>
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </section>
         );
