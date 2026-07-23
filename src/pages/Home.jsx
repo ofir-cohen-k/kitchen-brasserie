@@ -30,6 +30,8 @@ function TestimonialsMarquee() {
   const posRef = useRef(0);
   const rafRef = useRef(null);
   const pausedRef = useRef(false);
+  const touchStartXRef = useRef(null);
+  const touchStartPosRef = useRef(null);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -65,6 +67,27 @@ function TestimonialsMarquee() {
         className="testimonials-marquee-wrap"
         onMouseEnter={() => { pausedRef.current = true; }}
         onMouseLeave={() => { pausedRef.current = false; }}
+        onTouchStart={(e) => {
+          touchStartXRef.current = e.touches[0].clientX;
+          touchStartPosRef.current = posRef.current;
+          pausedRef.current = true;
+        }}
+        onTouchMove={(e) => {
+          if (touchStartXRef.current === null) return;
+          const track = trackRef.current;
+          if (!track) return;
+          const halfWidth = track.scrollWidth / 2;
+          const delta = e.touches[0].clientX - touchStartXRef.current;
+          let newPos = touchStartPosRef.current - delta;
+          newPos = ((newPos % halfWidth) + halfWidth) % halfWidth;
+          posRef.current = newPos;
+          track.style.transform = `translateX(${newPos - halfWidth}px)`;
+        }}
+        onTouchEnd={() => {
+          touchStartXRef.current = null;
+          touchStartPosRef.current = null;
+          pausedRef.current = false;
+        }}
       >
         <div className="testimonials-marquee-track" ref={trackRef}>
           {[...REVIEWS, ...REVIEWS].map(({ name, text }, i) => (
