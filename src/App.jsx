@@ -60,22 +60,27 @@ function MainLayout() {
   const location = useLocation();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
-      );
-      document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => observer.observe(el));
-      return () => observer.disconnect();
-    }, 150);
-    return () => clearTimeout(timer);
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+
+    function observeAll() {
+      document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => io.observe(el));
+    }
+
+    const mo = new MutationObserver(observeAll);
+    mo.observe(document.body, { childList: true, subtree: true });
+    observeAll();
+
+    return () => { io.disconnect(); mo.disconnect(); };
   }, [location.pathname]);
 
   return (
