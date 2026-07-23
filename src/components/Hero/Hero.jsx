@@ -1,8 +1,16 @@
 // Hero - מקטע הבאנר הגדול בדף הבית
 import { Link } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 import './Hero.css';
 
 function Hero() {
+  const mobileVideoRef = useRef(null);
+
+  useEffect(() => {
+    const v = mobileVideoRef.current;
+    if (v) v.play().catch(() => {});
+  }, []);
+
   return (
     <section className="hero" aria-label="כותרת ראשית">
       <div className="hero-overlay"></div>
@@ -37,7 +45,7 @@ function Hero() {
       {/* סרטון — מובייל בלבד, מתחת לתוכן */}
       <div className="hero-video-mobile">
         <div className="hero-video-phone">
-          <video autoPlay muted loop playsInline className="hero-video" poster="/og-image.jpg">
+          <video ref={mobileVideoRef} autoPlay muted loop playsInline className="hero-video">
             <source src="/reel.mp4" type="video/mp4" />
           </video>
         </div>
