@@ -85,6 +85,7 @@ function TestimonialsMarquee() {
 
 function Lightbox({ dishes, index, onClose, onPrev, onNext }) {
   const dish = dishes[index];
+  const touchStartX = useRef(null);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -100,8 +101,26 @@ function Lightbox({ dishes, index, onClose, onPrev, onNext }) {
     };
   }, [index]);
 
+  function handleTouchStart(e) {
+    touchStartX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd(e) {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? onNext() : onPrev();
+    }
+    touchStartX.current = null;
+  }
+
   return (
-    <div className="lightbox-overlay" onClick={onClose}>
+    <div
+      className="lightbox-overlay"
+      onClick={onClose}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       <button className="lightbox-close" onClick={onClose} aria-label="סגור"><X size={18} /></button>
       <div className="lightbox-content" onClick={e => e.stopPropagation()}>
         <img src={dish.image} alt={dish.name} className="lightbox-img" />
