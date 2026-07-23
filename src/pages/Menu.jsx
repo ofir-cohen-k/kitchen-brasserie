@@ -84,27 +84,30 @@ function Menu() {
         </div>
       </div>
 
+      {/* טאבי קטגוריה — מחוץ ל-section כדי שה-sticky יעבוד */}
+      <div className="menu-tabs-bar">
+        <div className="container">
+          <div className="menu-tabs" role="tablist" aria-label="קטגוריות תפריט">
+            {Object.entries(categoryLabels).map(([key, label]) => (
+              <button
+                key={key}
+                role="tab"
+                aria-selected={activeCategory === key}
+                className={`menu-tab ${activeCategory === key ? 'menu-tab-active' : ''}`}
+                onClick={() => setActiveCategory(key)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <section className="section">
         <div className="container">
 
-          {/* שורת פילטרים + חיפוש */}
+          {/* שדה חיפוש */}
           <div className="menu-controls">
-            {/* כפתורי קטגוריה */}
-            <div className="menu-tabs" role="tablist" aria-label="קטגוריות תפריט">
-              {Object.entries(categoryLabels).map(([key, label]) => (
-                <button
-                  key={key}
-                  role="tab"
-                  aria-selected={activeCategory === key}
-                  className={`menu-tab ${activeCategory === key ? 'menu-tab-active' : ''}`}
-                  onClick={() => setActiveCategory(key)}
-                >
-                  {label}
-                </button>
-              ))}
-            </div>
-
-            {/* שדה חיפוש */}
             <div className="menu-search">
               <Search size={16} className="search-icon" />
               <input

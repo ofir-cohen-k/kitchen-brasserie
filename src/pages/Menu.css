@@ -1,5 +1,16 @@
 .menu-hero { padding: 0.5rem 0 0.7rem; }
 
+/* פס טאבים דביק */
+.menu-tabs-bar {
+  position: sticky;
+  top: 68px;
+  z-index: 100;
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(44,26,10,0.06);
+  padding: 0.65rem 0;
+}
+
 /* שורת שליטה */
 .menu-controls {
   display: flex;
@@ -13,7 +24,12 @@
   display: flex;
   gap: 0.4rem;
   flex-wrap: wrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
+.menu-tabs::-webkit-scrollbar { display: none; }
+.menu-tab { flex-shrink: 0; }
 .menu-tab {
   font-size: 0.75rem;
   font-weight: 600;
@@ -67,22 +83,7 @@
 }
 
 @media (max-width: 900px) {
-  .menu-tabs {
-    position: sticky;
-    top: 68px;
-    z-index: 100;
-    background: var(--cream);
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    margin: 0 -1rem;
-    padding: 0.65rem 1rem;
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 2px 8px rgba(44,26,10,0.06);
-  }
-  .menu-tabs::-webkit-scrollbar { display: none; }
-  .menu-tab { flex-shrink: 0; }
+  .menu-tabs { flex-wrap: nowrap; }
   .menu-search { max-width: 100%; }
 }
 
