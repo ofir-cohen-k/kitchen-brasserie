@@ -83,7 +83,10 @@
   border-right: 1px solid var(--border);
   transition: background 0.2s;
   cursor: default;
+  display: flex;
+  flex-direction: column;
 }
+.home-card .btn { margin-top: auto; align-self: flex-start; }
 .home-card:first-child { border-right: none; }
 .home-card:hover { background: var(--cream); }
 .home-card-icon { font-size: 2rem; display: flex; justify-content: center; margin-bottom: 0.75rem; color: var(--gold); }
