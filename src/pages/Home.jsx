@@ -244,6 +244,34 @@ function Home() {
         </div>
       </section>
 
+      {/* ===== למה לבחור בנו ===== */}
+      <section className="home-why-section">
+        <div className="container">
+          <div className="home-why-grid reveal">
+            <div className="home-why-item">
+              <span className="home-why-icon">✦</span>
+              <h3 className="home-why-title">כשר למהדרין</h3>
+              <p className="home-why-sub">בד״ץ בית יוסף</p>
+            </div>
+            <div className="home-why-item">
+              <span className="home-why-icon">✦</span>
+              <h3 className="home-why-title">קולינריה מוקפדת</h3>
+              <p className="home-why-sub">חומרי גלם טריים</p>
+            </div>
+            <div className="home-why-item">
+              <span className="home-why-icon">✦</span>
+              <h3 className="home-why-title">חניה גדולה</h3>
+              <p className="home-why-sub">חופשית בחינם</p>
+            </div>
+            <div className="home-why-item">
+              <span className="home-why-icon">✦</span>
+              <h3 className="home-why-title">אירועים ומגשי אירוח</h3>
+              <p className="home-why-sub">הכל במקום אחד</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== מנות מומלצות ===== */}
       <section className="section" id="recommended">
         <div className="container">

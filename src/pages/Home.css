@@ -19,6 +19,51 @@
   display: block;
 }
 
+/* ===== למה לבחור בנו ===== */
+.home-why-section {
+  background: var(--dark);
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(184,154,94,0.15);
+  border-bottom: 1px solid rgba(184,154,94,0.15);
+}
+.home-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.home-why-item {
+  text-align: center;
+  padding: 1.25rem 1.5rem;
+  border-right: 1px solid rgba(184,154,94,0.15);
+}
+.home-why-item:last-child { border-right: none; }
+.home-why-icon {
+  display: block;
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.6rem;
+}
+.home-why-title {
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 0.25rem;
+}
+.home-why-sub {
+  font-size: 0.78rem;
+  color: rgba(184,154,94,0.8);
+  letter-spacing: 0.03em;
+}
+@media (max-width: 700px) {
+  .home-why-grid { grid-template-columns: repeat(2, 1fr); }
+  .home-why-item:nth-child(odd) { border-right: 1px solid rgba(184,154,94,0.15); }
+  .home-why-item:nth-child(even) { border-right: none; }
+  .home-why-item:nth-child(1),
+  .home-why-item:nth-child(2) { border-bottom: 1px solid rgba(184,154,94,0.15); }
+}
+
 /* כרטיסי ניווט מהיר */
 .home-cards-section {
   background: var(--white);
