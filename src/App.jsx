@@ -4,6 +4,23 @@
 
 import { Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import { useEffect, lazy, Suspense } from 'react';
+import { Phone } from 'lucide-react';
+
+const TABIT_URL = 'https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation';
+
+function MobileBottomBar() {
+  return (
+    <div className="mobile-bottom-bar">
+      <a href="tel:073-327-7207" className="mobile-bottom-btn mobile-bottom-call">
+        <Phone size={15} />
+        התקשר
+      </a>
+      <a href={TABIT_URL} target="_blank" rel="noopener noreferrer" className="mobile-bottom-btn mobile-bottom-reserve">
+        הזמן שולחן
+      </a>
+    </div>
+  );
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -52,6 +69,7 @@ function MainLayout() {
         <Outlet />
       </Suspense>
       <Footer />
+      <MobileBottomBar />
     </>
   );
 }
