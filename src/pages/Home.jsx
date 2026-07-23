@@ -365,17 +365,17 @@ function Home() {
               <h3 className="home-why-title">כשר למהדרין</h3>
               <p className="home-why-sub">בד״ץ בית יוסף</p>
             </div>
-            <div className="home-why-item reveal" style={{ transitionDelay: '0.15s' }}>
+            <div className="home-why-item reveal" style={{ transitionDelay: '0.3s' }}>
               <span className="home-why-icon">✦</span>
               <h3 className="home-why-title">קולינריה מוקפדת</h3>
               <p className="home-why-sub">חומרי גלם טריים</p>
             </div>
-            <div className="home-why-item reveal" style={{ transitionDelay: '0.30s' }}>
+            <div className="home-why-item reveal" style={{ transitionDelay: '0.6s' }}>
               <span className="home-why-icon">✦</span>
               <h3 className="home-why-title">חניה גדולה</h3>
               <p className="home-why-sub">חופשית בחינם</p>
             </div>
-            <div className="home-why-item reveal" style={{ transitionDelay: '0.45s' }}>
+            <div className="home-why-item reveal" style={{ transitionDelay: '0.9s' }}>
               <span className="home-why-icon">✦</span>
               <h3 className="home-why-title">אירועים ומגשי אירוח</h3>
               <p className="home-why-sub">הכל במקום אחד</p>
