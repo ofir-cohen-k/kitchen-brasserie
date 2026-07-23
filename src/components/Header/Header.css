@@ -131,6 +131,7 @@
   display: block;
   opacity: 0.85;
   transition: opacity 0.2s;
+  filter: drop-shadow(0 0 0.6px #1a1a18) drop-shadow(0 0 0.6px #1a1a18);
 }
 .wolt-btn:hover .wolt-badge-img { opacity: 1; }
 
