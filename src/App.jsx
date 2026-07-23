@@ -9,6 +9,8 @@ import { Phone } from 'lucide-react';
 const TABIT_URL = 'https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation';
 
 function MobileBottomBar() {
+  const { pathname } = useLocation();
+  if (pathname === '/catering') return null;
   return (
     <div className="mobile-bottom-bar">
       <a href="tel:073-327-7207" className="mobile-bottom-btn mobile-bottom-call">
