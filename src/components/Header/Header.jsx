@@ -98,7 +98,7 @@ function Header() {
             title="הזמנה דרך Wolt"
           >
             <span className="wolt-icon-pill">
-              <img src="/wolt-icon.png" alt="Wolt" />
+              <img src="/wolt-logo.png" alt="Wolt" />
             </span>
           </a>
 
