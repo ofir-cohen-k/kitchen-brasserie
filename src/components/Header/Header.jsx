@@ -27,9 +27,9 @@ function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // סגירת התפריט בלחיצה על קישור
   function handleNavClick() {
     setIsMenuOpen(false);
+    window.scrollTo(0, 0);
   }
 
   return (
@@ -42,25 +42,13 @@ function Header() {
 
         {/* תפריט ניווט - מחשב */}
         <nav className="nav-desktop" aria-label="תפריט ניווט ראשי">
-          <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} end>
-            בית
-          </NavLink>
-          <NavLink to="/menu" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            תפריט
-          </NavLink>
-          <NavLink to="/private-events" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            אירועים
-          </NavLink>
+          <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={handleNavClick} end>בית</NavLink>
+          <NavLink to="/menu" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={handleNavClick}>תפריט</NavLink>
+          <NavLink to="/private-events" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={handleNavClick}>אירועים</NavLink>
           {false && <NavLink to="/events" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>קונספטים</NavLink>}
-          <NavLink to="/catering" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            מגשי אירוח
-          </NavLink>
-          <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            אודות
-          </NavLink>
-          <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
-            צור קשר
-          </NavLink>
+          <NavLink to="/catering" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={handleNavClick}>מגשי אירוח</NavLink>
+          <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={handleNavClick}>אודות</NavLink>
+          <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'} onClick={handleNavClick}>צור קשר</NavLink>
           <a
             href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation"
             target="_blank"
