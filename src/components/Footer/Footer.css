@@ -183,6 +183,12 @@
 }
 
 /* כפתורי תפקידים */
+.footer-heading-btn {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.footer-heading-btn:hover { color: var(--gold); }
+
 .footer-job-btn {
   background: none;
   border: none;

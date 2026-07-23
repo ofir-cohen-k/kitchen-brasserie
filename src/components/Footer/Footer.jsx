@@ -147,7 +147,7 @@ function Footer() {
 
         {/* עמודה 5 - דרושים */}
         <div className="footer-col">
-          <h4 className="footer-heading">דרושים</h4>
+          <h4 className="footer-heading footer-heading-btn" onClick={openModal}>דרושים</h4>
           <ul className="footer-links">
             <li>
               <button className="footer-job-btn" onClick={openModal}>
