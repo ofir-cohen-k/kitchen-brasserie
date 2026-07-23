@@ -35,12 +35,16 @@ function TestimonialsMarquee() {
     const track = trackRef.current;
     if (!track) return;
     const halfWidth = track.scrollWidth / 2;
+    // start at -halfWidth so first visible cards are the duplicates (seamless from the start)
+    posRef.current = 0;
+    track.style.transform = `translateX(-${halfWidth}px)`;
 
     function step() {
       if (!pausedRef.current) {
         posRef.current += 0.6;
         if (posRef.current >= halfWidth) posRef.current -= halfWidth;
-        track.style.transform = `translateX(-${posRef.current}px)`;
+        // pos goes 0→halfWidth, transform goes -halfWidth→0 (cards move RIGHT)
+        track.style.transform = `translateX(${posRef.current - halfWidth}px)`;
       }
       rafRef.current = requestAnimationFrame(step);
     }
@@ -62,7 +66,7 @@ function TestimonialsMarquee() {
         onMouseEnter={() => { pausedRef.current = true; }}
         onMouseLeave={() => { pausedRef.current = false; }}
       >
-        <div className="testimonials-marquee-track" ref={trackRef}>
+        <div className="testimonials-marquee-track" ref={trackRef} style={{ direction: 'ltr' }}>
           {[...REVIEWS, ...REVIEWS].map(({ name, text }, i) => (
             <div key={i} className="testimonial-card">
               <div className="testimonial-quote-mark">"</div>
