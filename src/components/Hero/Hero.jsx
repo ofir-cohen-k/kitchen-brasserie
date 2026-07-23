@@ -26,7 +26,7 @@ function Hero() {
         </div>
         <p className="hero-subtitle">
           מסעדת קונספט חלבית ודגים<br />
-          ארוחות בוקר · תפריט עשיר · מגשי אירוח
+          בראנץ · ארוחות בוקר · תפריט עשיר · מגשי אירוח
         </p>
         <div className="hero-buttons">
           <Link to="/menu" className="btn btn-primary">לתפריט המלא</Link>

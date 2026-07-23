@@ -95,8 +95,8 @@ function PrivateEvents() {
   return (
     <main style={{ paddingTop: '68px' }}>
       <Helmet>
-        <title>אירועים פרטיים | Kitchen Brasserie — בר מצווה, ימי הולדת ואירועי חברה</title>
-        <meta name="description" content="אירועים פרטיים ב-Kitchen Brasserie — בר/בת מצווה, ימי הולדת, אירועי חברה ועוד. חבילות Silver, Gold ו-Platinum. מסעדה כשרה בנס ציונה." />
+        <title>אירועים פרטיים וקטנים | Kitchen Brasserie — בר מצווה, ימי הולדת ואירועי חברה בנס ציונה</title>
+        <meta name="description" content="אירועים פרטיים וקטנים ב-Kitchen Brasserie נס ציונה — בר/בת מצווה, ימי הולדת, אירועי חברה ועוד. אירועי בוטיק עד 60 אורחים. חבילות Silver, Gold ו-Platinum. מסעדה כשרה." />
         <link rel="canonical" href="https://kitchenbrasserie.com/private-events" />
       </Helmet>
       <div className="section-dark" style={{ padding: '0.5rem 0 0.7rem' }}>
