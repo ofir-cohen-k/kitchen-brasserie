@@ -276,7 +276,13 @@ input, select, textarea { font-family: var(--font-body); outline: none; directio
     background: transparent;
     color: var(--dark);
     border: 1.5px solid rgba(44,26,10,0.22);
-    flex: 0.7;
+    flex: 0.65;
+  }
+  .mobile-bottom-whatsapp {
+    background: #25D366;
+    color: white;
+    box-shadow: 0 3px 10px rgba(37,211,102,0.3);
+    flex: 0.85;
   }
   .mobile-bottom-reserve {
     background: var(--gold);
