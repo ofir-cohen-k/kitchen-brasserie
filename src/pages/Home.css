@@ -182,9 +182,10 @@
 }
 
 @media (max-width: 600px) {
-  .home-cards { grid-template-columns: 1fr; }
-  .home-card { border-right: none !important; border-bottom: 1px solid var(--border) !important; }
-  .home-card:last-child { border-bottom: none !important; }
+  .home-cards { grid-template-columns: repeat(2, 1fr) !important; }
+  .home-card { padding: 1.5rem 0.9rem; }
+  .home-card h3 { font-size: 0.95rem; }
+  .home-card p { font-size: 0.78rem; margin-bottom: 0.75rem; }
 }
 
 /* ===== עדויות לקוחות ===== */
