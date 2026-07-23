@@ -20,6 +20,7 @@ function Hero() {
       {/* תוכן — מרכז */}
       <div className="hero-content">
         <span className="hero-eyebrow">כשר חלבי ודגים · נס ציונה</span>
+        <h1 className="hero-h1-seo">Kitchen Brasserie — מסעדה כשרה חלבית ודגים בנס ציונה</h1>
         <div className="hero-logo-wrap">
           <img src="/logo.png" alt="Kitchen Brasserie" className="hero-logo-img" />
         </div>

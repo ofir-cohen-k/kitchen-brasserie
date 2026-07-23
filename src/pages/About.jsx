@@ -10,13 +10,13 @@ import PageTitle from '../components/PageTitle/PageTitle';
 import './About.css';
 
 const slideshowImages = [
-  '/מנות קיטשן/בוראטה דה נאפולי.jpg',
-  '/מנות קיטשן/שווארמה דג.jpg',
-  '/מנות קיטשן/בנדיקט קלאסי.jpg',
-  '/מנות קיטשן/שיפוד סלמון טיקה קארי מלזי.jpg',
-  '/מנות קיטשן/ספגטי קרבונרה.jpg',
-  '/מנות קיטשן/שניצל דג וסמאש פוטטוס.jpg',
-  '/מנות קיטשן/טירמיסו.jpg',
+  { src: '/מנות קיטשן/בוראטה דה נאפולי.jpg',          alt: 'בוראטה דה נאפולי — Kitchen Brasserie נס ציונה' },
+  { src: '/מנות קיטשן/שווארמה דג.jpg',                alt: 'שווארמה דג — מסעדה כשרה נס ציונה' },
+  { src: '/מנות קיטשן/בנדיקט קלאסי.jpg',              alt: 'בנדיקט קלאסי — ארוחת בוקר Kitchen Brasserie' },
+  { src: '/מנות קיטשן/שיפוד סלמון טיקה קארי מלזי.jpg', alt: 'שיפוד סלמון טיקה קארי מלזי — Kitchen Brasserie' },
+  { src: '/מנות קיטשן/ספגטי קרבונרה.jpg',             alt: 'ספגטי קרבונרה — פסטה כשרה נס ציונה' },
+  { src: '/מנות קיטשן/שניצל דג וסמאש פוטטוס.jpg',     alt: 'שניצל דג וסמאש פוטטוס — Kitchen Brasserie' },
+  { src: '/מנות קיטשן/טירמיסו.jpg',                   alt: 'טירמיסו — קינוח Kitchen Brasserie נס ציונה' },
 ];
 
 function About() {
@@ -58,11 +58,11 @@ function About() {
         <div className="container">
           <div className="about-story">
             <div className="about-story-img">
-              {slideshowImages.map((src, i) => (
+              {slideshowImages.map((img, i) => (
                 <img
                   key={i}
-                  src={src}
-                  alt="Kitchen Brasserie"
+                  src={img.src}
+                  alt={img.alt}
                   className={`slideshow-img ${i === currentSlide ? 'active' : ''}`}
                 />
               ))}
