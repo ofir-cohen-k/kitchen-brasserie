@@ -208,7 +208,7 @@ function Home() {
                 </div>
                 <div className="home-about-row">
                   <Phone size={15} />
-                  <span>073-327-7207</span>
+                  <a href="tel:073-327-7207" style={{ color: 'inherit' }}>073-327-7207</a>
                 </div>
                 <div className="home-about-row">
                   <Clock size={15} />
