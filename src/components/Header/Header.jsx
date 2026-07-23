@@ -97,9 +97,7 @@ function Header() {
             aria-label="הזמנה דרך Wolt"
             title="הזמנה דרך Wolt"
           >
-            <span className="wolt-icon-pill">
-              <img src="/wolt-icon.png" alt="Wolt" />
-            </span>
+            <img src="/wolt-badge.jpeg" alt="Wolt" className="wolt-badge-img" />
           </a>
 
           {/* כפתור תפריט המבורגר - רק במובייל */}

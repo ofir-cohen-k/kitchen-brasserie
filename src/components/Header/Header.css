@@ -125,22 +125,13 @@
 }
 .wolt-btn:hover { opacity: 0.7; }
 
-.wolt-icon-pill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  border: 1.8px solid var(--dark);
-  padding: 4px 9px;
-  transition: border-color 0.2s;
-}
-.wolt-btn:hover .wolt-icon-pill {
-  border-color: var(--gold);
-}
-.wolt-icon-pill img {
-  height: 18px;
-  width: auto;
+.wolt-badge-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
   display: block;
+  object-fit: cover;
+  transition: opacity 0.2s;
 }
 
 /* כפתור המבורגר */
