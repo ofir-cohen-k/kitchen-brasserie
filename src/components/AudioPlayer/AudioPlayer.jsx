@@ -10,20 +10,23 @@ function AudioPlayer() {
   const audioRef = useRef(null);
 
   useEffect(() => {
+    const audio = new Audio();
+    audio.preload = 'none';
+    audio.src = MUSIC_URL;
+    audio.loop = true;
+    audio.volume = 0.5;
+    audioRef.current = audio;
+    audio.play().then(() => {
+      setIsPlaying(true);
+      setHasInteracted(true);
+    }).catch(() => {});
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
+      audio.pause();
+      audioRef.current = null;
     };
   }, []);
 
   function toggle() {
-    if (!audioRef.current) {
-      audioRef.current = new Audio(MUSIC_URL);
-      audioRef.current.loop = true;
-      audioRef.current.volume = 0.5;
-    }
     if (!hasInteracted) setHasInteracted(true);
     if (isPlaying) {
       audioRef.current.pause();
