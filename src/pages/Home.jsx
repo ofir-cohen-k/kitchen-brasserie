@@ -177,6 +177,35 @@ function Home() {
 
       {/* אירועים קרובים — מוסתר זמנית */}
 
+      {/* ===== עדויות לקוחות ===== */}
+      <section className="section-dark home-testimonials-section">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-eyebrow" style={{ color: 'rgba(184,154,94,0.7)' }}>הלקוחות שלנו מספרים</span>
+            <h2 className="section-title section-title-light">מה אומרים עלינו</h2>
+            <div className="ornament ornament-light"><span>✦</span></div>
+          </div>
+          <div className="testimonials-grid">
+            {[
+              { name: 'מיכל צ׳', text: 'שירות מעולה, אוכל אנין טעם — פשוט מעולה. תודה רבה!' },
+              { name: 'סיון פ׳', text: 'אנחנו אוכלים פה קבוע ואין פעם שלא יוצאים מרוצים. קבלת פנים מאירת עיניים, המקום מדהים וכל הצוות פשוט מדהים.' },
+              { name: 'Ezra Y.', text: 'ארוחת הבוקר הייתה מעולה — עשירה ומפנקת, שירות מצוין. אהבנו מאוד, בהחלט נחזור לפה.' },
+              { name: 'יצחק ב׳', text: 'אוכל טעים מאוד, מנות מכובדות ולא בקמצנות, שירות נעים ואדיב. נהנינו אני ואשתי מאוד.' },
+              { name: 'Sapir C.', text: 'מסעדה מדהימה! אהבנו ממש את האוכל ואת כל חוויית השירות. בטוחה שאחזור :)' },
+            ].map(({ name, text }, i) => (
+              <div key={i} className="testimonial-card">
+                <span className="testimonial-quote">"</span>
+                <p className="testimonial-text">{text}</p>
+                <div className="testimonial-footer">
+                  <span className="testimonial-stars">★★★★★</span>
+                  <span className="testimonial-name">{name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== שאלות נפוצות ===== */}
       <section className="section home-faq-section" id="faq">
         <div className="container">
