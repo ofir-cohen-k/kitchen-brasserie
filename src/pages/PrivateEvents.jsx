@@ -117,7 +117,7 @@ function PrivateEvents() {
             <div className="ornament"><span>✦</span></div>
             <p className="private-events-tagline">קולינריה מוקפדת, אווירה אלגנטית ושירות מכל הלב.</p>
             <p className="private-events-body">
-              ב־Kitchen Brasserie תוכלו לחגוג אירועים משפחתיים ועסקיים באווירה ייחודית,
+              ב־Kitchen Brasserie תוכלו לחגוג אירועי בוטיק עד 60 אורחים, אירועים משפחתיים ועסקיים באווירה ייחודית,
               עם מגוון תפריטי אירוח עשירים ואפשרות לבניית תפריט בהתאמה אישית.
             </p>
             <p className="private-events-cta-line">בחרו את התפריט המתאים לכם והתחילו לתכנן את האירוע שלכם.</p>
