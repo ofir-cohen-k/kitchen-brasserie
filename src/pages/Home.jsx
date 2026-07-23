@@ -66,7 +66,7 @@ function TestimonialsMarquee() {
         onMouseEnter={() => { pausedRef.current = true; }}
         onMouseLeave={() => { pausedRef.current = false; }}
       >
-        <div className="testimonials-marquee-track" ref={trackRef} style={{ direction: 'ltr' }}>
+        <div className="testimonials-marquee-track" ref={trackRef}>
           {[...REVIEWS, ...REVIEWS].map(({ name, text }, i) => (
             <div key={i} className="testimonial-card">
               <div className="testimonial-quote-mark">"</div>
