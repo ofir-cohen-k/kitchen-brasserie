@@ -180,6 +180,37 @@
 
 @media (max-width: 900px) {
   .hero-video-side { display: none; }
+  .hero {
+    background-image: url('/og-image.jpg');
+    background-size: cover;
+    background-position: center top;
+  }
+  .hero-overlay {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(44,26,10,0.42) 0%, rgba(44,26,10,0.68) 100%);
+  }
+  .hero-logo-img { filter: brightness(0) invert(1); }
+  .hero-eyebrow { color: rgba(248,244,236,0.75); }
+  .hero-subtitle { color: rgba(248,244,236,0.82); }
+  .hero-frame {
+    border-color: rgba(248,244,236,0.18);
+  }
+  .hero-frame::before,
+  .hero-frame::after {
+    border-color: rgba(248,244,236,0.4);
+  }
+  .hero-btn-outline {
+    color: rgba(248,244,236,0.9) !important;
+    border-color: rgba(248,244,236,0.4) !important;
+  }
+  .hero-btn-outline:hover {
+    color: white !important;
+    border-color: white !important;
+    background: rgba(248,244,236,0.12) !important;
+  }
+  .scroll-line { background: linear-gradient(to bottom, rgba(248,244,236,0.7), transparent); }
 }
 
 @media (max-width: 600px) {
