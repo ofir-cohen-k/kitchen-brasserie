@@ -240,7 +240,7 @@ function Home() {
             <h3>הזמנה דרך Wolt</h3>
             <p>הזמינו מהתפריט שלנו עם משלוח עד הבית</p>
             <a href="https://wolt.com/en/isr/rishon-lezion-hashfela-area/restaurant/kitchen-by-greg-ness-ziona" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm" style={{ padding: '0.45rem 1.1rem' }}>
-              <img src="/wolt-logo.png" alt="Wolt" style={{ height: '16px', width: 'auto', display: 'block' }} />
+              <img src="/wolt-logo.png" alt="Wolt" style={{ height: '16px', width: 'auto', display: 'inline', objectFit: 'initial', maxWidth: 'none' }} />
             </a>
           </div>
         </div>
