@@ -34,6 +34,15 @@ function Hero() {
         </div>
       </div>
 
+      {/* סרטון — מובייל בלבד, מתחת לתוכן */}
+      <div className="hero-video-mobile">
+        <div className="hero-video-phone">
+          <video autoPlay muted loop playsInline className="hero-video" poster="/og-image.jpg">
+            <source src="/reel.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
       <div className="hero-scroll-indicator" aria-hidden="true">
         <div className="scroll-line"></div>
       </div>
