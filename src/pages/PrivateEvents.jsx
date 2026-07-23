@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PageTitle from '../components/PageTitle/PageTitle';
 import './PrivateEvents.css';
 
@@ -227,6 +228,15 @@ function PrivateEvents() {
               </div>
             </form>
           )}
+        </div>
+      </section>
+
+      {/* קישורים פנימיים */}
+      <section className="section-alt" style={{ padding: '2rem 0' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <p style={{ color: 'var(--text2)', fontSize: '0.92rem', marginBottom: '1rem' }}>
+            מחפשים גם מגשי אירוח לאירוע? <Link to="/catering" style={{ color: 'var(--gold-dark)', fontWeight: 600 }}>לעמוד מגשי האירוח ←</Link>
+          </p>
         </div>
       </section>
 

@@ -42,6 +42,18 @@ function Home() {
         <title>Kitchen Brasserie | מסעדה כשרה חלבית ודגים בנס ציונה</title>
         <meta name="description" content="מסעדת קונספט חלבית ודגים כשרה למהדרין בנס ציונה. ארוחות בוקר מפנקות, פסטות, פיצות, דגים ומגשי אירוח. כשר בד״ץ בית יוסף — קניון קניותר." />
         <link rel="canonical" href="https://kitchenbrasserie.com/" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "האם Kitchen Brasserie כשרה?", "acceptedAnswer": { "@type": "Answer", "text": "כן. אנחנו מסעדה חלבית ודגים כשרה למהדרין תחת השגחת בד״ץ בית יוסף." } },
+            { "@type": "Question", "name": "מה שעות הפתיחה של Kitchen Brasserie?", "acceptedAnswer": { "@type": "Answer", "text": "ראשון עד חמישי 09:00–22:30, שישי 09:00–15:00. שבת — סגור." } },
+            { "@type": "Question", "name": "איפה נמצאת Kitchen Brasserie?", "acceptedAnswer": { "@type": "Answer", "text": "האירוסים 53, קניון קניותר, נס ציונה. יש חניה חינמית בקניון." } },
+            { "@type": "Question", "name": "האם אפשר להזמין שולחן ב-Kitchen Brasserie?", "acceptedAnswer": { "@type": "Answer", "text": "כן, ניתן להזמין שולחן דרך האתר או בטלפון 073-327-7207." } },
+            { "@type": "Question", "name": "האם יש מגשי אירוח ב-Kitchen Brasserie?", "acceptedAnswer": { "@type": "Answer", "text": "כן, מגשי אירוח מעוצבים לאירועים עסקיים ומשפחתיים — כריכונים, פוקאצ׳ות, סלטים ועוד." } },
+            { "@type": "Question", "name": "האם ניתן לקיים אירועים פרטיים ב-Kitchen Brasserie?", "acceptedAnswer": { "@type": "Answer", "text": "כן, אירועי בוטיק עד 60 אורחים — בר/בת מצווה, ימי הולדת, אירועי חברה ועוד." } },
+          ]
+        })}</script>
       </Helmet>
       {/* Hero - מקטע ראשי */}
       <Hero />
@@ -164,6 +176,32 @@ function Home() {
       </section>
 
       {/* אירועים קרובים — מוסתר זמנית */}
+
+      {/* ===== שאלות נפוצות ===== */}
+      <section className="section home-faq-section" id="faq">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-eyebrow">Kitchen Brasserie</span>
+            <h2 className="section-title">שאלות נפוצות</h2>
+            <div className="ornament"><span>✦</span></div>
+          </div>
+          <div className="home-faq-grid">
+            {[
+              { q: 'האם Kitchen Brasserie כשרה?', a: 'כן. אנחנו מסעדה חלבית ודגים כשרה למהדרין תחת השגחת בד״ץ בית יוסף — אחת מסמכויות הכשרות המחמירות בישראל.' },
+              { q: 'מה שעות הפתיחה?', a: 'ראשון עד חמישי 09:00–22:30, שישי 09:00–15:00. שבת — סגור.' },
+              { q: 'איפה נמצאת המסעדה?', a: 'האירוסים 53, קניון קניותר, נס ציונה. יש חניה חינמית בקניון.' },
+              { q: 'האם אפשר להזמין שולחן מראש?', a: 'כן, ניתן להזמין שולחן דרך האתר שלנו או בטלפון 073-327-7207.' },
+              { q: 'האם יש מגשי אירוח?', a: 'כן! אנחנו מכינים מגשי אירוח מעוצבים לאירועים עסקיים ומשפחתיים — כריכונים, פוקאצ׳ות, סלטים ועוד. ניתן לבקש הצעת מחיר דרך עמוד מגשי האירוח.' },
+              { q: 'האם ניתן לקיים אירועים פרטיים?', a: 'כן, אנחנו מארחים אירועי בוטיק עד 60 אורחים — בר/בת מצווה, ימי הולדת, אירועי חברה ועוד. צרו קשר לפרטים.' },
+            ].map(({ q, a }, i) => (
+              <details key={i} className="faq-item">
+                <summary className="faq-question">{q}</summary>
+                <p className="faq-answer">{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ===== CTA - הזמנת שולחן ===== */}
       <section className="section home-cta-section">

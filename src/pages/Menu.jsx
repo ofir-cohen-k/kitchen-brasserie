@@ -139,6 +139,17 @@ function Menu() {
           )}
         </div>
       </section>
+      {/* CTA הזמנת שולחן */}
+      <section className="section-dark" style={{ padding: '2.5rem 0' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <h2 className="section-title section-title-light" style={{ fontSize: '1.4rem' }}>אהבתם מה שראיתם? הזמינו שולחן</h2>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '1.25rem', flexWrap: 'wrap' }}>
+            <a href="https://tabitisrael.co.il/%D7%94%D7%96%D7%9E%D7%A0%D7%AA-%D7%9E%D7%A7%D7%95%D7%9D/create-reservation?step=search&orgId=6714f66c66e62b4cd2ab260f&source=tabit&type=future_reservation" target="_blank" rel="noopener noreferrer" className="btn btn-primary">הזמנת שולחן</a>
+            <a href="tel:0733277207" className="btn btn-outline" style={{ color: 'var(--cream)', borderColor: 'rgba(248,244,236,0.4)' }}>073-327-7207</a>
+          </div>
+        </div>
+      </section>
+
       {activeDish && (
         <div className="lightbox-overlay" onClick={() => setLightboxIndex(null)} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
           <button className="lightbox-close" onClick={() => setLightboxIndex(null)} aria-label="סגור">
