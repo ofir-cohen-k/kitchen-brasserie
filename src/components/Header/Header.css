@@ -125,23 +125,14 @@
 }
 .wolt-btn:hover { opacity: 0.7; }
 
-.wolt-badge-circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #1a1a18;
-  transition: background 0.2s;
-}
-.wolt-btn:hover .wolt-badge-circle { background: #333; }
 .wolt-badge-img {
-  height: 13px;
+  height: 22px;
   width: auto;
   display: block;
-  filter: invert(1);
+  opacity: 0.85;
+  transition: opacity 0.2s;
 }
+.wolt-btn:hover .wolt-badge-img { opacity: 1; }
 
 /* כפתור המבורגר */
 .hamburger-btn {
