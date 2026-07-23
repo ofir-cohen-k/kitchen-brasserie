@@ -14,6 +14,19 @@ function Menu() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchText, setSearchText] = useState('');
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [tabsFixed, setTabsFixed] = useState(false);
+  const sentinelRef = useRef(null);
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setTabsFixed(!entry.isIntersecting),
+      { rootMargin: '-68px 0px 0px 0px' }
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
 
   const categoryOrder = Object.keys(categoryLabels);
 
@@ -84,8 +97,12 @@ function Menu() {
         </div>
       </div>
 
-      {/* טאבי קטגוריה — מחוץ ל-section כדי שה-sticky יעבוד */}
-      <div className="menu-tabs-bar">
+      {/* sentinel לזיהוי מתי הטאבים יוצאים מהמסך */}
+      <div ref={sentinelRef} style={{ height: 1 }} />
+
+      {/* טאבי קטגוריה */}
+      <div className={`menu-tabs-bar${tabsFixed ? ' menu-tabs-bar-fixed' : ''}`}>
+
         <div className="container">
           <div className="menu-tabs" role="tablist" aria-label="קטגוריות תפריט">
             {Object.entries(categoryLabels).map(([key, label]) => (
@@ -102,6 +119,7 @@ function Menu() {
           </div>
         </div>
       </div>
+      {tabsFixed && <div style={{ height: 55 }} />}
 
       <section className="section">
         <div className="container">

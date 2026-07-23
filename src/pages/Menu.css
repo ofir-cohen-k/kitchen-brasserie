@@ -1,14 +1,18 @@
 .menu-hero { padding: 0.5rem 0 0.7rem; }
 
-/* פס טאבים דביק */
+/* פס טאבים */
 .menu-tabs-bar {
-  position: sticky;
-  top: 68px;
-  z-index: 100;
   background: var(--cream);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 2px 8px rgba(44,26,10,0.06);
   padding: 0.65rem 0;
+}
+.menu-tabs-bar-fixed {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(44,26,10,0.1);
 }
 
 /* שורת שליטה */
