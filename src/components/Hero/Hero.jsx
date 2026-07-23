@@ -45,7 +45,13 @@ function Hero() {
       {/* סרטון — מובייל בלבד, מתחת לתוכן */}
       <div className="hero-video-mobile">
         <div className="hero-video-phone">
-          <video ref={mobileVideoRef} autoPlay muted loop playsInline className="hero-video">
+          <video
+            ref={mobileVideoRef}
+            autoPlay muted loop playsInline
+            preload="auto"
+            onLoadedData={() => mobileVideoRef.current?.play().catch(() => {})}
+            className="hero-video"
+          >
             <source src="/reel.mp4" type="video/mp4" />
           </video>
         </div>
