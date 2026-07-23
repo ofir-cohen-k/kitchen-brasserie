@@ -207,8 +207,8 @@ function Home() {
       <Hero />
 
       {/* ===== כרטיסי ניווט מהיר ===== */}
-      <section className="home-cards-section reveal">
-        <div className="home-cards container">
+      <section className="home-cards-section">
+        <div className="home-cards container reveal">
           <div className="home-card">
             <span className="home-card-icon"><Star size={28} strokeWidth={1.5} /></span>
             <h3>אירועים פרטיים</h3>
@@ -243,9 +243,9 @@ function Home() {
       </section>
 
       {/* ===== מנות מומלצות ===== */}
-      <section className="section reveal" id="recommended">
+      <section className="section" id="recommended">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header reveal">
             <span className="section-eyebrow">kitchen Brasserie</span>
             <h2 className="section-title">המנות המומלצות שלנו</h2>
             <p className="section-subtitle">מנות שהאורחים שלנו הכי אוהבים — מוכנות בחומרי גלם טריים</p>
@@ -274,10 +274,10 @@ function Home() {
       </section>
 
       {/* ===== על המסעדה ===== */}
-      <section className="section-alt reveal" id="about-preview">
+      <section className="section-alt" id="about-preview">
         <div className="container">
           <div className="home-about">
-            <div className="home-about-text">
+            <div className="home-about-text reveal">
               <span className="section-eyebrow">Kitchen Brasserie</span>
               <h2 className="section-title">מסעדת קונספט כשרה<br />עם אופי ייחודי</h2>
               <p className="home-about-body">
@@ -307,7 +307,7 @@ function Home() {
                 <Link to="/about" className="btn btn-primary">קרא עוד עלינו</Link>
               </div>
             </div>
-            <div className="home-about-img">
+            <div className="home-about-img reveal reveal-delay-2">
               {slideshowImages.map((img, i) => (
                 <img
                   key={i}
@@ -338,14 +338,14 @@ function Home() {
       <TestimonialsMarquee />
 
       {/* ===== שאלות נפוצות ===== */}
-      <section className="section home-faq-section reveal" id="faq">
+      <section className="section home-faq-section" id="faq">
         <div className="container">
           <div className="section-header">
             <span className="section-eyebrow">Kitchen Brasserie</span>
             <h2 className="section-title">שאלות נפוצות</h2>
             <div className="ornament"><span>✦</span></div>
           </div>
-          <div className="home-faq-grid">
+          <div className="home-faq-grid reveal">
             {[
               { q: 'האם Kitchen Brasserie כשרה?', a: 'כן. אנחנו מסעדה חלבית ודגים כשרה למהדרין תחת השגחת בד״ץ בית יוסף — אחת מסמכויות הכשרות המחמירות בישראל.' },
               { q: 'מה שעות הפתיחה?', a: 'ראשון עד חמישי 09:00–22:30, שישי 09:00–15:00. שבת — סגור.' },
@@ -365,9 +365,9 @@ function Home() {
       </section>
 
       {/* ===== CTA - הזמנת שולחן ===== */}
-      <section className="section home-cta-section reveal">
+      <section className="section home-cta-section">
         <div className="container">
-          <div className="home-cta">
+          <div className="home-cta reveal">
             <h2 className="section-title">מוכנים לארוחה מיוחדת?</h2>
             <p className="section-subtitle">הזמינו שולחן עכשיו ותהנו מחוויה קולינרית יוקרתית</p>
             <div className="home-cta-btns">
