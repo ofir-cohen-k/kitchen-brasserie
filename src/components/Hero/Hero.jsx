@@ -11,7 +11,7 @@ function Hero() {
       {/* סרטון — צד שמאל */}
       <div className="hero-video-side">
         <div className="hero-video-phone">
-          <video autoPlay muted loop playsInline className="hero-video">
+          <video autoPlay muted loop playsInline className="hero-video" poster="/og-image.jpg">
             <source src="/reel.mp4" type="video/mp4" />
           </video>
         </div>
@@ -22,7 +22,7 @@ function Hero() {
         <span className="hero-eyebrow">כשר חלבי ודגים · נס ציונה</span>
         <h1 className="hero-h1-seo">Kitchen Brasserie — מסעדה כשרה חלבית ודגים בנס ציונה</h1>
         <div className="hero-logo-wrap">
-          <img src="/logo.png" alt="Kitchen Brasserie" className="hero-logo-img" />
+          <img src="/logo.png" alt="Kitchen Brasserie" className="hero-logo-img" fetchpriority="high" />
         </div>
         <p className="hero-subtitle">
           מסעדת קונספט חלבית ודגים<br />
