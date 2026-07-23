@@ -113,6 +113,14 @@
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .menu-card-img { height: 120px; }
+  .menu-card-body { padding: 0.7rem 0.8rem 0.9rem; }
+  .menu-card-name { font-size: 0.84rem; }
+  .menu-card-price { font-size: 0.84rem; }
+  .menu-card-desc { font-size: 0.73rem; }
+}
+
 /* Lightbox */
 .lightbox-overlay {
   position: fixed;

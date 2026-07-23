@@ -235,9 +235,8 @@ input, select, textarea { font-family: var(--font-body); outline: none; directio
   .container { padding: 0 1rem; }
   .section, .section-alt, .section-dark { padding: 55px 0; }
   .form-grid { grid-template-columns: 1fr; }
-  .cards-grid, .cards-grid-4 {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  }
+  .cards-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .cards-grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ===== Mobile Bottom Bar ===== */
